@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:id="@+id/rootCo"
+    android:layout_marginHorizontal="@dimen/size5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="@dimen/size2"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/size10">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/size10">
+
+        <ImageView
+            android:id="@+id/ivCardGradient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/grad1"/>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.cardview.widget.CardView>

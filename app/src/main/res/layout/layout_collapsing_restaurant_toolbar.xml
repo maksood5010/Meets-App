@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meetsportal.meets.overridelayout.CollapsibleToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:minHeight="60dp"
+    app:layoutDescription="@xml/scene_collapsing_restaurant_detail"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryDark"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        android:src="@drawable/temp_restaurant_detail" />
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_restaurant_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size5"
+        android:layout_marginLeft="@dimen/size10"
+        android:orientation="vertical">-->
+    <ImageView
+        android:id="@+id/backWhite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="@dimen/size1"
+        android:src="@color/page_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size2"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingTop="@dimen/size5"
+        android:paddingBottom="@dimen/size10"
+        android:text="Shisheo Lounge"
+        android:textColor="@color/primaryDark"
+        android:textSize="@dimen/size20"
+        app:layout_constraintBottom_toTopOf="@+id/tv_timing"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_timing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size2"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/blacktextColor"
+        android:textSize="@dimen/size12"
+        app:layout_constraintBottom_toTopOf="@+id/rb_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="Open: 6:00pm - 3:00am" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/rb_rating"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size2"
+        android:isIndicator="true"
+        android:rating="0.1"
+        android:stepSize="0.1"
+        android:theme="@style/RatingBar"
+        app:layout_constraintBottom_toTopOf="@+id/tv_rate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size2"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/blacktextColor"
+        android:textSize="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="5 of 5" />
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/ll_create_meet_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size10"
+        android:background="@drawable/round_border_primary_bg"
+        android:elevation="@dimen/size2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/size10"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="781dp">
+
+        <ImageView
+            android:id="@+id/iv_meet_upLogo"
+            android:layout_width="28dp"
+            android:layout_height="27dp"
+            android:src="@drawable/meet_logo"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_meet_up_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size5"
+            android:text="Meet up here"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size10"
+        android:src="@drawable/ic_not_bookmarked" />
+
+</com.meetsportal.meets.overridelayout.CollapsibleToolbar>

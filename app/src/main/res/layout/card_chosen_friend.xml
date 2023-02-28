@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_img"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        app:civ_border_color="@color/primaryDark"
+        app:civ_border_width="1dp"
+        android:src="@drawable/temp_restaurant_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_round_cancel"
+        app:layout_constraintTop_toTopOf="@+id/civ_img"
+        app:layout_constraintBottom_toBottomOf="@+id/civ_img"
+        app:layout_constraintStart_toStartOf="@+id/civ_img"
+        app:layout_constraintEnd_toEndOf="@+id/civ_img"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adriana"
+        android:textColor="@color/primaryDark"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/size12"
+        app:layout_constraintTop_toBottomOf="@+id/civ_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

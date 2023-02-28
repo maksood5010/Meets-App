@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size5"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Search"
+        android:textColor="@color/primaryDark"
+        android:textSize="@dimen/size18"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/size20"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_search"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/primaryDark" />
+
+    <EditText
+        android:id="@+id/et_search"
+        style="@style/editTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size20"
+        android:layout_marginTop="@dimen/size30"
+        android:background="@drawable/bg_circular_corcnor_filled2"
+        android:fontFamily="@font/poppins_light"
+        android:hint="Search People……"
+        android:maxLength="50"
+        android:paddingVertical="@dimen/size10"
+        android:paddingStart="@dimen/size20"
+        android:paddingEnd="@dimen/size40"
+        android:textColorHint="#32BFC9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/tv_search" />
+
+    <ImageView
+        android:id="@+id/iv_clear_edit"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        android:paddingHorizontal="@dimen/size5"
+        android:layout_marginHorizontal="@dimen/size10"
+        android:background="@drawable/bg_circle_primary"
+        android:src="@drawable/ic_clear_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search"
+        app:tint="@color/white" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:background="#32BFC9"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav" />
+
+
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_people"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:alpha="1"
+                    android:background="@drawable/round_border_primary_bg">
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/size4"
+                    android:src="@drawable/ic_single_person"
+                    app:tint="@color/blacktextColor" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="People"
+                style="@style/subHeaderSmall"
+                android:textColor="@color/blacktextColor"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_post"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:alpha="0.19"
+                    android:background="@drawable/round_border_primary_bg">
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_post"
+                    android:layout_width="@dimen/size15"
+                    android:layout_height="@dimen/size15"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/size4"
+                    android:src="@drawable/ic_post_tab"
+                    app:tint="@color/blacktextColor" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Posts"
+                style="@style/subHeaderSmall"
+                android:textColor="@color/blacktextColor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_meetup"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:alpha="0.19"
+                    android:background="@drawable/round_border_primary_bg">
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_meetup"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/size4"
+                    android:src="@drawable/ic_meet_up_colored" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_meetup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Meetup"
+                android:textColor="@color/primaryDark"
+                android:textSize="@dimen/size10" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_restaurant"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp"
+                    android:alpha="0.19"
+                    android:background="@drawable/round_border_primary_bg">
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_restaurant"
+                    android:layout_width="@dimen/size15"
+                    android:layout_height="@dimen/size15"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/size4"
+                    android:src="@drawable/ic_places"
+                    app:tint="@color/blacktextColor" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Places"
+                style="@style/subHeaderSmall"
+                android:textColor="@color/blacktextColor" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

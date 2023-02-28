@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#00000000"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_bottom_sheet"
+        android:gravity="left">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:gravity="center"
+            android:textSize="@dimen/size20"
+            android:layout_marginTop="@dimen/size10"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/blacktextColor"
+            android:layout_marginBottom="@dimen/size20"/>
+
+        <TextView
+            android:id="@+id/tv_spam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="It’s spam"
+            android:textSize="@dimen/size16"
+            android:textColor="@color/blacktextColor"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size20"
+            android:paddingVertical="@dimen/size15"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#CECECE"/>
+
+        <TextView
+            android:id="@+id/tv_nudity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Nudity or sexually explicit"
+            android:textSize="@dimen/size16"
+            android:textColor="@color/blacktextColor"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size20"
+            android:paddingVertical="@dimen/size15"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#CECECE"/>
+
+        <TextView
+            android:id="@+id/tv_not_liked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="I just don’t like it"
+            android:textSize="@dimen/size16"
+            android:textColor="@color/blacktextColor"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size20"
+            android:paddingVertical="@dimen/size15"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#CECECE"/>
+
+        <TextView
+            android:id="@+id/tv_violence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Violence"
+            android:textSize="@dimen/size16"
+            android:textColor="@color/blacktextColor"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size20"
+            android:paddingVertical="@dimen/size15"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#CECECE"/>
+
+        <TextView
+            android:id="@+id/tv_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Other"
+            android:textSize="@dimen/size16"
+            android:textColor="@color/blacktextColor"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="@dimen/size20"
+            android:paddingVertical="@dimen/size15"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#CECECE"/>
+
+    </LinearLayout>
+</RelativeLayout>

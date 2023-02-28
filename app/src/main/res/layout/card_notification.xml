@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:background="@color/page_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/size10">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dp"
+        android:layout_width="@dimen/size50"
+        android:layout_height="@dimen/size50"
+        android:src="@drawable/ic_person_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--<ImageView
+        android:id="@+id/ivDpBadge"
+        style="@style/smallBadge"
+        app:layout_constraintStart_toStartOf="@+id/dp"
+        app:layout_constraintEnd_toEndOf="@+id/dp"
+        app:layout_constraintTop_toTopOf="@+id/dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dp"/>-->
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size14"
+        android:text="meets"
+        android:maxLines="4"
+        android:ellipsize="middle"
+        android:textColor="@color/blacktextColor"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintTop_toTopOf="@+id/dp"
+        app:layout_constraintStart_toEndOf="@+id/dp"
+        app:layout_constraintEnd_toStartOf="@+id/card"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/desc"
+        app:layout_constraintStart_toStartOf="@+id/desc"
+        app:layout_constraintEnd_toStartOf="@+id/card"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="88dp"
+        android:layout_height="@dimen/size60"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person_placeholder"/>
+
+            <com.meetsportal.meets.overridelayout.AutoResizeTextView
+                android:id="@+id/etTextpost"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/grad1"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/size25"
+                android:gravity="center"
+                android:cursorVisible="false"
+                tools:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

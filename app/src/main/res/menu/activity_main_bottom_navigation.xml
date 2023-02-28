@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="start"
+    android:layout_gravity="start">
+    <item android:id="@+id/action_feed"
+        android:title="Feed"
+        android:icon="@drawable/ic_post_tab" />
+
+    <item android:id="@+id/action_meetup"
+        android:title="Meetup"
+        android:icon="@drawable/ic_meet_up" />
+
+    <item android:id="@+id/action_places"
+        android:title="Places"
+        android:icon="@drawable/ic_places_tab" />
+
+    <item android:id="@+id/action_discover"
+        android:title="Discover"
+        android:icon="@drawable/ic_map_flat" />
+
+    <item android:id="@+id/action_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_menu" />
+</menu>

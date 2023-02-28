@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/toolBarBack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvToolbarText"
+                style="@style/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recover your account"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:id="@+id/sView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar">
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlOldPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size10"
+                    android:background="@drawable/shape_round_search"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/tvOldPhone"
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginHorizontal="@dimen/size10"
+                        android:text="Old phone number" />
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/oldCCP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_rememberLastSelection="true"
+                        app:ccp_customMasterCountries="@string/contrylist"
+                        app:ccp_showNameCode="false"
+                        app:ccp_autoDetectCountry="true"
+                        app:layout_constraintStart_toStartOf="@+id/tvOldPhone"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOldPhone"
+                        app:ccp_hintExampleNumber="true"
+                        android:layout_below="@+id/tvOldPhone"
+                        android:layout_alignStart="@+id/tvOldPhone"
+                        app:ccp_textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/etOldPhone"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvOldPhone"
+                        android:layout_alignStart="@+id/tvOldPhone"
+                        android:background="@color/transparent"
+                        android:hint="type your old phone number"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:paddingVertical="5dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/oldCCP"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOldPhone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlNewPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size10"
+                    android:background="@drawable/shape_round_search"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rlOldPhone">
+
+
+                    <TextView
+                        android:id="@+id/tvNewPhone"
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginHorizontal="@dimen/size10"
+                        android:text="New phone number" />
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/newCCP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_rememberLastSelection="true"
+                        app:ccp_showNameCode="false"
+                        app:ccp_customMasterCountries="@string/contrylist"
+                        app:ccp_autoDetectCountry="true"
+                        app:layout_constraintStart_toStartOf="@+id/tvNewPhone"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNewPhone"
+                        app:ccp_hintExampleNumber="true"
+                        android:layout_below="@+id/tvNewPhone"
+                        android:layout_alignStart="@+id/tvNewPhone"
+                        app:ccp_textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/etNewPhone"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvNewPhone"
+                        android:layout_alignStart="@+id/tvNewPhone"
+                        android:background="@color/transparent"
+                        android:hint="type your new phone number"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:paddingVertical="5dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/newCCP"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNewPhone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size10"
+                    android:background="@drawable/shape_round_search"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rlNewPhone">
+                    <ImageView
+                        android:id="@+id/ivMail"
+                        style="@style/header"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="@dimen/size10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_mail"
+                        app:tint="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:text="Recovery email"
+                        android:layout_marginStart="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivMail"
+                        app:layout_constraintStart_toEndOf="@+id/ivMail"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvEmail"
+                        android:layout_alignStart="@+id/tvEmail"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/transparent"
+                        android:hint="type your recovery email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingVertical="5dp"
+                        android:maxLength="65"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/ivMail"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvSubmit"
+                    style="@style/primaryButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:paddingHorizontal="100dp"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/rlEmail"
+                    app:layout_constraintStart_toStartOf="@+id/rlEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/rlEmail" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/tvText"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center_horizontal"
+                    android:layout_marginVertical="20dp"
+                    android:text="Didn't get the code? "
+                    android:textSize="@dimen/size20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_resend"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_timer" />
+
+                <TextView
+                    android:id="@+id/tv_resend"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Resend"
+                    android:textColor="@color/resend"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvText"
+                    app:layout_constraintTop_toTopOf="@+id/tvText" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size50"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="5dp"
+                    android:text="60 seconds remaining"
+                    android:textSize="@dimen/size15"
+                    app:layout_constraintTop_toBottomOf="@+id/phone_otp"
+                    app:layout_constraintEnd_toEndOf="@+id/email_otp" />
+
+                <com.mukesh.OtpView
+                    android:id="@+id/email_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:itemBackground="#aaffffff"
+                    android:textColor="@color/black"
+                    app:OtpItemCount="4"
+                    android:cursorVisible="true"
+                    app:OtpLineColor="@color/transparent"
+                    app:OtpViewType="rectangle"
+                    app:OtpItemRadius="@dimen/size20"
+                    app:OtpItemHeight="64dp"
+                    app:OtpItemWidth="64dp"
+                    android:imeOptions="actionNext"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSendMail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+                <com.mukesh.OtpView
+                    android:id="@+id/phone_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_marginTop="5dp"
+                    android:itemBackground="#aaffffff"
+                    android:textColor="@color/black"
+                    app:OtpItemCount="4"
+                    android:imeOptions="actionDone"
+                    android:cursorVisible="true"
+                    app:OtpLineColor="@color/transparent"
+                    app:OtpViewType="rectangle"
+                    app:OtpItemRadius="@dimen/size20"
+                    app:OtpItemHeight="64dp"
+                    app:OtpItemWidth="64dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSendPhone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSendMail"
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="code sent to mail@mail.com"
+                    app:layout_constraintStart_toStartOf="@+id/tv_quick_one"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_quick_one" />
+
+                <TextView
+                    android:id="@+id/tv_quick_one"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginStart="20dp"
+                    android:text="Verify Email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_quick_one2"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Verify New number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/email_otp" />
+
+
+                <TextView
+                    android:id="@+id/tvSendPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="code sent to +971XXXXXX"
+                    app:layout_constraintStart_toStartOf="@+id/tv_quick_one2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_quick_one2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ViewFlipper>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the recovery email you\nused for this account"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/size14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sView"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

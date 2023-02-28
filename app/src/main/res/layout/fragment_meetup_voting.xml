@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="-20dp"
+    android:background="#80000000"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="36dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="@dimen/size5"
+        android:elevation="@dimen/size12"
+        android:src="@drawable/ic_round_cancel"
+        app:layout_constraintEnd_toEndOf="@+id/cl_round_card"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/cl_round_card"
+        app:layout_constraintTop_toTopOf="@+id/cl_round_card" />
+
+    <TextView
+        android:id="@+id/maxVote"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/size5"
+        android:elevation="@dimen/size12"
+        android:textColor="@color/black"
+        tools:text="10 Votes remaining"
+        android:paddingHorizontal="@dimen/size10"
+        android:textSize="@dimen/size8"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintEnd_toEndOf="@+id/cl_round_card"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/cl_round_card"
+        app:layout_constraintTop_toTopOf="@+id/cl_round_card" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_round_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_main_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/size20"
+            app:cardCornerRadius="@dimen/size20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/meetup_gb"
+                android:paddingBottom="@dimen/size20">
+
+                <TextView
+                    android:id="@+id/tv_meetupChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size10"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Meetup Chat"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/tocheckheight"
+                    android:layout_width="@dimen/size20"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_meetupChat" />
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/nested"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_meetupChat">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!--      Summary Card Start-->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/summaryCard"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/size20"
+                                android:padding="@dimen/size10"
+                                app:cardCornerRadius="@dimen/size20"
+                                app:cardElevation="0dp"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingTop="@dimen/size10">
+
+                                    <!--<TextView
+                                        android:id="@+id/tvSummery"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="Summary Vote"
+                                        android:textColor="@color/blacktextColor"
+                                        android:textSize="@dimen/size16"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+-->
+                                    <androidx.constraintlayout.widget.Guideline
+                                        android:id="@+id/giude7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        app:layout_constraintGuide_percent="0.63" />
+
+                                    <View
+                                        android:id="@+id/cardHeight"
+                                        android:layout_width="2dp"
+                                        android:layout_height="150dp"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/cardImage"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:minHeight="@dimen/size100"
+                                        android:layout_marginVertical="@dimen/size5"
+                                        android:layout_marginStart="@dimen/size20"
+                                        android:layout_marginEnd="@dimen/size20"
+                                        app:cardBackgroundColor="@color/page_bg"
+                                        app:cardCornerRadius="@dimen/size10"
+                                        app:cardElevation="0dp"
+                                        app:layout_constraintBottom_toTopOf="@+id/name"
+                                        app:layout_constraintEnd_toEndOf="@+id/giude7"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:minHeight="100dp">
+
+                                            <ImageView
+                                                android:id="@+id/votedPlace"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:background="@color/gray1"
+                                                android:scaleType="centerCrop"
+                                                android:src="@drawable/ic_bg_default_place_h" />
+
+                                            <TextView
+                                                android:id="@+id/ivName"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerInParent="true"
+                                                android:ellipsize="end"
+                                                android:fontFamily="@font/poppins_semibold"
+                                                android:gravity="center"
+                                                android:maxLines="2"
+                                                android:textColor="@color/blacktextColor"
+                                                android:textSize="@dimen/size12"
+                                                tools:text="burj Tower" />
+
+                                            <LinearLayout
+                                                android:id="@+id/llHighPlaceDetail"
+                                                android:visibility="gone"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:background="@drawable/bg_primary_gradient"
+                                                android:layout_alignParentBottom="true">
+
+
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:orientation="horizontal"
+                                                    android:paddingHorizontal="@dimen/size5"
+                                                    android:layout_height="wrap_content">
+
+                                                    <!--<RatingBar
+                                                        android:id="@+id/rating"
+                                                        style="?attr/ratingBarStyleSmall"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:isIndicator="true"
+                                                        android:numStars="0"
+                                                        android:visibility="invisible"
+                                                        android:secondaryProgressTint="@color/yellow"
+                                                        android:progressTint="@color/yellow"
+                                                        android:rating="3"
+                                                        android:textColor="@color/white" />-->
+                                                    <TextView
+                                                        android:id="@+id/ratingData"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:paddingHorizontal="@dimen/size5"
+                                                        style="@style/subHeader"
+                                                        android:maxLines="1"
+                                                        android:textColor="@color/white"
+                                                        tools:text="5 of 5"/>
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                        </RelativeLayout>
+                                    </androidx.cardview.widget.CardView>
+
+                                    <TextView
+                                        android:id="@+id/name"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        style="@style/subHeader"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:paddingHorizontal="@dimen/size5"
+                                        android:singleLine="true"
+                                        tools:text="Shisheo"
+                                        android:textSize="@dimen/size12"
+                                        android:textColor="@color/black"
+                                        android:layout_marginTop="@dimen/size5"
+                                        app:layout_constraintStart_toStartOf="@+id/cardImage"
+                                        app:layout_constraintTop_toBottomOf="@+id/cardImage"
+                                        app:layout_constraintEnd_toStartOf="@+id/confirm"/>
+
+                                    <RatingBar
+                                        android:id="@+id/rating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/Widget.AppCompat.RatingBar.Small"
+                                        android:rating="0"
+                                        android:progressTint="@color/yellow"
+                                        app:layout_constraintTop_toBottomOf="@+id/name"
+                                        app:layout_constraintStart_toStartOf="@+id/name"
+                                        android:layout_marginBottom="@dimen/size10"
+                                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                                    <TextView
+                                        android:id="@+id/confirm"
+                                        style="@style/primaryButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="@dimen/size10"
+                                        android:layout_marginTop="@dimen/size5"
+                                        android:paddingVertical="@dimen/size5"
+                                        android:text="Confirm"
+                                        android:textSize="@dimen/size12"
+                                        android:textColor="@color/white"
+                                        app:layout_constraintEnd_toEndOf="@+id/cardImage"
+                                        app:layout_constraintTop_toBottomOf="@+id/cardImage"
+                                        app:layout_constraintBottom_toBottomOf="@+id/rating"/>
+
+                                    <View
+                                        android:id="@+id/line"
+                                        android:layout_width="1dp"
+                                        android:layout_height="0dp"
+                                        android:background="@color/primaryDark"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        android:layout_marginBottom="@dimen/size10"
+                                        app:layout_constraintEnd_toEndOf="@+id/giude7"
+                                        app:layout_constraintTop_toTopOf="@+id/cardImage" />
+
+                                    <lecho.lib.hellocharts.view.PieChartView
+                                        android:id="@+id/chart"
+                                        android:layout_width="130dp"
+                                        android:layout_height="130dp"
+                                        tools:visibility="visible"
+                                        android:layout_marginBottom="@dimen/size15"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/giude7"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginHorizontal="@dimen/size20"
+                                android:layout_marginVertical="@dimen/size20"
+                                app:cardCornerRadius="@dimen/size20"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintHeight_default="spread"
+                                app:layout_constraintHeight_min="200dp"
+                                app:layout_constraintTop_toBottomOf="@+id/summaryCard">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:minHeight="800dp">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:id="@+id/rlmsg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="#F7F7F7"
+                                        android:paddingHorizontal="@dimen/size20"
+                                        android:paddingTop="@dimen/size10"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/rootReply"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:animateLayoutChanges="true"
+                                            android:paddingBottom="@dimen/size3"
+                                            android:visibility="gone"
+                                            app:layout_constraintBottom_toTopOf="@+id/rlMsg"
+                                            tools:visibility="visible">
+
+                                            <LinearLayout
+                                                android:id="@+id/llLine"
+                                                android:layout_width="@dimen/size3"
+                                                android:layout_height="0dp"
+                                                android:backgroundTint="@color/blacktextColor"
+                                                android:background="@drawable/bg_dm_own"
+                                                android:orientation="vertical"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="@+id/replyinto" />
+
+                                            <TextView
+                                                android:id="@+id/replyinto"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/size10"
+                                                style="@style/header"
+
+                                                android:paddingLeft="@dimen/size10"
+                                                android:text="Replying to yourself"
+                                                app:layout_constraintStart_toEndOf="@+id/llLine"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <TextView
+                                                android:id="@+id/replyMsg"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:ellipsize="end"
+                                                android:paddingLeft="@dimen/size10"
+                                                android:singleLine="true"
+                                                android:text="Lorem Ipsum is simply dummy text of the prjdnjfnrjvnjnvfnvnnvjnjvnfjnvjfn"
+                                                app:layout_constraintEnd_toStartOf="@+id/replyImage"
+                                                app:layout_constraintStart_toEndOf="@+id/llLine"
+                                                app:layout_constraintTop_toBottomOf="@+id/replyinto" />
+
+                                            <ImageView
+                                                android:id="@+id/replyImage"
+                                                android:layout_width="@dimen/size40"
+                                                android:layout_height="@dimen/size40"
+                                                android:scaleType="centerCrop"
+                                                android:src="@drawable/ic_other_spot_bg"
+                                                app:layout_constraintEnd_toStartOf="@+id/cancelReply"
+                                                app:layout_constraintTop_toTopOf="@+id/replyinto" />
+
+                                            <ImageView
+                                                android:id="@+id/cancelReply"
+                                                android:layout_width="@dimen/size24"
+                                                android:layout_height="@dimen/size24"
+                                                android:layout_marginRight="@dimen/size5"
+                                                android:src="@drawable/ic_cancel"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                app:layout_constraintVertical_bias="0.0"
+                                                app:tint="@color/blacktextColor" />
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/rlMsg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent">
+
+                                            <ImageView
+                                                android:id="@+id/ivBg"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                app:layout_constraintTop_toTopOf="@+id/etMsg"
+                                                app:layout_constraintBottom_toBottomOf="@+id/etMsg"
+                                                android:layout_marginBottom="10dp"
+                                                android:background="@drawable/bg_circular_corcnor_filled3"
+                                                android:paddingVertical="@dimen/size10" />
+
+                                            <EditText
+                                                android:id="@+id/etMsg"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                android:background="@color/transparent"
+                                                android:gravity="center_vertical"
+                                                android:paddingEnd="@dimen/size50"
+                                                android:hint="@string/message__"
+                                                android:imeOptions="actionSend|flagNoEnterAction"
+                                                android:maxLines="2"
+                                                android:paddingStart="10dp"
+                                                android:paddingTop="@dimen/size10"
+                                                android:paddingBottom="@dimen/size20"
+                                                android:textColor="@color/blacktextColor"
+                                                android:textSize="16sp" />
+
+                                            <TextView
+                                                android:id="@+id/send"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="0dp"
+                                                app:layout_constraintTop_toTopOf="@id/etMsg"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                android:fontFamily="@font/poppins_semibold"
+                                                android:gravity="center_vertical"
+                                                android:textColor="@color/primaryDark"
+                                                app:drawableStartCompat="@drawable/ic_send" />
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/lottiAnim"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:orientation="vertical"
+                                        android:paddingVertical="@dimen/size20"
+                                        android:paddingHorizontal="@dimen/size10"
+                                        app:layout_constraintBottom_toBottomOf="@+id/rvChat"
+                                        app:layout_constraintStart_toStartOf="@+id/rvChat"
+                                        app:layout_constraintEnd_toEndOf="@+id/rvChat"
+                                        app:layout_constraintTop_toTopOf="@+id/rvChat">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="No Vote Yet!!"
+                                            android:textSize="@dimen/size14"
+                                            android:textColor="@color/blacktextColor"
+                                            android:fontFamily="@font/poppins_semibold"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="-5dp"
+                                            android:text="Be the first to vote..."
+                                            android:textSize="@dimen/size12"
+                                            android:fontFamily="@font/poppins"/>
+
+                                        <com.airbnb.lottie.LottieAnimationView
+                                            android:layout_width="200dp"
+                                            android:layout_height="108dp"
+                                            app:lottie_autoPlay="true"
+                                            app:lottie_fileName="meet_vote.json"
+                                            app:lottie_loop="true"
+                                            app:lottie_speed="1"
+                                            app:layout_constraintTop_toTopOf="@+id/rvChat"
+                                            app:layout_constraintBottom_toBottomOf="@+id/rvChat"
+                                            app:layout_constraintStart_toStartOf="@+id/rvChat"
+                                            app:layout_constraintEnd_toEndOf="@+id/rvChat"/>
+
+
+                                    </LinearLayout>
+
+
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvChat"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:clipToPadding="false"
+                                        android:orientation="vertical"
+                                        android:background="@color/transparent"
+                                        android:paddingBottom="100dp"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        app:layout_constraintBottom_toBottomOf="@+id/clPlacehere"
+                                        app:layout_constraintTop_toBottomOf="@+id/rlParticipant"
+                                        app:layout_constraintVertical_bias="1.0"
+                                        tools:layout_editor_absoluteX="0dp"
+                                        tools:listitem="@layout/card_meet_message" />
+
+                                    <View
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="37.5dp"
+                                        android:background="@color/white"
+                                        app:layout_constraintBottom_toBottomOf="@id/clPlacehere"
+                                        app:layout_constraintEnd_toEndOf="@id/clPlacehere"
+                                        app:layout_constraintStart_toStartOf="@id/clPlacehere" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:id="@+id/clPlacehere"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintBottom_toTopOf="@+id/rlmsg">
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rvPlaces"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clipToPadding="false"
+                                            android:orientation="horizontal"
+                                            android:splitMotionEvents="false"
+                                            android:paddingVertical="@dimen/size5"
+                                            android:paddingStart="13dp"
+                                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            tools:listitem="@layout/card_selected_place" />
+
+                                        <!--<ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dp"
+                                            app:layout_constraintTop_toTopOf="@+id/llVoteCLose"
+                                            app:layout_constraintBottom_toBottomOf="@+id/llVoteCLose"
+                                            android:src="@drawable/bg_fading"
+                                            app:tint="@color/white" />-->
+
+                                        <LinearLayout
+                                            android:id="@+id/llVoteCLose"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:visibility="gone"
+                                            tools:visibility="visible"
+                                            app:layout_constraintBottom_toBottomOf="parent">
+                                            <LinearLayout
+                                                android:id="@+id/llScheduleMsg"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center"
+                                                android:paddingVertical="@dimen/size5"
+                                                android:orientation="vertical"
+                                                android:layout_marginHorizontal="@dimen/size20"
+                                                android:background="@drawable/bg_circular_corcnor_filled2"
+                                                app:layout_constraintBottom_toTopOf="@+id/rlmsg">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Your Meetup has been scheduled with"
+                                                    android:textColor="@color/black"/>
+
+                                                <TextView
+                                                    android:id="@+id/finalParticipant"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:ellipsize="middle"
+                                                    android:fontFamily="@font/poppins_semibold"
+                                                    android:gravity="center"
+                                                    android:paddingHorizontal="@dimen/size20"
+                                                    android:singleLine="true"
+                                                    android:textColor="@color/primaryDark"
+                                                    tools:text="CEO, Imran, Asad" />
+
+
+
+                                            </LinearLayout>
+
+                                            <TextView
+                                                android:id="@+id/imHere"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="I’m Here"
+                                                android:layout_marginTop="10dp"
+                                                android:gravity="center"
+                                                android:textSize="@dimen/size14"
+                                                android:fontFamily="@font/poppins_bold"
+                                                android:paddingVertical="@dimen/size10"
+                                                android:textColor="@color/white"
+                                                android:layout_marginHorizontal="@dimen/size20"
+                                                android:background="@drawable/bg_imhere"/>
+
+
+                                        </LinearLayout>
+
+
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:id="@+id/rlParticipant"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/page_bg"
+                                        android:padding="@dimen/size5"
+                                        app:layout_constraintTop_toTopOf="parent">
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rvParticipant"
+                                            android:layout_width="100dp"
+                                            android:layout_height="wrap_content"
+                                            android:clipToPadding="false"
+                                            android:orientation="horizontal"
+                                            android:paddingStart="@dimen/size30"
+                                            tools:itemCount="1"
+                                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                            tools:listitem="@layout/card_meet_person_chat"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"/>
+
+                                        <TextView
+                                            android:id="@+id/meetUpName"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            tools:text="MeetName"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/size16"
+                                            android:singleLine="true"
+                                            android:paddingHorizontal="@dimen/size10"
+                                            app:layout_constraintHorizontal_bias="0.1"
+                                            app:layout_constraintStart_toEndOf="@+id/rvParticipant"
+                                            app:layout_constraintEnd_toStartOf="@+id/tv_options"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Tap here for meet up info"
+                                            android:fontFamily="@font/poppins"
+                                            android:paddingHorizontal="@dimen/size10"
+                                            android:textSize="@dimen/size8"
+                                            android:layout_marginTop="@dimen/size22"
+                                            app:layout_constraintStart_toStartOf="@+id/meetUpName"
+                                            app:layout_constraintTop_toTopOf="@+id/meetUpName"/>
+
+                                        <TextView
+                                            android:id="@+id/tv_options"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingStart="@dimen/size20"
+                                            android:paddingEnd="@dimen/size20"
+                                            android:text="&#8942;"
+                                            android:textAppearance="?android:textAppearanceLarge"
+                                            android:textStyle="bold"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

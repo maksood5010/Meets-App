@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/meetup_gb"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingTop="@dimen/size20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:drawableStart="@drawable/ic_back"
+            android:drawablePadding="@dimen/size5"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/size25"
+            android:paddingVertical="@dimen/size8"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/ic_next"
+            android:drawablePadding="@dimen/size5"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_into"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_back"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_back">
+
+            <TextView
+                android:id="@+id/tv_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Places"
+                android:textColor="@color/white"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-18dp"
+                android:fontFamily="@font/poppins"
+                android:text="Where do you want to Meet Up?"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size12"
+                app:layout_constraintTop_toBottomOf="@+id/tv_friend" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_into"
+            android:layout_marginTop="@dimen/size8"
+            android:background="@drawable/bg_circular_corner_border"
+            android:hint="Search Places"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLength="50"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="#D8D4D4"
+            android:textSize="@dimen/size12"
+            app:layout_constraintTop_toBottomOf="@+id/ll_into" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/page_bg"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/size5"
+        android:paddingStart="@dimen/size20"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/cl_header"
+        tools:listitem="@layout/card_meetup_place_category" />
+
+    <LinearLayout
+        android:id="@+id/llSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/size20"
+        app:layout_constraintTop_toBottomOf="@+id/rv_categories">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="You selected: "
+            android:textSize="@dimen/size12" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="start"
+                android:paddingStart="@dimen/size20"
+                android:text="No Place Selected"
+                android:textColor="@color/blacktextColor"
+                android:textSize="@dimen/size12" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/selectedPlace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/page_bg"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/size10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="0"
+                tools:listitem="@layout/card_pre_seleced_place" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/llRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/page_bg"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSelected"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvSearchResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size20"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Trending Places"
+            android:textColor="@color/blacktextColor"
+            android:textSize="@dimen/size20" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMap"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/primary"
+            android:src="@drawable/ic_custom_place"
+            android:visibility="gone"
+            app:contentPaddingBottom="5dp"
+            app:contentPaddingEnd="@dimen/size10"
+            app:contentPaddingStart="@dimen/size10"
+            app:contentPaddingTop="5dp"
+            app:shapeAppearanceOverlay="@style/CircleCorner"
+            tools:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvAddPlaceText"
+            android:layout_below="@+id/tvSearchResult"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvAddPlaceText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size100"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-10dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/size10"
+            android:text="Use the map icon to add custom places or click here to add"
+            android:textSize="@dimen/size12"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/noData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_no_result" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/add_friend_or_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size20"
+        android:elevation="@dimen/size10"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingHorizontal="@dimen/size30"
+        android:paddingVertical="@dimen/size5"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size14"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

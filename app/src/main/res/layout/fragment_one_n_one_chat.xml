@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/mainRoot"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="-20dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:orientation="vertical" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size10"
+        android:paddingVertical="@dimen/size15"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userDp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="@dimen/size5"
+        android:layout_marginTop="@dimen/size5"
+        android:src="@drawable/ic_person_placeholder"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="@dimen/size2"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDpBadge"
+        style="@style/smallBadge"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/userDp"
+        app:layout_constraintEnd_toEndOf="@+id/userDp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@+id/userDp"
+        app:layout_constraintTop_toTopOf="@+id/userDp"
+        app:layout_constraintVertical_bias="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size10"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/userDp"
+        app:layout_constraintStart_toEndOf="@+id/userDp"
+        app:layout_constraintTop_toTopOf="@+id/userDp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/blacktextColor"
+            android:textSize="@dimen/size14"
+            app:layout_constraintBottom_toBottomOf="@+id/userDp"
+            app:layout_constraintStart_toEndOf="@+id/userDp"
+            app:layout_constraintTop_toTopOf="@+id/userDp"
+            tools:text="@string/user_name" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:textSize="@dimen/size10"
+            tools:text="Bronze Status" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivCreateMeetUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:background="@color/primary"
+        android:src="@drawable/ic_meet_up"
+        android:tint="@color/white"
+        app:contentPadding="@dimen/size5"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@id/cardView"
+        app:shapeAppearanceOverlay="@style/Top5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        app:contentPaddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userDp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/wallpaper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.2"
+                android:layerType="software"
+                android:scaleType="centerCrop"
+                android:src="@drawable/chatbg"
+                app:shapeAppearanceOverlay="@style/Top20" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#BCFFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/wallpaper"
+                app:layout_constraintEnd_toEndOf="@+id/wallpaper"
+                app:layout_constraintStart_toStartOf="@+id/wallpaper"
+                app:layout_constraintTop_toTopOf="@+id/wallpaper"
+                app:shapeAppearanceOverlay="@style/Top20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/cl_send"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:itemCount="1"
+                tools:layout_editor_absoluteX="0dp"
+                tools:listitem="@layout/card_direct_message_video" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/size3"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rootReply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/fl_reply"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/llLine"
+                        android:layout_width="@dimen/size3"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/size20"
+                        android:background="@drawable/bg_dm_own"
+                        android:backgroundTint="@color/blacktextColor"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/replyinto" />
+
+                    <TextView
+                        android:id="@+id/replyinto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size10"
+                        android:paddingLeft="@dimen/size10"
+                        android:text="Replying to yourself"
+                        app:layout_constraintStart_toEndOf="@+id/llLine"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/replyMsg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:paddingLeft="@dimen/size10"
+                        android:singleLine="true"
+                        android:text="Lorem Ipsum is simply dummy text of the prjdnjfnrjvnjnvfnvnnvjnjvnfjnvjfn"
+                        app:layout_constraintEnd_toStartOf="@+id/replyImage"
+                        app:layout_constraintStart_toEndOf="@+id/llLine"
+                        app:layout_constraintTop_toBottomOf="@+id/replyinto" />
+
+                    <ImageView
+                        android:id="@+id/replyImage"
+                        android:layout_width="@dimen/size40"
+                        android:layout_height="@dimen/size40"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_other_spot_bg"
+                        app:layout_constraintEnd_toStartOf="@+id/cancelReply"
+                        app:layout_constraintTop_toTopOf="@+id/replyinto" />
+
+                    <ImageView
+                        android:id="@+id/cancelReply"
+                        android:layout_width="@dimen/size24"
+                        android:layout_height="@dimen/size24"
+                        android:layout_marginRight="@dimen/size5"
+                        android:src="@drawable/ic_cancel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:tint="@color/black" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvBlocked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="you blics dkfh"
+                    style="@style/header"
+                    android:paddingHorizontal="15dp"
+                    android:backgroundTint="#eeeeee"
+                    android:background="@drawable/bg_shimmer_curve"
+                    app:layout_constraintTop_toTopOf="@+id/fl_reply"
+                    app:layout_constraintEnd_toEndOf="@+id/fl_reply"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:paddingVertical="@dimen/size5"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_reply"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="50dp"
+                        android:background="@drawable/bg_circular_corcnor_filled3"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/attach"
+                            android:layout_width="@dimen/size35"
+                            android:layout_height="@dimen/size35"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_attachment" />
+
+
+                        <com.meetsportal.meets.overridelayout.StickerEditText
+                            android:id="@+id/message"
+                            android:layout_width="0dp"
+                            android:maxLength="1000"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="bottom"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:maxLines="3"
+                            android:paddingHorizontal="@dimen/size10"
+                            android:paddingVertical="@dimen/size8"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/send"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="2dp"
+                        android:src="@drawable/ic_send" />
+                </FrameLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.tougee.recorderview.AudioRecordView
+                android:id="@+id/record_view"
+                tools:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_alignParentBottom="true"
+                app:blink_color="@color/red_color_picker"
+                app:cancel_icon_color="@color/red_color_picker"
+                app:cancel_text="Cancel"
+                app:circle_color="#32BFC9"
+                app:layout_constraintBottom_toBottomOf="@id/cl_send"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:mic_active_icon="@drawable/ic_send"
+                app:mic_hint_color="@color/primary"
+                app:mic_hint_enable="true"
+                app:mic_hint_text="Hold to record release to send"
+                app:mic_icon="@drawable/ic_mic"
+                app:slide_cancel_text="Slide to cancel"
+                app:vibration_enable="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:id="@+id/motion_base"
+    android:background="@color/page_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layoutDescription="@xml/fragment_choose_interest_scene">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_left_arrow"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share you interest"
+        android:layout_marginStart="@dimen/size20"
+        style="@style/headerL"
+        app:layout_constraintStart_toEndOf="@+id/ivBack"
+        app:layout_constraintTop_toTopOf="@+id/ivBack"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBack"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="Share your interest to connect with others with similar interests"
+        android:paddingHorizontal="@dimen/size20"
+        style="@style/subHeaderSmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:layout_marginTop="@dimen/size5"
+        android:fontFamily="@font/poppins_light"
+        android:hint="Search"
+        android:maxLength="50"
+        android:inputType="textFilter"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+    <LinearLayout
+        android:id="@+id/llChangeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch">
+        
+        <ImageView
+            android:id="@+id/leftChar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size10"
+            android:src="@drawable/ic_left_arrow"/>
+
+        <TextView
+            android:id="@+id/tvChar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:layout_marginHorizontal="@dimen/size10"
+            android:layout_gravity="center_vertical"
+            style="@style/header"/>
+
+        <ImageView
+            android:id="@+id/rightChar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size10"
+            android:rotation="180"
+            android:src="@drawable/ic_left_arrow"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rldialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/size1"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llChangeList">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvABC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/size10"
+            android:scrollbars="vertical"
+            android:scrollbarStyle="outsideOverlay"
+            android:paddingTop="@dimen/size10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See All"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/primaryDark"
+            android:paddingHorizontal="@dimen/size20"
+            android:paddingVertical="@dimen/size10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInteres"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewChosenInterest"
+        app:layout_constraintTop_toBottomOf="@+id/llChangeList" />
+
+
+    <RelativeLayout
+        android:id="@+id/viewChosenInterest"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size200"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:layout_marginBottom="@dimen/size20"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/countSelected"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+        app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"
+        app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+        app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+        android:text="5 interest selected" />
+
+    <ImageView
+        android:id="@+id/downArray"
+        android:layout_width="wrap_content"
+        android:elevation="@dimen/size2"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size10"
+        app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+        app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"
+        android:src="@drawable/ic_left_arrow" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selectedInterest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/size10"
+        android:paddingBottom="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+        app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"
+        app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+        app:layout_constraintTop_toTopOf="@+id/viewChosenInterest" />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/tvSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="@color/white"
+        style="@style/header"
+        android:gravity="center"
+        android:paddingVertical="@dimen/size10"
+        android:layout_margin="@dimen/size20"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

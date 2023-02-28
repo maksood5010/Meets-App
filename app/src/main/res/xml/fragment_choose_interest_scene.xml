@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/rvInteres"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintTop_toBottomOf="@+id/llChangeList"/>
+
+        <Constraint android:id="@+id/viewChosenInterest"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size200"
+            android:layout_marginStart="@dimen/size20"
+            android:layout_marginEnd="@dimen/size20"
+            app:layout_constraintBottom_toTopOf="@+id/tvSave"
+            android:layout_marginBottom="@dimen/size20"/>
+
+        <Constraint android:id="@+id/downArray"
+            android:layout_width="wrap_content"
+            android:rotation="270"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest" />
+
+        <Constraint android:id="@+id/countSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+            app:layout_constraintBottom_toTopOf="@+id/selectedInterest"
+            android:layout_marginStart="@dimen/size20"
+            android:scaleY="0.9"
+            android:scaleX="0.9"
+            android:alpha="1.0"/>
+
+<!--        app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"-->
+
+        <Constraint
+            android:id="@+id/selectedInterest"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/downArray"
+            app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+            app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+            app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"
+            android:visibility="visible"
+            />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/rvInteres"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintTop_toBottomOf="@+id/llChangeList"/>
+
+        <Constraint android:id="@+id/viewChosenInterest"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvSave"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/size20"/>
+
+        <Constraint android:id="@+id/downArray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="90"
+            app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+            app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest" />
+
+        <Constraint android:id="@+id/countSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+            app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+            app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"/>
+
+
+        <Constraint
+            android:id="@+id/selectedInterest"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toTopOf="@+id/viewChosenInterest"
+            app:layout_constraintBottom_toBottomOf="@+id/viewChosenInterest"
+            app:layout_constraintStart_toStartOf="@+id/viewChosenInterest"
+            app:layout_constraintEnd_toEndOf="@+id/viewChosenInterest"
+            android:alpha="0.0"
+            />
+
+    </ConstraintSet>
+
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="200"
+        app:motionInterpolator="easeOut">
+
+        <!--<OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/viewChosenInterest"/>-->
+
+        <KeyFrameSet>
+           <!-- <KeyCycle
+                android:rotation="10"
+                app:framePosition="100"
+                app:motionTarget="@+id/downArray"
+                app:waveOffset="4"
+                app:wavePeriod="5"
+                app:waveShape="sin" />-->
+
+        </KeyFrameSet>
+
+    </Transition>
+
+</MotionScene>

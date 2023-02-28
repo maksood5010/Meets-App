@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" >
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="color_primary">#32BFC9</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="page_bg">#F5F5F5</color>
+   <!-- <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>-->
+
+    <color name="black_card">#222222</color>
+
+    <color name="line">#66000000</color>
+    <color name="blacktextColor">#4D4D4D</color>
+    <color name="cancelledRed">#B3FF7272</color>
+    <color name="textdescColor">#747474</color>
+    <color name="white_soil">#eeeeee</color>
+    <color name="lightGray">#B4878686</color>
+    <color name="lightestGray">#F5F5F5</color>
+    <color name="extraLightGray">#D8D4D4</color>
+    <color name="gray1">#E8E8E8</color>
+    <color name="resend">#D8D4D4</color>
+    <color name="gray4">#656565</color>
+
+    <color name="bg_comment">#1A32BFC9</color>
+
+
+    <color name="primary">#32BFC9</color>
+    <color name="primaryDark">#32BFC9</color>
+    <color name="mention">#5385F5</color>
+    <color name="darkerGray">#8B8989</color>
+    <color name="gray">#d3d3d3</color>
+    <color name="selectedUser">#C9A632</color>
+
+    <color name="shimmer_placeholder">#bbbbbb</color>
+    <color name="upcomingmeetuptab">#0F8D95</color>
+
+
+
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+<!--    <color name="colorAccent">#FF4081</color>-->
+
+    <color name="transparent">#00000000</color>
+    <color name="whiteTranparent">#90ffffff</color>
+    <color name="light_transparent">#33000000</color>
+    <color name="dark_transparent">#88000000</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue_color_picker">#0066FF</color>
+    <color name="brown_color_picker">#AF593E</color>
+    <color name="green_color_picker">#01A368</color>
+    <color name="orange_color_picker">#FF861F</color>
+    <color name="red_color_picker">#ED0A3F</color>
+    <color name="red_orange_color_picker">#FF3F34</color>
+    <color name="sky_blue_color_picker">#76D7EA</color>
+    <color name="violet_color_picker">#8359A3</color>
+    <color name="yellow_color_picker">#FBE870</color>
+    <color name="yellow_green_color_picker">#C5E17A</color>
+    <color name="tool_bg">#151414</color>
+    <color name="semi_black_transparent">#99000000</color>
+    <color name="description">#6E6E6E</color>
+    <color name="yellow">#FFC107</color>
+    <color name="clickedIcon">#00727A</color>
+    <color name="pending_document_text">#C9A632</color>
+    <color name="bg_card">#E0F3F3</color>
+    <color name="otherdmbg">#98dfe4</color>
+
+    <!--tooltipGradient-->
+    <color name="ttpstart">#EDA3FF</color>
+    <color name="ttpend">#32BFC9</color>
+    <color name="ttpmiddle">#92B1E4</color>
+
+    <color name="place1">#B276E6</color>
+    <color name="place2">#EAC85A</color>
+    <color name="place3">#F449A4</color>
+    <color name="place4">#64C5F8</color>
+    <color name="place5">#69F584</color>
+    <color name="place6">#6C60F5</color>
+    <color name="place7">#6E6A6A</color>
+    <color name="place8">#899B27</color>
+    <color name="place9">#DDF846</color>
+    <color name="place10">#F45959</color>
+    <color name="bg_gray">#F7F7F7</color>
+
+
+    <!--Level1-->
+    <color name="start1">#FDD150</color>
+    <color name="centre1">#E8AF42</color>
+    <color name="border1">#753B12</color>
+    <color name="border2">#FEFE87</color>
+    <color name="dash1">#FEDB94</color>
+
+
+    <color name="centre2">#FEF85A</color>
+    <color name="start2">#C59434</color>
+
+    <color name="level1s">#FDD150</color>
+    <color name="level1e">#E8AF42</color>
+
+    <color name="level2s">#F3F5F5</color>
+    <color name="level2e">#DBDDDC</color>
+
+    <color name="level3s">#FEFE7A</color>
+    <color name="level3e">#FDDD66</color>
+
+    <color name="level4s">#B1F6FE</color>
+    <color name="level4e">#99CAFF</color>
+
+    <color name="level5s">#F4FEF5</color>
+    <color name="level5e">#C8D2C9</color>
+
+    <color name="level6s">#E3DCFF</color>
+    <color name="level6e">#C2BBFF</color>
+
+    <color name="level7s">#E3E3EB</color>
+    <color name="level7e">#C3C3CC</color>
+
+    <color name="level8s">#FDEEE0</color>
+    <color name="level8e">#FEC9C0</color>
+
+    <color name="level9s">#F4CAFF</color>
+    <color name="level9e">#D4AEFF</color>
+
+    <color name="level10s">#B3F5FF</color>
+    <color name="level10e">#A0D8FF</color>
+
+    <color name="level11s">#92FFE9</color>
+    <color name="level11e">#7AEDC5</color>
+
+    <color name="level12s">#FDD3D4</color>
+    <color name="level12e">#FEB6B9</color>
+
+    <color name="level13s">#FED5FF</color>
+    <color name="level13e">#FDBAE7</color>
+
+    <color name="level14s">#7EFCEE</color>
+    <color name="level14e">#6DDCD2</color>
+
+    <color name="level15s">#6DDCD2</color>
+    <color name="level15e">#7BD3FF</color>
+
+    <color name="mining_e">#D8D4D4</color>
+    <color name="mining_s">#E5E3E3</color>
+
+
+
+    <color name="gred_red">#FF7272</color>
+
+    <color name="golden">#E8AF42</color>
+    <color name="golder_strip">#FFDA71</color>
+    <color name="post_insight">#93E0BA</color>
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/toolBarBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingVertical="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/toolBarText"
+                android:layout_gravity="center"
+                android:text="Post Insight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tvTop"
+            style="@style/subHeaderVerySmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="Messaging-related insight, such as shares and replies, may be lower than expected due to privacy rules in some regions."
+            android:textColor="@color/blacktextColor"
+            app:layout_constraintTop_toBottomOf="@+id/tb_toolbar" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTop">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_primary_10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/flPost"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/flText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone">
+
+                            <View
+                                android:id="@+id/textPostBg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/grad1" />
+
+                            <com.meetsportal.meets.overridelayout.AutoResizeTextView
+                                android:id="@+id/tv_caption"
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/poppins_bold"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size25"
+                                tools:text="TextPost" />
+
+
+                        </RelativeLayout>
+
+                        <include
+                            android:id="@+id/inMeetup"
+                            layout="@layout/card_grid_meet_post"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/ivPost"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@color/gray"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/CircleCorner10"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="3dp" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/subHeaderVerySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/flPost"
+                    app:layout_constraintStart_toStartOf="@+id/flPost"
+                    app:layout_constraintTop_toBottomOf="@+id/flPost"
+                    tools:text="19 October 2021 at 7:45 AM" />
+
+                <LinearLayout
+                    android:id="@+id/llLikes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_primary_stroke_10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout8"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/flPost"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_small_heart"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Likes"
+                        android:textColor="#1C787E" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_primary_stroke_10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/llLikes"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_comments"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comments"
+                        android:textColor="#1C787E" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvLikes"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/llLikes"
+                    app:layout_constraintStart_toStartOf="@+id/llLikes"
+                    app:layout_constraintTop_toBottomOf="@+id/llLikes" />
+
+                <TextView
+                    android:id="@+id/tvComment"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout8"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayout8"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--        <View-->
+        <!--            android:layout_width="4dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:background="@drawable/view_insight"-->
+        <!--            android:layerType="software"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/tvOverview"/>-->
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sideParent"
+            android:layout_width="10dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/white"
+            android:elevation="5dp"
+            android:layerType="software"
+            android:scaleType="fitXY"
+            android:src="@drawable/view_insight"
+            app:contentPadding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvOverview"
+            app:shapeAppearanceOverlay="@style/Top5" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@id/tvOverview" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@id/tvReach" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@id/tvContent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@id/tvProfileActivity" />
+
+        <ImageView
+            android:id="@+id/ivSuper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@id/tvSuper" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:layerType="software"
+            android:src="@drawable/ic_star_post"
+            app:layout_constraintEnd_toEndOf="@+id/sideParent"
+            app:layout_constraintStart_toStartOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@+id/tvChargePost" />
+
+        <TextView
+            android:id="@+id/tvOverview"
+            style="@style/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="Overview"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/cvPost" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/bg_primary_10dp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/llOverview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toTopOf="@+id/llOverview" />
+
+        <LinearLayout
+            android:id="@+id/llOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOverview">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_primary_10dp"
+                android:backgroundTint="#93E0BA"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvReached"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Account \n reached"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_primary_10dp"
+                android:backgroundTint="#75F6F1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvContentInter"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Content \n interactions"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_primary_10dp"
+                android:backgroundTint="#ECE4AE"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProfileTotal"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Profile \n activity"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider1"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@id/llOverview" />
+
+        <TextView
+            android:id="@+id/tvReach"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="Reach"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+        <LinearLayout
+            android:id="@+id/llReach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReach">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvFollow"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvFollowers"
+                    style="@style/subHeaderSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="5dp"
+                    android:text="Followers" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAccount"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:background="#2EAA96"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAccountReached"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Account \n reached"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvNonFollower"
+                    style="@style/headerL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/tvNonFollow"
+                    style="@style/subHeaderSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="5dp"
+                    android:text="Non-Followers" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvReachDesc"
+            style="@style/subHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="20dp"
+            android:text="Reach is the number of unique accounts that Have seen your post"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/llReach" />
+
+        <View
+            android:id="@+id/divider3"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@id/tvReachDesc" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="20dp"
+            android:text="Content Interaction"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_primary_10dp"
+            android:backgroundTint="#4AD0D4"
+            app:layout_constraintBottom_toBottomOf="@+id/llContent"
+            app:layout_constraintEnd_toEndOf="@+id/llContent"
+            app:layout_constraintStart_toStartOf="@+id/llContent"
+            app:layout_constraintTop_toTopOf="@+id/llContent" />
+
+        <LinearLayout
+            android:id="@+id/llContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="5dp">
+
+                    <TextView
+                        android:id="@+id/tvLikeIt"
+                        style="@style/headerL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="0" />
+
+                    <View
+                        style="@style/divider"
+                        android:layout_marginVertical="5dp" />
+
+                    <TextView
+                        style="@style/subHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:minEms="4"
+                        android:paddingHorizontal="15dp"
+                        android:text="Like It" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="5dp">
+
+                    <TextView
+                        android:id="@+id/tvCommentIt"
+                        style="@style/headerL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="0" />
+
+                    <View
+                        style="@style/divider"
+                        android:layout_marginVertical="5dp" />
+
+                    <TextView
+                        style="@style/subHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minEms="4"
+                        android:paddingHorizontal="10dp"
+                        android:text="Comments" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvContentDesc"
+            style="@style/subHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="20dp"
+            android:text="Content interaction is the number of users that have either liked or commented on your post "
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/llContent" />
+
+        <View
+            android:id="@+id/divider4"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContentDesc" />
+
+        <TextView
+            android:id="@+id/tvProfileActivity"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Profile Activity"
+            app:layout_constraintStart_toEndOf="@+id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <TextView
+            android:id="@+id/tvPro"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Profile visits"
+            app:layout_constraintEnd_toStartOf="@+id/tvProfileVisit"
+            app:layout_constraintStart_toStartOf="@+id/tvProfileActivity"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileActivity" />
+
+        <TextView
+            android:id="@+id/tvProfileVisit"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvPro"
+            app:layout_constraintTop_toTopOf="@+id/tvPro" />
+
+        <TextView
+            android:id="@+id/tvNew"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="New Follows"
+            app:layout_constraintEnd_toEndOf="@+id/tvPro"
+            app:layout_constraintStart_toStartOf="@+id/tvPro"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileVisit" />
+
+        <TextView
+            android:id="@+id/tvNewFollows"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNew"
+            app:layout_constraintEnd_toEndOf="@+id/tvProfileVisit"
+            app:layout_constraintStart_toStartOf="@+id/tvProfileVisit"
+            app:layout_constraintTop_toTopOf="@+id/tvNew" />
+
+        <TextView
+            android:id="@+id/tvProfileDesc"
+            style="@style/subHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="10dp"
+            android:text="Profile activity is the made up of uniques accounts who Your profile as well as new followers you acquired"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNewFollows" />
+
+        <View
+            android:id="@+id/divider5"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileDesc" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_divider"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvSuper,llSuper,tvT,tvTotal,divider6,tvSuperCharge,ivSuper" />
+
+        <TextView
+            android:id="@+id/tvSuper"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Super charge post"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <LinearLayout
+            android:id="@+id/llSuper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSuper">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvProfileVisits"
+                    style="@style/header"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/bg_text_circle"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="00" />
+
+
+                <TextView
+                    android:id="@+id/tvSPV"
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:background="#357FD3"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingVertical="5dp"
+                    android:text="Profile Visits"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPostViews"
+                    style="@style/header"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/bg_text_circle"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="00" />
+
+
+                <TextView
+                    android:id="@+id/tvSPView"
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#357FD3"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingVertical="5dp"
+                    android:text="Post Views"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPostLikes"
+                    style="@style/header"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/bg_text_circle"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="00" />
+
+
+                <TextView
+                    android:id="@+id/tvPLikes"
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:background="#357FD3"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingVertical="5dp"
+                    android:text="Post Likes"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvT"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Total"
+            android:textColor="#357FD3"
+            app:layout_constraintStart_toStartOf="@id/llSuper"
+            app:layout_constraintTop_toBottomOf="@+id/llSuper" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="00"
+            android:textColor="#357FD3"
+            app:layout_constraintBottom_toBottomOf="@+id/tvT"
+            app:layout_constraintEnd_toEndOf="@+id/llSuper"
+            app:layout_constraintTop_toTopOf="@+id/tvT" />
+
+        <View
+            android:id="@+id/divider6"
+            style="@style/divider"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/tvT" />
+
+        <TextView
+            android:id="@+id/tvSuperCharge"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Super charge"
+            app:layout_constraintStart_toEndOf="@id/sideParent"
+            app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvChargePost" />
+
+        <View
+            android:id="@+id/superClick"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@id/ivArrow"
+            app:layout_constraintStart_toStartOf="@+id/tvChargePost"
+            app:layout_constraintTop_toTopOf="@+id/tvChargePost" />
+        <TextView
+            android:id="@+id/tvChargePost"
+            style="@style/subHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="10dp"
+            android:text="Super charge this post"
+            app:drawableEndCompat="@drawable/ic_chart"
+            app:layout_constraintStart_toStartOf="@+id/tvSuperCharge"
+            app:layout_constraintTop_toBottomOf="@+id/tvSuperCharge" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/subHeaderSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="This post is not currently promoted. promote it to reach more people."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivArrow"
+            app:layout_constraintStart_toStartOf="@+id/tvChargePost"
+            app:layout_constraintTop_toBottomOf="@+id/tvChargePost" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/dark_transparent"
+    android:id="@+id/rootCo"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/size5"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stroke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size20"
+            android:paddingBottom="@dimen/size40">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/starAnim"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                app:lottie_fileName="staranim.json"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintDimensionRatio="H,5:3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Congratulation!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size30"
+                android:layout_below="@+id/starAnim"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintTop_toBottomOf="@+id/starAnim"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/poppins_semibold"/>
+
+            <TextView
+                android:id="@+id/tvMintConut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCong"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="100"
+                android:layout_marginBottom="@dimen/size20"
+                android:layout_marginTop="@dimen/size20"
+                android:paddingHorizontal="@dimen/size20"
+                android:textColor="@color/dark_transparent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCong"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/size50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You just earned 100 mints for signup"
+                android:layout_below="@+id/tvMintConut"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/tvMintConut"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/parentAnim"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_speed="0.5"
+        app:lottie_fileName="moneyfell.json"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="V,414:736"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

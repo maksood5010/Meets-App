@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1010968069178",
+    "firebase_url": "https://shisheo-3db0e.firebaseio.com",
+    "project_id": "shisheo-3db0e",
+    "storage_bucket": "shisheo-3db0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010968069178:android:eaaebc5a3cf858e4572103",
+        "android_client_info": {
+          "package_name": "com.meetsportal.meets.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010968069178-upjlbgbknuvqivjmsviumghgnif69hu7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetsportal.meets.dev",
+            "certificate_hash": "f2446dcd3a5d4705b9d598fedf18fcf76e71f927"
+          }
+        },
+        {
+          "client_id": "1010968069178-kei4cebgn9iac8oqd0a1carajmhbhtmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-y-Hxnmuq6x8jTlfgqjcAjRtLc6htEuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010968069178-kei4cebgn9iac8oqd0a1carajmhbhtmf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1010968069178-27ng89s0ok51dht426r5np1690p3crrh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ae.com.Meets"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

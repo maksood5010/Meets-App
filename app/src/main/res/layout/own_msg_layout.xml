@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_own"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llbgColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dm_own"
+        android:backgroundTint="@color/blacktextColor"
+        android:orientation="vertical"
+        android:padding="@dimen/size5">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ownParentRoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10">
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_dm_own"
+                app:tint="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ownParentUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:singleLine="true"
+                    tools:text="Tula_grand"
+                    android:textColor="@color/white"/>
+
+
+                <TextView
+                    android:id="@+id/ownParentBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/size10"
+                    tools:text="text"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ownParentImage"
+                android:layout_width="@dimen/size40"
+                android:layout_height="@dimen/size40"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_other_spot_bg" />
+
+
+        </LinearLayout>
+
+        <!--<View
+                android:id="@+id/width"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"/>-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ownImageCard"
+            android:layout_width="@dimen/size200"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/size15"
+            app:cardElevation="0dp"
+            tools:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ownImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.7"
+                    android:background="#cccccc"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_meme" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size50"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/bg_primary_gradient" />
+
+                <TextView
+                    android:id="@+id/ownVoted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/size3"
+                    android:layout_marginTop="@dimen/size3"
+                    android:layout_marginEnd="@dimen/size3"
+                    android:layout_marginBottom="@dimen/size3"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:paddingVertical="@dimen/size2"
+                    android:text="voted"
+                    android:textColor="@color/dark_transparent"
+                    android:textSize="@dimen/size12" />
+
+                <TextView
+                    android:id="@+id/ownPlaceName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:paddingBottom="@dimen/size5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12"
+                    tools:text="Shisheo Louge" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/own"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="@dimen/size10"
+            tools:text="Lorem ipsum "
+            android:ellipsize="end"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/ownTime"
+        style="@style/subHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="1233333"
+        android:layout_marginEnd="@dimen/size15"
+        android:textSize="@dimen/size8" />
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/size20"
+    android:paddingTop="@dimen/size10"
+    tools:background="@color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_person_placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivDpBadge"
+        style="@style/smallBadge"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintEnd_toEndOf="@+id/image"
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/image" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/size5"
+        android:lineSpacingExtra="-8dp"
+        android:maxLength="20"
+        android:ellipsize="end"
+        android:textColor="@color/blacktextColor"
+        tools:text="HelloHello "
+        android:singleLine="true"
+        android:layout_marginStart="@dimen/size10"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/image"
+        app:layout_constraintEnd_toStartOf="@+id/verify"/>
+
+    <ImageView
+        android:id="@+id/verify"
+        android:layout_width="@dimen/size20"
+        android:layout_height="@dimen/size20"
+        android:src="@drawable/ic_verified_tick"
+        android:layout_marginStart="@dimen/size5"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/username"
+        style="@style/subHeaderSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_marginStart="@dimen/size10"
+        tools:text="username"
+        android:maxLength="22"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/name"/>
+
+    <TextView
+        android:id="@+id/allow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_primary_bg"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size5"
+        android:text="Allow"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--<LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#B7B7B7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent" />
+-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

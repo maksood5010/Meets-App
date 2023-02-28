@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#44000000"
+    android:id="@+id/rootCo"
+    android:layout_marginBottom="-20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="@dimen/size20"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:tint="@color/primaryDark"
+                android:padding="@dimen/size20"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear All"
+                android:textColor="@color/primaryDark"
+                android:padding="@dimen/size10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cancel"
+                app:layout_constraintBottom_toBottomOf="@+id/cancel"/>
+            
+            <LinearLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#B8B8B8"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@+id/line"
+                app:layout_constraintBottom_toTopOf="@+id/line2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sortByButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#FFFFFF"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Categories"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/facilityButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#d3d3d3"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Facilities"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/cusineButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#d3d3d3"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Cuisines"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="#B8B8B8"/>
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1.7">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/categoryRecycler"
+                        android:layout_width="match_parent"
+                        android:paddingStart="@dimen/size10"
+                        android:paddingTop="@dimen/size10"
+                        android:layout_height="match_parent"
+                        android:visibility="visible" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="gone"
+                        android:id="@+id/facilitesRecycler"
+                        android:layout_width="match_parent"
+                        android:paddingStart="@dimen/size10"
+                        android:paddingTop="@dimen/size10"
+                        android:layout_height="match_parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="gone"
+                        android:id="@+id/cusineRecyclerView"
+                        android:layout_width="match_parent"
+                        android:paddingStart="@dimen/size10"
+                        android:paddingTop="@dimen/size10"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#B8B8B8"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/size20"
+                app:layout_constraintBottom_toTopOf="@+id/apply" />
+
+            <TextView
+                android:id="@+id/apply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:textSize="@dimen/size14"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:paddingVertical="@dimen/size5"
+                android:background="@drawable/round_border_primary_bg"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:layout_marginBottom="@dimen/size40"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/page_bg"
+    android:paddingTop="@dimen/size5"
+    android:paddingBottom="@dimen/size6">
+
+    <include layout="@layout/timeline_profile_head" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_visual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="true"
+        android:longClickable="true"
+        android:paddingHorizontal="@dimen/size20"
+        app:layout_constraintTop_toBottomOf="@+id/cl_card_header">
+
+            <include
+                layout="@layout/card_core_open_meet" />
+
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/anim_heart"
+            android:layout_width="@dimen/size80"
+            android:layout_height="@dimen/size80"
+            android:alpha="0"
+            android:src="@drawable/anim_like"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include layout="@layout/timeline_profile_tail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

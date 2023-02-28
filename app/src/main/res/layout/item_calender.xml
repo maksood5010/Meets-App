@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    android:background="@drawable/round_border_primary_bg"-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootCo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="20dp"
+    android:background="@drawable/bg_white_50dp"
+    android:paddingVertical="@dimen/size10"
+    android:paddingHorizontal="@dimen/size15">
+
+    <TextView
+        android:id="@+id/tvDay"
+        style="@style/subHeader"
+        android:minWidth="30dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun" />
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/headerL"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#1E7F82"
+        android:layout_marginTop="-2dp"
+        android:text="15" />
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="-8dp"
+        android:src="@drawable/mints_gold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/subHeader"
+        android:text="71"/>
+</LinearLayout>

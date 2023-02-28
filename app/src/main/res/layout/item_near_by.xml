@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/size10">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPlace"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            app:shapeAppearanceOverlay="@style/CircleCorner20"
+            android:layout_gravity="center_vertical"
+            android:background="#A1E2E6"
+            app:contentPadding="@dimen/size15"
+            app:tint="@color/clickedIcon" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvTextView"
+            android:visibility="gone"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            app:cardBackgroundColor="#A1E2E6"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/tvDrawableText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                style="@style/header"
+                android:textColor="@color/clickedIcon"
+                android:textAllCaps="true"
+                android:textSize="50sp"
+                android:text="M" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size10"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPlaceName"
+                style="@style/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capital Golden Tower"
+                android:textColor="@color/primary" />
+
+            <TextView
+                android:id="@+id/tvPLaceAddress"
+                style="@style/subHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kalifa Tower, Sheikh Zayed road, Dubai, United Arab Emirates" />
+            <TextView
+                android:id="@+id/tvPLaceDate"
+                style="@style/subHeader"
+                android:visibility="gone"
+                android:textSize="@dimen/size10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/saved_on" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/rvCheckbox"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/bg_black_stroke_25dp"/>
+
+    </LinearLayout>
+</LinearLayout>

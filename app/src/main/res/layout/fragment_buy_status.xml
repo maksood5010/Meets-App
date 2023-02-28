@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#BC6A007B"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_buy_stats"
+            android:paddingVertical="20dp">
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inAnimation="@anim/fragment_slide_in"
+                android:outAnimation="@anim/fragment_slide_out">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/child22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTitle1"
+                        style="@style/header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Profile Stats"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/bit_coin"
+                        app:layout_constraintEnd_toStartOf="@+id/tvMints"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle1" />
+
+                    <TextView
+                        android:id="@+id/tvMints"
+                        style="@style/header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:text="0.00 Mints"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                        app:layout_constraintEnd_toStartOf="@+id/ivAddMints"
+                        app:layout_constraintStart_toEndOf="@+id/imageView5"
+                        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+                    <ImageView
+                        android:id="@+id/ivAddMints"
+                        style="@style/header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="5dp"
+                        android:background="#FF84EF"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:src="@drawable/ic_plus_sign"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvMints"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvMints"
+                        app:layout_constraintTop_toTopOf="@+id/tvMints"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/subHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="Buy a package to see who viewed your profile, How often they viewed your profile and where They are viewing you from"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMints" />
+
+                    <TextView
+                        android:id="@+id/tvChoose"
+                        style="@style/subHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="Choose your package"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvChargePackage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:clipToPadding="false"
+                        android:minHeight="170dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="130dp"
+                        android:paddingEnd="130dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toTopOf="@+id/tvBuyNow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvChoose"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_boost_package" />
+
+                    <TextView
+                        android:id="@+id/tvBuyNow"
+                        style="@style/headerL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/size5"
+                        android:text="Buy Now"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/tvNotNow"
+                        tools:layout_editor_absoluteX="20dp" />
+
+                    <TextView
+                        android:id="@+id/tvNotNow"
+                        style="@style/headerL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/size5"
+                        android:text="Not Now"
+                        android:textColor="#FF7272"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:layout_editor_absoluteX="20dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ViewFlipper>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

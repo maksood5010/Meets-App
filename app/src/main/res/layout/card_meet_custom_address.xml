@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:clipToPadding="false"
+    android:paddingHorizontal="@dimen/size20"
+    android:paddingVertical="@dimen/size5"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/size20"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:id="@+id/rootCo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/size10">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPlace"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="#A1E2E6"
+                app:contentPadding="@dimen/size15"
+                app:shapeAppearanceOverlay="@style/CircleCorner10"
+                app:tint="@color/clickedIcon" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvTextView"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                app:cardBackgroundColor="#A1E2E6"
+                app:cardCornerRadius="10dp">
+
+                <TextView
+                    android:id="@+id/tvDrawableText"
+                    style="@style/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="M"
+                    android:textAllCaps="true"
+                    android:textColor="@color/clickedIcon"
+                    android:textSize="50sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size10"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPlaceName"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Capital Golden Tower" />
+
+                <TextView
+                    android:id="@+id/tvPLaceAddress"
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="Kalifa Tower, Sheikh Zayed road, Dubai, United Arab Emirates" />
+
+                <TextView
+                    android:id="@+id/tvPLaceDate"
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/size10"
+                    android:visibility="gone"
+                    tools:text="@string/saved_on" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/remove"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/size5"
+                    android:elevation="@dimen/size12"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_round_cancel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/rvCheckbox"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_unchecked" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

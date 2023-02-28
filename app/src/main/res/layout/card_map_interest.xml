@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/size5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/backColor"
+        android:layout_width="@dimen/size50"
+        android:layout_height="@dimen/size50"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/size25"
+        android:layout_height="@dimen/size25"
+        android:src="@drawable/ic_app_icon"
+        android:layout_centerInParent="true"
+        app:layout_constraintStart_toStartOf="@+id/backColor"
+        app:layout_constraintEnd_toEndOf="@+id/backColor"
+        app:layout_constraintTop_toTopOf="@+id/backColor"
+        app:layout_constraintBottom_toBottomOf="@+id/backColor"/>
+
+    <TextView
+        android:id="@+id/tvInterest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/primaryDark"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/backColor"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/size5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rootCo"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/size10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="134dp"
+                android:layout_height="140dp"
+                tools:src="@drawable/profile_pic"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="top"
+                android:paddingRight="@dimen/size10"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                android:orientation="vertical"
+                android:paddingStart=
+                    "@dimen/size10"
+                android:paddingTop="@dimen/size10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:singleLine="true"
+                    android:text="Place"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size16" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Open: 6:00pm - 3:00am"
+                    android:textSize="@dimen/size12"
+                    android:singleLine="true"
+                    android:layout_marginTop="-8dp"
+                    android:ellipsize="end"
+                    android:textColor="@color/primaryDark"
+                    android:fontFamily="@font/poppins"/>
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size12"
+                    android:layout_marginTop="-5dp"
+                    android:ellipsize="end"
+                    tools:text="Casual Dining, Restaurant"
+                    android:textColor="#CECECE"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/rb_rate_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar"/>
+
+                    <TextView
+                        android:id="@+id/rate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 of 5"
+                        android:textSize="@dimen/size10"
+                        android:textColor="@color/primaryDark"
+                        android:fontFamily="@font/poppins"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_book_table"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primaryDark"
+                        android:text="Book Table"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:textSize="@dimen/size10"
+                        android:visibility="gone"
+                        android:layout_marginRight="@dimen/size10"
+                        android:fontFamily="@font/poppins"
+                        android:drawableStart="@drawable/ic_book_table"
+                        android:drawablePadding="@dimen/size10"
+                        android:background="@drawable/color_border_white_bg_button_bg"/>
+
+                    <TextView
+                        android:id="@+id/tv_meet_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primaryDark"
+                        android:text="Meetup"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:textSize="@dimen/size10"
+                        android:fontFamily="@font/poppins"
+                        android:drawablePadding="@dimen/size10"
+                        android:background="@drawable/color_border_white_bg_button_bg"
+                        app:drawableStartCompat="@drawable/ic_meet_up" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

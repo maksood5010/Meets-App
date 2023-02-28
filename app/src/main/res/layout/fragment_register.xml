@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.authfragment.RegisterFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginRight="-60dp"
+        android:layout_marginEnd="-60dp"
+        android:background="@drawable/ic_path_18"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/create_account"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_welcome_sub"
+        android:layout_below="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Create account to get started"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/textCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size65">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/size10"
+            android:src="@drawable/ic_left_arrow"
+            android:tint="@color/white"/>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textCreateAccount">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size30"
+            android:layout_marginTop="@dimen/size20"
+            android:layout_marginEnd="@dimen/size30"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="start"
+                android:src="@drawable/updated_approved_logo_with_name_shisheo" />
+
+            <LinearLayout
+                android:layout_marginTop="-20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_fname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/first_name"
+                        android:textColorHint="@color/primaryDark"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_single_person"
+                        android:tint="@color/primaryDark"
+                        android:drawablePadding="10dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue"
+                android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_lname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/last_name"
+                        android:textColorHint="@color/primaryDark"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_single_person"
+                        android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue"
+                android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email"
+                        android:textColorHint="@color/primaryDark"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="65"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_mail"
+                        android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue"
+                android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone"
+                        android:textColorHint="@color/primaryDark"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_mobile_phone"
+                        android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue"
+                android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:textColorHint="@color/primaryDark"
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_privacy"
+                        android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="@drawable/round_border_blue"
+                android:layout_marginTop="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/confirm_password"
+                        android:textColorHint="@color/primaryDark"
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_privacy"
+                        android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/size8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/termCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:layout_centerVertical="true"
+                    android:shadowColor="@color/primaryDark"
+                    android:buttonTint="@color/primaryDark"/>
+                <TextView
+                    android:id="@+id/termText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/termCheck"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size4"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="3dp"
+                    android:text="@string/i_accept_terms_conditions"/>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signUpButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size20"
+                style="@style/button_blue"
+                android:text="@string/sign_up" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moveToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/size20"
+                style="@style/normal_text"
+                android:text="@string/already_have_an_account_login" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/orText"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/or_login_with"
+                    android:textAlignment="center"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size20"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llfacebookLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:background="@drawable/round_border_blue"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="80dp"
+                        android:padding="22dp"
+                        android:src="@drawable/ic_facebook" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="@string/c_facebook"
+                        android:textColor="@color/primaryDark"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llgoogleLogin"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:background="@drawable/round_border_blue"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="80dp"
+                        android:padding="22dp"
+                        android:src="@drawable/ic_google" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="@string/c_google"
+                        android:textColor="@color/primaryDark"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

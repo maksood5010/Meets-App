@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/page_bg"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_left_arrow"
+        android:padding="@dimen/size20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change City"
+        android:textSize="@dimen/size24"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/blacktextColor"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintStart_toEndOf="@+id/back"/>
+
+
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size16"
+        android:hint="Search by cities..."
+        android:maxLength="50"
+        android:paddingHorizontal="@dimen/size10"
+        android:layout_marginTop="@dimen/size10"
+        android:layout_marginHorizontal="@dimen/size20"
+        app:layout_constraintTop_toBottomOf="@+id/name"/>
+
+    <RelativeLayout
+        android:id="@+id/rlCurrentLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size10"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/search">
+
+        <ImageView
+            android:id="@+id/ivMyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_current_location"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/size5"
+            android:layout_marginStart="@dimen/size5"
+            android:layout_toRightOf="@+id/ivMyLocation"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size5"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Dubai"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/city"
+                android:layout_marginStart="@dimen/size5"
+                android:layout_marginTop="-5dp"
+                android:text="Your current country"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvOtherCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other cities"
+        android:textSize="@dimen/size16"
+        android:layout_marginTop="@dimen/size5"
+        app:layout_constraintTop_toBottomOf="@+id/rlCurrentLoc"
+        android:layout_marginStart="@dimen/size20"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOtherCity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingTop="@dimen/size20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOtherCity"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

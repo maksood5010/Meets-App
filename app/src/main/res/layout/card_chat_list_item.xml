@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:id="@+id/rootCo"
+    android:paddingVertical="5dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dp"
+        android:layout_width="@dimen/size50"
+        android:layout_height="@dimen/size50"
+        tools:src="@drawable/demo_post_image4"
+        app:civ_border_color="@color/primaryDark"
+        app:civ_border_width="@dimen/size1"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:src="@drawable/ic_person_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ll_text"/>
+
+    <ImageView
+        android:id="@+id/verify"
+        android:layout_width="@dimen/size15"
+        android:layout_height="@dimen/size15"
+        android:src="@drawable/ic_verified_tick"
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/dp"
+        app:layout_constraintEnd_toEndOf="@+id/dp"
+        app:layout_constraintTop_toTopOf="@+id/dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dp"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ll_meta"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="adele"
+            style="@style/header" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxEms="11"
+                tools:text="DJ Khalid sent you an attachment. Mar 4Mar 4Mar 4"
+                style="@style/subHeaderSmall"
+                android:textColor="#AEAEAE"/>
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_marginStart="@dimen/size5"
+                android:minEms="2"
+                android:lineSpacingExtra="-4sp"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_primary_5dp"/>
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_meta"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Yesterday"
+            style="@style/subHeader"
+            android:layout_marginHorizontal="@dimen/size10"
+            android:textSize="12sp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

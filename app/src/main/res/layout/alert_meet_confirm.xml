@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_speed="2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/size20" />
+
+
+            <!--<LinearLayout
+                android:id="@+id/reason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size10"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="Your Meetup with "
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size14"
+                    app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+                <TextView
+                    android:id="@+id/tv_participant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size10"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    tools:text="Imran, Ceo, reo_sanchez"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="@dimen/size14"
+                    app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            </LinearLayout>-->
+            <TextView
+                android:id="@+id/tv_participant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textColor="@color/blacktextColor"
+                android:text="Your Meetup with Imran, Ceo, reo_sanchez Has been confirmed"
+                android:gravity="center"
+                android:textSize="@dimen/size14"
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

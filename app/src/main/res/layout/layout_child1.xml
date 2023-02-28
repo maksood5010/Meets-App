@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/child11"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvTitle3"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You have"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCharges2"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_charge"
+        android:gravity="center_vertical"
+        android:text="Charge"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle3" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_rocket"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCharges2" />
+
+    <TextView
+        android:id="@+id/tvTitle2"
+        style="@style/subHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:text="Super charge your post for a minimum of 1hour and get "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:contentPadding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/subHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_check_in"
+                android:drawablePadding="10dp"
+                android:paddingVertical="5dp"
+                android:text="More visits to your profile" />
+
+            <TextView
+                style="@style/subHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_check_in"
+                android:drawablePadding="10dp"
+                android:paddingVertical="5dp"
+                android:text="More views on your post" />
+
+            <TextView
+                style="@style/subHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:drawableStart="@drawable/ic_check_in"
+                android:drawablePadding="10dp"
+                android:paddingVertical="5dp"
+                android:text="More likes on your post" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvSuperCharge"
+        style="@style/headerL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingVertical="@dimen/size5"
+        android:text="Next"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <TextView
+        android:id="@+id/tvNotNow"
+        style="@style/headerL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:gravity="center"
+        android:paddingVertical="@dimen/size5"
+        android:text="Buy more Charges"
+        android:textColor="#1A9EE4"
+        app:layout_constraintTop_toBottomOf="@+id/tvSuperCharge"
+        tools:layout_editor_absoluteX="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

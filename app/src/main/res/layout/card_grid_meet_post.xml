@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="1dp"
+    android:id="@+id/rootCo"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/llBorder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:padding="@dimen/size5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/rlWhitebg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/meetName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/size5"
+                android:paddingVertical="@dimen/size5"
+                android:singleLine="true"
+                android:text="New Meet"
+                android:textColor="@color/blacktextColor"
+                android:textSize="@dimen/size10" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/meetName"
+                android:layout_marginHorizontal="@dimen/size2"
+                android:background="@color/extraLightGray"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/llDate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="3"
+                android:layout_below="@+id/meetName"
+                android:layout_above="@+id/tvOpenMeet"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/size10"
+                android:orientation="vertical">
+
+                <com.meetsportal.meets.overridelayout.AutoResizeTextView
+                    android:id="@+id/dayOfWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="@dimen/size2"
+                    android:text="Sunday"
+                    android:fontFamily="@font/poppins_semibold"/>
+
+                <com.meetsportal.meets.overridelayout.AutoResizeTextView
+                    android:id="@+id/dayOfMonth"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="@dimen/size2"
+                    android:layout_height="0dp"
+                    android:text="15"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <com.meetsportal.meets.overridelayout.AutoResizeTextView
+                    android:id="@+id/Time"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="@dimen/size2"
+                    android:layout_height="0dp"
+                    android:text="10:00 am"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llDate"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Time: "
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="10:00 AM"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>-->
+            <TextView
+                android:id="@+id/tvOpenMeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingHorizontal="@dimen/size10"
+                android:paddingVertical="@dimen/size5"
+                android:text="Open Meet"
+                android:textSize="@dimen/size10" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

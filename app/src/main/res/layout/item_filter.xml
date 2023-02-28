@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvFilterText"
+        style="@style/subHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size8"
+        android:drawablePadding="-30dp"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size5"
+        android:text="All"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size14" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/divider" />
+</LinearLayout>

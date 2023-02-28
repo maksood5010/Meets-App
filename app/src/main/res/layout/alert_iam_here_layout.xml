@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                app:lottie_autoPlay="false"
+                app:lottie_speed="1"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bg_too_far"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/size20" />
+
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Fetching Location"
+                android:textSize="@dimen/size20"
+                android:layout_marginStart="@dimen/size10"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blacktextColor"
+                android:gravity="center"
+                android:singleLine="true"
+                android:paddingHorizontal="@dimen/size20"
+                android:ellipsize="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="This will take just a few seconds."
+                android:textSize="@dimen/size16"
+                android:layout_marginStart="@dimen/size10"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/blacktextColor"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/size20"
+                android:ellipsize="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/head"/>
+
+
+
+
+
+            <!--<TextView
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Are you sure you want to block"
+                android:gravity="center"
+                android:textSize="@dimen/size14"
+                android:textColor="#4D4D4D"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>-->
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

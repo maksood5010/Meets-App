@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:background="#f1f1f1">
+
+                <RelativeLayout
+                    android:id="@+id/rv_thinking"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginVertical="@dimen/size10"
+                    android:background="@color/white"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:text="Create a post"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="@dimen/size14"
+                        android:textColor="@color/blacktextColor" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:src="@drawable/ic_create_post" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_suggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_below="@+id/rv_thinking"
+                    android:paddingVertical="@dimen/size10">
+
+                    <TextView
+                        android:id="@+id/tv_suggest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="10dp"
+                        android:text="Suggested for You"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size15" />
+
+                    <TextView
+                        android:id="@+id/seeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_suggest"
+                        android:layout_alignBottom="@+id/tv_suggest"
+                        android:gravity="center_vertical"
+                        android:layout_toStartOf="@+id/hideSuggested"
+                        android:fontFamily="@font/poppins"
+                        android:paddingHorizontal="@dimen/size10"
+                        android:text="See All"
+                        android:textColor="@color/primaryDark"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/hideSuggested"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/tv_suggest"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/size10"
+                        android:padding="@dimen/size5"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_suggestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_suggest"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/card_news_feed_story" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_current_feed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_suggestion"
+                    android:layout_marginTop="1dp"
+                    android:drawableStart="@drawable/ic_timeline"
+                    android:drawableEnd="@drawable/ic_timeline_dropdown"
+                    android:drawablePadding="@dimen/size5"
+                    android:paddingHorizontal="@dimen/size22"
+                    android:paddingTop="@dimen/size10"
+                    android:paddingBottom="@dimen/size10"
+                    android:text="You are viewing your Global feeds"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="@dimen/size14" />
+
+            </RelativeLayout>
+            <!--<RelativeLayout
+                android:id="@+id/rl_nodata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <include
+                    layout="@layout/layout_no_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" />
+            </RelativeLayout>-->
+        </LinearLayout>
+  <!--  </androidx.core.widget.NestedScrollView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

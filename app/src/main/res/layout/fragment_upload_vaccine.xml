@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/size20"
+        app:tint="@color/primaryDark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Vaccine Card"
+        android:textColor="@color/primaryDark"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/size18"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/size15"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You can download your vaccination card \nfrom the DHA app or ALHOSN App"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="@dimen/size14"
+            android:textColor="@color/primaryDark"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/rv_uploadImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="@dimen/size20"
+            android:background="@drawable/bg_ractangle_round_dash"
+            app:layout_constraintTop_toBottomOf="@+id/tv_instruction">
+
+            <ImageView
+                android:id="@+id/iv_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_folder"
+                android:layout_marginVertical="@dimen/size60"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/filename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click to upload your file here"
+                android:fontFamily="@font/poppins_light"
+                android:textSize="@dimen/size14"
+                android:maxLines="2"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="@dimen/size5"
+                android:textColor="@color/primaryDark"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/size15"/>
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_consent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:textColor="#D8D4D4"
+            android:textSize="@dimen/size12"
+            android:textStyle="italic"
+            android:layout_marginTop="@dimen/size12"
+            android:text="We do not share your information  with any Third party."
+            app:layout_constraintTop_toBottomOf="@+id/rv_uploadImage"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/ll_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:weightSum="6"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/tv_consent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pdf"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="@dimen/size14"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/primaryDark"/>
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size8"
+                    android:paddingHorizontal="@dimen/size10"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    android:progressDrawable="@drawable/custom_progressbar"
+                    android:progress="0"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_checked" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:paddingVertical="@dimen/size10"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/size18"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:layout_marginBottom="@dimen/size20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/round_border_primary_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

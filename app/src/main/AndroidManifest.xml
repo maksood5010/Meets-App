@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.meetsportal.meets">
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+    <application
+        android:name="com.meetsportal.meets.application.MyApplication"
+        android:allowBackup="false"
+        tools:replace="android:allowBackup,android:supportsRtl"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.Shisheo"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false">
+        <activity android:name="com.meetsportal.meets.ui.activities.OnBoard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo"/>
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.NewSplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="themeetsapp.com"
+                    android:scheme="https"/>
+                <data android:host="themeetsapp.com" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo">
+
+        </activity>
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.HomeActivityNew"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo">
+        </activity>
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo">
+
+        </activity>
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.RestaurantDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo" />
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.MemeIt"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo" />
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.SocialPage"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.AuthenticationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo" />
+        <activity
+            android:name="com.meetsportal.meets.ui.activities.HomePage"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Shisheo" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <!--
+<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA3KZhcdK54Yp_m4c28KeeFnG3tK_gWjmU" />
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/GOOGLE_API_KEY" />
+
+        <meta-data
+            android:name="com.onesignal.NotificationServiceExtension"
+            android:value="com.meetsportal.meets.utils.NotificationServiceExtension" />
+
+        <service
+            android:name="com.meetsportal.meets.utils.ForegroundOnlyLocationService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size20"
+        app:contentPadding="@dimen/size2"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/size20">
+
+            <ViewFlipper
+                android:id="@+id/switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/llShimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="170dp"
+                        android:background="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/size24"
+                        android:layout_marginTop="@dimen/size10"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/size24"
+                        app:cardCornerRadius="@dimen/size20"
+                        android:layout_marginStart="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginStart="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/size15"
+                            app:cardCornerRadius="@dimen/size20"
+                            app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/size15"
+                            app:cardCornerRadius="@dimen/size20"
+                            android:layout_marginStart="@dimen/size10"
+                            app:cardBackgroundColor="@color/shimmer_placeholder"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/size15"
+                            app:cardCornerRadius="@dimen/size20"
+                            android:layout_marginStart="@dimen/size10"
+                            app:cardBackgroundColor="@color/shimmer_placeholder"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="@dimen/size15"
+                            app:cardCornerRadius="@dimen/size20"
+                            android:layout_marginStart="@dimen/size10"
+                            app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/size24"
+                        android:layout_marginTop="@dimen/size10"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_height="@dimen/size24"
+                        android:layout_marginTop="@dimen/size10"
+                        android:layout_marginStart="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        android:layout_marginEnd="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size15"
+                        android:layout_marginTop="@dimen/size8"
+                        android:layout_marginStart="@dimen/size20"
+                        android:layout_marginEnd="@dimen/size20"
+                        app:cardCornerRadius="@dimen/size20"
+                        app:cardBackgroundColor="@color/shimmer_placeholder"/>
+
+                </LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:elevation="@dimen/size3"
+                        android:background="@color/page_bg"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:layout_editor_absoluteX="0dp" />
+
+                    <LinearLayout
+                        android:id="@+id/llDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@+id/image">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kind of Place"
+                            android:textSize="@dimen/size14"
+                            android:paddingTop="@dimen/size5"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCategory"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/card_kind_of_places"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cuisine"
+                            android:paddingTop="@dimen/size5"
+                            android:textSize="@dimen/size14"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_cuisine"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Facilities"
+                            android:paddingTop="@dimen/size5"
+                            android:textSize="@dimen/size14"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_facility"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address"
+                            android:paddingTop="@dimen/size5"
+                            android:textSize="@dimen/size14"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_address_logo" />
+
+                            <TextView
+                                android:id="@+id/tv_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="2dp"
+                                android:text="@string/lorum_ipsum" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/llDesc" >
+
+                        <TextView
+                            android:id="@+id/goToPlace"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/primaryDark"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/size15"
+                            android:text="See more"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size14"
+                            android:layout_weight="1"/>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/votePlace"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/primaryDark"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/size15"
+                            android:text="Vote Place"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size14"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </ViewFlipper>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

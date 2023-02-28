@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/page_bg"
+    android:paddingVertical="@dimen/size10">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Follower……"
+        android:maxLength="50"
+        android:textColorHint="#32BFC9"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/size10"
+        android:textSize="@dimen/size10"
+        android:fontFamily="@font/poppins_light"
+        android:background="@drawable/bg_circular_corcnor_filled2"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size15"
+        android:layout_marginHorizontal="@dimen/size20"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/et_search"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

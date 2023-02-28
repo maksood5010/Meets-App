@@ -1,0 +1,390 @@
+//apply plugin: 'kotlin-kapt'
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+
+//apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.meetsportal.meets"
+        minSdkVersion 24
+        targetSdkVersion 31
+        versionCode 34
+        versionName "2.2.1"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 31
+        renderscriptSupportModeEnabled true
+    }
+
+    def props = new Properties()
+    file("meets.properties").withInputStream { props.load(it) }
+
+    signingConfigs {
+        debug {
+
+            storeFile file(props.getProperty("storefile"))
+            storePassword props.getProperty("storepassword")
+            keyAlias props.getProperty("keyalias")
+            keyPassword props.getProperty("keypassword")
+
+        }
+        release {
+            storeFile file(props.getProperty("storefile"))
+            storePassword props.getProperty("storepassword")
+            keyAlias props.getProperty("keyalias")
+            keyPassword props.getProperty("keypassword")
+
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            //debuggable true
+            //buildConfigField "String", 'SERVER_URL', '"https://gateway-dev.shisheo.com/"'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            //buildConfigField "String", 'SERVER_URL', '"http://dev4.xicom.us/shisheo/public/"'
+           // buildConfigField "String", 'SERVER_URL', '"https://gateway-dev.shisheo.com/"'
+            signingConfig signingConfigs.debug
+
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors{
+
+        dev{
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            buildConfigField "String", 'SERVER_URL', '"https://gateway-dev.shisheo.com/"'
+            buildConfigField "String", 'MIXPANEL_TOKEN', '"143c307bc5c6195e0bc3882479ed6c80"'
+            buildConfigField "String", 'SERVER_CODE', '"clgjr28w"'
+            resValue "string", "app_name", "Meets-Dev"
+        }
+        prod{
+            buildConfigField "String", 'SERVER_URL', '"https://gateway.shisheo.com/"'
+            buildConfigField "String", 'MIXPANEL_TOKEN', '"313ecf1fc769103dcf4fbae3f449e1c9"'
+            buildConfigField "String", 'SERVER_CODE', '"gkiz4on1"'
+            resValue "string", "app_name", "Meets"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude "DebugProbesKt.bin"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.android.billingclient:billing-ktx:4.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    /*// Dagger
+    def dagger_version = '2.27'
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"*/
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0-beta01"
+
+
+
+    //***************************** Fragment Ktx ****************************
+    def fragment_version = "1.4.0"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    //**********************************************************************
+
+
+    //***********************LifeCycle architechture***************************
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    //***************************************************************************
+
+
+    //***********************Paging**********************************************
+    def paging_version = "3.0.1"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    // alternatively - without Android dependencies for tests
+    testImplementation "androidx.paging:paging-common:$paging_version"
+    // optional - RxJava2 support
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+    // optional - Guava ListenableFuture support
+    implementation "androidx.paging:paging-guava:$paging_version"
+
+
+
+    //Paging
+    //implementation "android.arch.paging:runtime:1.0.1"
+    //implementation "androidx.paging:paging-runtime-ktx:3.0.1"
+    //***************************************************************************
+
+
+    //***********************Firebase**********************************************
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-dynamic-links'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
+   // implementation "androidx.work:work-runtime-ktx:2.7.1"
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+    //***************************************************************************
+
+
+    //*****************************Room DataBase *********************************
+    def room_version = "2.3.0"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+    // optional - RxJava2 support for Room
+    //implementation "androidx.room:room-rxjava2:$room_version"
+    // optional - Paging 3 Integration
+    //implementation("androidx.room:room-paging:2.4.0-alpha04")
+    //****************************************************************************
+
+
+    //***************************** CameraX *********************************
+    def camerax_version = "1.0.2"
+    // CameraX core library using camera2 implementation
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    // CameraX Lifecycle Library
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    // CameraX View class
+    implementation "androidx.camera:camera-view:1.0.0-alpha30"
+    //****************************************************************************
+
+    //***************************** FaceBook Login ***************************
+    implementation 'com.facebook.android:facebook-login:13.0.0'
+    //***********************************************************************
+
+    def viewPagerVersion = "1.0.0"
+    implementation "androidx.viewpager2:viewpager2:$viewPagerVersion"
+
+    def lottieVersion = "3.7.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //circleImageviews
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+
+    implementation 'androidx.palette:palette-ktx:1.0.0'
+
+    //Imagefilter
+    implementation 'com.github.hgayan7:FilterLibrary:0.1.0'
+
+    def nav_version = "2.3.2"
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    //classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha05"
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.caverock:androidsvg-aar:1.4'
+    //circleImageviews
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.0'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
+
+    //map
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.firebase:firebase-appindexing:19.1.0'
+
+    // Maps Clustering
+    //implementation 'com.google.maps.android:android-maps-utils:2.2.3'
+    implementation 'com.google.maps.android:maps-ktx:2.3.0'
+    implementation 'com.google.maps.android:maps-utils-ktx:2.3.0'
+    //map animation
+    implementation 'com.github.aarsy.googlemapsanimations:googlemapsanimations:1.0.5'
+
+
+
+    //image Cropper and zoomimage
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.jsibbold:zoomage:1.3.1'
+
+    //Photo Editor
+    implementation 'com.burhanrashid52:photoeditor:1.1.1'
+
+    // top snack bar
+    implementation 'com.androidadvance:topsnackbar:1.1.1'
+
+    //Date Time Picked
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+    //crousal
+    implementation 'com.synnapps:carouselview:0.1.5'
+
+    //stackView
+    implementation 'com.yuyakaido.android:card-stack-view:2.2.1'
+
+    //country code picker
+    implementation 'com.hbb20:ccp:2.5.1'
+
+    //sms Reader
+    implementation 'com.github.stfalcon-studio:SmsVerifyCatcher:0.3.3'
+
+    //OneSignal
+    //Documentation : https://documentation.onesignal.com/docs/android-sdk-setup
+    implementation 'com.onesignal:OneSignal:4.6.3'
+
+    //cloudinary
+    implementation "com.cloudinary:cloudinary-android:1.30.0"
+
+    //FlexBox
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+
+
+    //double CLick
+    implementation 'com.gitlab.developerdeveloperdeveloper:androidutilslibrary:1.0.0'
+
+    //shimmer effecf
+    //implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //for loaading svg
+    implementation 'com.pixplicity.sharp:library:1.1.2@aar'
+
+    //for blur iffect
+    implementation 'jp.wasabeef:blurry:4.0.0'
+    //implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
+
+    //double Click
+    implementation 'com.gitlab.developerdeveloperdeveloper:androidutilslibrary:1.0.0'
+
+    //pusher IO Testing
+    implementation 'com.pusher:pusher-java-client:2.2.1'
+
+    //for showing guide
+    /*implementation 'com.github.mreram:showcaseview:1.4.0'
+    implementation 'com.nhaarman.supertooltips:library:3.0.0'*/
+    implementation 'com.fenchtose:tooltip:0.1.6'
+    implementation 'com.kyleduo.switchbutton:library:2.0.3'
+    //Places
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+    //map geocontext
+    implementation 'com.google.maps:google-maps-services:0.11.0'
+
+
+    //for showing charts
+    //implementation 'com.github.lecho:hellocharts-android:v1.5.8'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
+    implementation 'com.github.a914-gowtham:android-video-trimmer-litr:1.5.11'
+    implementation 'com.cossacklabs.com:themis:0.13.1'
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.4'
+
+    //coroutine
+    /*implementation ('org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1')
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"*/
+
+    implementation "com.github.skydoves:progressview:1.1.2"
+
+    implementation 'com.github.sephiroth74:android-target-tooltip:2.0.4'
+    implementation 'com.github.3llomi:RecordView:3.0.2'
+    implementation 'com.github.tougee:audiorecorderview:1.0.4'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
+
+    //For diskCache
+    implementation 'com.jakewharton:disklrucache:2.0.2'
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+
+
+//    implementation 'com.ablanco.zoomy:zoomy:1.1.0'
+//    implementation 'com.github.sumitsonawane:Zoomy:3fingers-screenshot-SNAPSHOT'
+    implementation 'com.github.sumitsonawane:Zoomy:f77d2ede95'
+    //implementation 'io.github.imablanco:zoomy:{latest version}'
+
+
+    //mixpanel
+    implementation "com.mixpanel.android:mixpanel-android:6.0.0"
+
+    //for gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
+
+
+}

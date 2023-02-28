@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_cancel"
+                app:tint="@color/primaryDark" />
+
+            <View
+                android:layout_marginTop="5dp"
+                style="@style/divider"/>
+
+            <TextView
+                android:id="@+id/head"
+                style="@style/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/size10"
+                android:text="Add a name"
+                android:textSize="@dimen/size18" />
+
+            <EditText
+                android:id="@+id/etName"
+                style="@style/editTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_black_stroke_25dp"
+                android:fontFamily="@font/poppins_light"
+                android:hint="type a name……"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size10"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="@dimen/size14" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Add a custom name to this place to help you remember"/>
+
+            <TextView
+                android:id="@+id/tvAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/primaryButton"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size18"
+                android:text="Add"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#80000000"
+    android:layout_marginBottom="-20dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="36dp"
+        android:layout_height="39dp"
+        android:elevation="@dimen/size12"
+        android:src="@drawable/ic_round_cancel"
+        android:layout_marginTop="@dimen/size5"
+        app:layout_constraintEnd_toEndOf="@+id/cl_round_card"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/cl_round_card"
+        app:layout_constraintTop_toTopOf="@+id/cl_round_card"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_round_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_main_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-20dp"
+            app:cardCornerRadius="@dimen/size20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/meetup_gb">
+
+                <TextView
+                    android:id="@+id/tv_upcoming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size10"
+                    android:text="Up Coming Meetup"
+                    android:textSize="@dimen/size18"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+                    
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/size20"
+                    android:layout_marginTop="@dimen/size20"
+                    app:layout_constraintTop_toTopOf="@+id/rlTab"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/ivFilter"
+                    app:layout_constraintTop_toTopOf="@+id/rlTab"
+                    app:layout_constraintBottom_toBottomOf="@+id/rlTab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:paddingVertical="@dimen/size10"
+                    android:paddingHorizontal="20dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_filter"/>
+                <RelativeLayout
+                    android:id="@+id/rlTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_upcoming">
+
+                    <LinearLayout
+                        android:id="@+id/llTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_round_gray2"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvMyMeetUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="My Meetups"
+                            android:textColor="@color/white"
+                            android:paddingHorizontal="@dimen/size30"
+                            android:paddingVertical="@dimen/size10"
+                            android:textSize="@dimen/size10"
+                            android:fontFamily="@font/poppins_semibold"/>
+
+                        <TextView
+                            android:id="@+id/tvInvites"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invites"
+                            android:paddingHorizontal="@dimen/size30"
+                            android:paddingVertical="@dimen/size10"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size10"
+                            android:fontFamily="@font/poppins_semibold"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_meetUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="invisible"
+                    android:layout_marginHorizontal="@dimen/size10"
+                    tools:listitem="@layout/card_meetup"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_upcoming"
+                    app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

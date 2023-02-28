@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/rlDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/size10"
+        android:background="@color/white"
+        android:layout_marginVertical="@dimen/size80"
+        android:layout_marginHorizontal="@dimen/size30">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Who can join"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size14" />
+
+        <ImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvTitle"
+            android:layout_marginTop="-5dp"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/size5"
+            android:src="@drawable/ic_cancel" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"
+            android:layout_alignBottom="@+id/ivCancel"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBadges"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/tvDone"
+            android:layout_below="@+id/ivCancel"
+            android:clipToPadding="false"
+            android:padding="@dimen/size10"
+            tools:itemCount="5"
+            tools:listitem="@layout/card_badge_item" />
+
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            style="@style/primaryButton"
+            android:text="Done"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

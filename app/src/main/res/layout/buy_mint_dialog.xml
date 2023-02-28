@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/parentCard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/size25"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="@dimen/size25"
+            android:scaleType="fitCenter"
+            android:src="@drawable/money"
+            app:contentPadding="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/parentCard"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.TopCornerOnly" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/giudeLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.28" />
+
+        <TextView
+            android:id="@+id/tvMintCash"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mint Cash"
+            app:layout_constraintEnd_toEndOf="@id/parentCard"
+            app:layout_constraintStart_toStartOf="@id/parentCard"
+            app:layout_constraintTop_toBottomOf="@+id/giudeLine" />
+
+        <TextView
+            android:id="@+id/tvBuyMint"
+            style="@style/subHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy mint cash to step up your status."
+            app:layout_constraintEnd_toEndOf="@id/parentCard"
+            app:layout_constraintStart_toStartOf="@id/parentCard"
+            app:layout_constraintTop_toBottomOf="@+id/tvMintCash" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size20"
+            android:elevation="@dimen/size10"
+            android:gravity="center"
+            android:minHeight="120dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuyMint">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMintPackage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:minHeight="180dp"
+                tools:itemCount="0"
+                android:orientation="horizontal"
+                android:paddingStart="130dp"
+                android:paddingEnd="130dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_mint_package" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvBuy"
+            style="@style/primaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Buy"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="@id/parentCard"
+            app:layout_constraintStart_toStartOf="@id/parentCard"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+        <TextView
+            android:id="@+id/tvCancel"
+            style="@style/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/size20"
+            android:gravity="center"
+            android:text="Not Now"
+            android:textColor="#1AE4A7"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/parentCard"
+            app:layout_constraintEnd_toEndOf="@id/parentCard"
+            app:layout_constraintStart_toStartOf="@id/parentCard"
+            app:layout_constraintTop_toBottomOf="@+id/tvBuy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/root"
+    android:layout_margin="1dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_interest_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/size7"
+        android:paddingHorizontal="@dimen/size20"
+        android:layout_marginEnd="@dimen/size3"
+        tools:text="Trling 🎮"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/size14"
+        android:fontFamily="@font/poppins"
+        android:singleLine="true"
+        android:textColor="@color/blacktextColor" />
+
+    <ImageView
+        android:id="@+id/cross"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cancel"
+        android:layout_marginHorizontal="@dimen/size10"
+        app:layout_constraintStart_toEndOf="@+id/tv_interest_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_interest_item"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_interest_item"
+        android:layout_toRightOf="@+id/tv_interest_item"
+        android:layout_centerVertical="true"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

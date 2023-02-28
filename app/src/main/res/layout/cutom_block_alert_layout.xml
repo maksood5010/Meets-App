@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:tint="@color/primaryDark"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="#CECECE"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/cancel"/>
+
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Block User"
+                android:textSize="@dimen/size18"
+                android:layout_marginStart="@dimen/size10"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blacktextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+            
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_block"
+                app:layout_constraintTop_toBottomOf="@+id/head"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/size20"/>
+
+
+            <TextView
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Are you sure you want to block"
+                android:gravity="center"
+                android:textSize="@dimen/size14"
+                android:textColor="#4D4D4D"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User?"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/reason"/>
+
+            <TextView
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:paddingHorizontal="@dimen/size40"
+                android:textSize="@dimen/size18"
+                android:paddingVertical="@dimen/size5"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/round_border_primary_bg"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_marginTop="@dimen/size30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username"/>
+
+            <TextView
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:paddingHorizontal="@dimen/size40"
+                android:textSize="@dimen/size18"
+                android:paddingVertical="@dimen/size5"
+                android:textColor="@color/primaryDark"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/horizontal_round_shape"
+                android:layout_marginEnd="@dimen/size20"
+                android:layout_marginTop="@dimen/size30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

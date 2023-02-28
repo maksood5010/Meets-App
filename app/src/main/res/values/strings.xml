@@ -1,0 +1,93 @@
+<resources>
+   <!-- <string name="app_name">Meets</string>-->
+    <string name="search">Search</string>
+    <string name="map">Map</string>
+    <string name="offers">Offer</string>
+    <string name="default_img_url">https://res.cloudinary.com/shisheo/image/upload/v1643377728/shisheo-resources/definitions/default_icons/default_Pp_nxhgq0.png</string>
+    <string name="shisheo">Shisheo</string>
+    <string name="home_page_categories_heading">Categories</string>
+    <string name="home_page_best_joint_heading">Best Meetup Joints</string>
+    <string name="social_onboard_description">Discover new friends and a whole new community</string>
+    <string name="home">Home</string>
+    <string name="camera_post">Post</string>
+    <string name="lorum_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="skip">Skip</string>
+    <string name="email">name@email.com</string>
+<!--    <string name="email_regex">(?:[a-z0-9!#$%&amp;\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;\'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])</string>-->
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Create Acoount</string>
+    <string name="login">Login</string>
+    <string name="or_login_with">or</string>
+    <string name="c_facebook">Continue with Facebook</string>
+    <string name="c_google">Continue with Google</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="i_accept_terms_conditions"><![CDATA[I accept Term & Conditions]]></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_login">Already have Account</string>
+    <string name="recover_my_password">Recover My Password</string>
+    <string name="close_restaurant">0 Places close by</string>
+    <string name="see_all"><u>See All</u></string>
+    <string name="there_is_no_review_for_this_restaurant">There is no review for this restaurant.</string>
+    <string name="user_name">Imran Khan</string>
+    <string name="review_time">1 day ago</string>
+    <string name="_4_of_5">4 of 5</string>
+    <string name="date_time"><![CDATA[Date & Time]]></string>
+    <string name="posts">Posts</string>
+
+    <string name="usernameValidLetter">ABCDEFGHIJKLMNOPQRSTUVWQYZabcdefghijklmnopqrstuvwxyz_1234567890</string>
+    <string name="resend_otp">"Didn't get the code? Resend"</string>
+    <string name="shisheomeets"><b>M</b>eets </string>
+    <string name="empty_interest_text">"It’s easier to find people you can connect with, when you share your interests. Click the icon to edit your interests "</string>
+
+    <string name="mandatory_permission">Mandatory Permissions</string>
+    <string name="app_setting">Manually allow permissions in App settings</string>
+    <string name="settings">Settings</string>
+    <string name="terms">Terms and conditions</string>
+    <string name="privacy">Privacy Policy</string>
+    <string name="GOOGLE_API_KEY">AIzaSyC3Oj-BmFPMYJy2eYU4Q6UQ8QbqPW805tM</string>
+    <string name="saved_on">Saved on %s</string>
+    <string name="sorry_try_again">Sorry, something went wrong. Please try again</string>
+    <string name="deleted_success">Deleted Successfully</string>
+    <string name="message__">Message…</string>
+    <string name="enterChat">Enter Chat</string>
+    <string name="add_custom_name">Add Custom name</string>
+    <string name="signup_text">Don\'t have an account? <u><b>Signup</b></u></string>
+    <string name="signin_text">Already have an account? <u><b>Login</b></u></string>
+    <string name="recover_text">Lost your number? <u>Recover your account</u></string>
+    <string name="agree_text">By signing up, you agree to the <u>Terms and conditions</u></string>
+    <string name="contrylist">af,al,dz,ad,al,AU,AT,AZ,AG,aw,am,ae,BH,BD,BB,BZ,BM,BT,BO,BA,BW,BN,BG,BF,BL,KH,CM,CV,CF,TD,KM,CK,HR,CY,CZ,CD,DK,DJ,DN,GQ,ER,EE,ET,FO,FJ,FI,FR,GF,PF,GA,GM,GE,DE,GH,GL,GR,GL,GD,GP,GG,GN,GW,GY,H,HN,HK,ID,IQ,IE,IM,IL,IT,JM,JP,JE,KZ,KE,XK,KG,LV,LB,LS,LY,LI,LT,LU,MO,MK,MG,MW,MV,ML,MT,MQ,MR,MU,YT,LA,MD,MN,ME,MS,MA,MM,NA,NL,AN,NC,NE,NG,NU,NO,OM,PK,PS,PA,PG,PL,PT,RE,RO,RW,WS,SM,ST,RS,SC,SL,SG,SK,SI,SB,SO,SS,ES,SR,SZ,SE,CH,TW,TJ,TX,TL,TG,TO,TT,TN,TC,TC,UG,UA,GB,UZ,VU,VG,YE,ZM,ZW,SN,NP,CL,IS</string>
+    <string-array name="year">
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+    </string-array>
+    <string-array name="months">
+        <item name="january">January</item>
+        <item name="february">February</item>
+        <item name="march">March</item>
+        <item name="april">April</item>
+        <item name="may">May</item>
+        <item name="june">June</item>
+        <item name="july">July</item>
+        <item name="august">August</item>
+        <item name="september">September</item>
+        <item name="october">October</item>
+        <item name="november">November</item>
+        <item name="december">December</item>
+    </string-array>
+
+
+
+
+    <string name="facebook_app_id">662213288318223</string>
+    <string name="fb_login_protocol_scheme">fb662213288318223</string>
+    <string name="facebook_client_token">3487c97d5a38f9e37ebf63ff4bc89d8f</string>
+
+
+
+</resources>

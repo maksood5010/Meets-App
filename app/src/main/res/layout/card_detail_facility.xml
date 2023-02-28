@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_checked_icon"/>
+
+    <TextView
+        android:id="@+id/facility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="facility"
+        android:paddingLeft="@dimen/size3"
+        android:textColor="@color/blacktextColor"
+        android:textSize="@dimen/size12"/>
+
+
+</LinearLayout>

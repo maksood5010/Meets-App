@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:paddingVertical="@dimen/size5"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/votingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="You voted Nineve Cafe"
+        android:singleLine="true"
+        android:textSize="@dimen/size14"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="May 9, 2021. 3:47Pm"
+        android:layout_marginTop="-2dp"
+        android:textColor="#D8D4D4"
+        android:textSize="@dimen/size9"
+        android:fontFamily="@font/poppins"/>
+
+
+
+
+
+</LinearLayout>

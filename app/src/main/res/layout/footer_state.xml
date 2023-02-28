@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/size10"
+    android:id="@+id/rootCo"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/retrycard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size10">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/size6"
+            android:background="@color/blacktextColor">
+
+            <TextView
+                android:id="@+id/tv_errorMsg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sorry, something went wrong. Please try again"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/size6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/bt_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#6E6E6E"
+                    android:text="Retry"
+                    android:paddingVertical="@dimen/size5"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:textColor="@color/primaryDark"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+   <!-- <TextView
+        android:id="@+id/tv_errorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Error msg..."
+        android:textColor="@color/red_color_picker"
+        android:textAlignment="center"
+        android:layout_gravity="center"/>-->
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminateOnly="true"
+        android:layout_gravity="center"/>
+    
+    
+    <!--<TextView
+        android:id="@+id/bt_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retry"
+        android:paddingVertical="@dimen/size5"
+        android:paddingHorizontal="@dimen/size20"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:background="@drawable/round_border_primary_bg"/>-->
+
+</LinearLayout>

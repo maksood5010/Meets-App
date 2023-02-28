@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/upseperator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size5"
+        android:background="@color/page_bg"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include layout="@layout/timeline_profile_head" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/size20"
+        app:layout_constraintTop_toBottomOf="@+id/cl_card_header">
+
+        <TextView
+            android:id="@+id/tv_caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="6"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:textColor="@color/blacktextColor"
+            android:text="Checked in at Shisheo Lounge"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/size14"
+            app:layout_constraintEnd_toStartOf="@+id/see_more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="See More"
+            android:textColor="@color/primaryDark"
+            android:textSize="@dimen/size10"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_visual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="true"
+        android:longClickable="true"
+        android:paddingTop="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/cl_caption">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size200"
+            android:layout_marginHorizontal="@dimen/size20"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_post_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#aa32BFC9"
+                    android:clickable="true"
+                    android:longClickable="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/temp_restaurant_detail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/size20"
+                    android:background="@drawable/bg_transparent_shade"
+                    android:elevation="8dp"
+                    android:paddingBottom="@dimen/size10"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent" >
+
+                    <TextView
+                        android:id="@+id/place_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shisheo Lounge"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textSize="@dimen/size20"
+                        android:layout_marginBottom="-10dp"/>
+
+                    <TextView
+                        android:id="@+id/timing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open: 6:00pm - 3:00am"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="-5dp"
+                        android:fontFamily="@font/poppins"/>
+
+                    <RatingBar
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:rating="4.5"
+                        android:progressTint="@color/yellow"/>
+
+                    <TextView
+                        android:id="@+id/rating_txt"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 of 5"/>
+
+
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/anim_heart"
+                    android:layout_width="@dimen/size80"
+                    android:layout_height="@dimen/size80"
+                    android:alpha="0"
+                    android:src="@drawable/anim_like"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_imageCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:elevation="@dimen/size10"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="10+ Photos"
+            android:textColor="@color/primaryDark"
+            android:textSize="@dimen/size10"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/timeline_profile_tail"/>
+
+    <View
+        android:id="@+id/lowerseperator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size5"
+        android:background="@color/page_bg"
+        app:layout_constraintTop_toBottomOf="@+id/like_comment"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

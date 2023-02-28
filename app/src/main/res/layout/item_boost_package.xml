@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMintPackage"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#97DFFF"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMint"
+            style="@style/headerXXL"
+            android:textSize="34sp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:singleLine="true"
+            android:text="5" />
+
+        <TextView
+            android:id="@+id/tvCharges"
+            style="@style/subHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:layout_marginBottom="10dp"
+            android:text="Charges" />
+
+        <LinearLayout
+            android:id="@+id/bottomBg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#42B05E"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/size15">
+            <TextView
+                android:id="@+id/tvPriceOffer"
+                style="@style/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save 20%"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                style="@style/subHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="400 mints"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

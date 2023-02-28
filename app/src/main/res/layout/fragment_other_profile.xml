@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/page_bg"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        tools:visibility="gone"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:background="@color/shimmer_placeholder"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/size20"
+                android:layout_marginTop="@dimen/size30"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/size60"
+                    android:layout_height="@dimen/size60"
+                    android:src="@color/shimmer_placeholder"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size100"
+                    android:background="@color/shimmer_placeholder"
+                    android:layout_marginLeft="@dimen/size20"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="100dp"
+                android:layout_height="@dimen/size50"
+                android:background="@color/shimmer_placeholder"
+                android:layout_marginTop="@dimen/size40"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/shimmer_placeholder"
+                android:paddingHorizontal="@dimen/size20"
+                android:layout_marginTop="@dimen/size10"/>
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="@dimen/size50"
+                android:background="@color/shimmer_placeholder"
+                android:layout_marginTop="@dimen/size40"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/shimmer_placeholder"
+                android:paddingHorizontal="@dimen/size20"
+                android:layout_marginTop="@dimen/size10"/>
+
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/rootCo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:minHeight="50dp"
+                app:contentScrim="@android:color/transparent"
+                app:expandedTitleGravity="center_vertical|center_horizontal"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:scrimVisibleHeightTrigger="200dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom"
+                        android:minHeight="?android:attr/actionBarSize"
+                        app:layout_collapseMode="pin">
+
+                        <!--<GridLayout
+                            android:id="@+id/guidline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/app_image"
+                            app:layout_constraintGuide_end="@dimen/size20" />-->
+
+
+                        <ImageView
+                            android:id="@+id/app_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="200pt"
+                            android:layout_marginBottom="-30dp"
+                            android:background="#11000000"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_person_placeholder"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!--<RelativeLayout
+                            android:id="@+id/rl_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/size10"
+                            app:layout_constraintTop_toTopOf="@+id/app_image"
+                            app:layout_constraintStart_toStartOf="@+id/app_image">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="27dp"
+                                android:layout_height="27dp"
+                                android:src="#3B000000" />
+                            &lt;!&ndash;            app:civ_circle_background_color="#3B000000"/>&ndash;&gt;
+
+                            <ImageView
+                                android:layout_width="@dimen/size16"
+                                android:layout_height="@dimen/size16"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_back"
+                                app:tint="@color/primaryDark" />
+
+                        </RelativeLayout>-->
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_marginTop="-30dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_bottom_sheet"
+                        app:layout_constraintTop_toBottomOf="@+id/app_image">
+
+                        <include
+                            layout="@layout/layout_bottom_other_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tl_tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+                            app:tabContentStart="0dp"
+                            app:tabInlineLabel="true"
+                            app:tabMode="fixed"
+                            app:tabTextAppearance="@style/home_tab_text">
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:icon="@drawable/ic_grid"
+                                android:paddingHorizontal="200dp" />
+
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:icon="@drawable/ic_list" />
+
+                        </com.google.android.material.tabs.TabLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/bg_bottom_sheet"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <!--<include
+            layout="@layout/layout_bottom_profile"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>-->
+
+        <!--<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_heading"
+            tools:listitem="@layout/card_news_feed" />-->
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:listitem="@layout/card_news_feed"
+            android:nestedScrollingEnabled="true"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/no_post"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include layout="@layout/layout_no_activity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--</LinearLayout>-->
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>
+

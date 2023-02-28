@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/size10"
+        android:background="#00EBFF">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#FF7272"
+            android:layout_margin="5dp"
+            app:shapeAppearanceOverlay="@style/CircleCorner"
+            android:elevation="@dimen/size10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/SImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="#F7F7F7"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_eye"
+            app:contentPadding="10dp"
+            android:tint="@color/gray4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleCorner10" />
+
+        <TextView
+            android:id="@+id/tvUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/SImage"
+            app:layout_constraintTop_toTopOf="@+id/SImage"
+            android:layout_marginStart="10dp"
+            style="@style/header"
+            android:text="new users visited your profile"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPerson"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/size30"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/tvView"
+            app:layout_constraintStart_toStartOf="@+id/tvUsers"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsers"
+            tools:listitem="@layout/card_meet_person" />
+
+        <TextView
+            android:id="@+id/tvView"
+            style="@style/primaryButton"
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:textColor="@color/white"
+            android:backgroundTint="#00727A"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

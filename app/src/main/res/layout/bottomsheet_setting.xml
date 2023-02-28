@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/size5"
+    android:background="@drawable/bg_meet_place_map">
+
+    <ImageView
+        android:id="@+id/bar"
+        android:layout_width="50dp"
+        android:layout_height="8dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/bg_map_tab"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:divider="@color/gray"
+        android:showDividers="middle"
+        app:layout_constraintTop_toBottomOf="@id/bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/tvSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="16sp"
+            android:gravity="bottom"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="@dimen/size15"
+            android:fontFamily="@font/poppins_light"
+            android:drawablePadding="@dimen/size10"
+            app:drawableStartCompat="@drawable/ic_gear"
+            app:drawableTint="@color/black" />
+        <TextView
+            android:id="@+id/tvSaved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved"
+            android:textSize="16sp"
+            android:gravity="bottom"
+            android:paddingTop="5dp"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="@dimen/size15"
+            android:fontFamily="@font/poppins_light"
+            android:drawablePadding="@dimen/size10"
+            app:drawableStartCompat="@drawable/ic_bookmarked"
+            app:drawableTint="@color/black"/>
+        <!--<TextView
+            android:id="@+id/tvMySafe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Safe"
+            android:textSize="16sp"
+            android:gravity="bottom"
+            android:paddingTop="10dp"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="@dimen/size20"
+            android:fontFamily="@font/poppins_light"
+            android:drawablePadding="@dimen/size10"
+            app:drawableStartCompat="@drawable/ic_safe"
+            app:drawableTint="@color/black"/>-->
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

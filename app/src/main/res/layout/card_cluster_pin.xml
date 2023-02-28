@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="@dimen/size80"
+            android:layout_height="@dimen/size80"
+            android:src="@drawable/ic_map_cluster_people"
+            android:elevation="@dimen/size5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="17dp"
+            android:elevation="@dimen/size30"
+            android:textColor="@color/white"
+            android:layout_marginBottom="-20dp"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/bg"
+            app:layout_constraintEnd_toEndOf="@+id/bg"
+            app:layout_constraintTop_toTopOf="@+id/bg"
+            app:layout_constraintBottom_toBottomOf="@+id/bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="People"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/size8"
+            app:layout_constraintVertical_bias="0.35"
+            android:layout_marginTop="-10dp"
+            android:elevation="@dimen/size30"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/bg"
+            app:layout_constraintEnd_toEndOf="@+id/bg"
+            app:layout_constraintTop_toTopOf="@+id/count"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

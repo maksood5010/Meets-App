@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/restro_img" />
+    </androidx.cardview.widget.CardView>
+
+    <!--<Button
+        android:id="@+id/bt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:layout_margin="@dimen/size10"
+        app:layout_constraintTop_toTopOf="@+id/cv_image"
+        app:layout_constraintStart_toStartOf="@+id/cv_image"/>-->
+
+    <ImageView
+        android:id="@+id/bt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit_post_image"
+        android:elevation="@dimen/size2"
+        android:padding="@dimen/size20"
+        app:layout_constraintTop_toTopOf="@+id/cv_image"
+        app:layout_constraintStart_toStartOf="@+id/cv_image"/>
+
+   <!-- <androidx.cardview.widget.CardView
+        android:id="@+id/cv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/size10"
+        android:layout_margin="@dimen/size10"
+        app:cardBackgroundColor="@color/primaryDark"
+        app:layout_constraintEnd_toEndOf="@id/cv_image"
+        app:layout_constraintTop_toTopOf="@id/cv_image">-->
+
+        <!--<androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/size30"
+            app:cardElevation="@dimen/size30"
+            app:cardCornerRadius="50dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_margin="@dimen/size10">-->
+
+            <ImageView
+                android:id="@+id/cv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel_bg"
+                android:padding="@dimen/size5"
+                android:clickable="true"
+                android:elevation="20dp"
+                android:layout_margin="@dimen/size10"
+                app:layout_constraintEnd_toEndOf="@id/cv_image"
+                app:layout_constraintTop_toTopOf="@id/cv_image"
+               />
+
+        <!--</androidx.cardview.widget.CardView>-->
+
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

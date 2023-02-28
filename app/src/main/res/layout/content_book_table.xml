@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/size20">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#CCCCCC"
+        android:textSize="14dp"
+        android:text="Date"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"/>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:clickable="true"
+            android:text="Today, 20th December"
+            android:editable="false"
+            android:textColor="@color/primaryDark"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+            android:background="@drawable/gray_button_background"
+            android:paddingHorizontal="@dimen/size15"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/size14"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:text="Guests"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"/>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/iv_minus"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:paddingVertical="@dimen/size16"
+            android:paddingHorizontal="@dimen/size10"
+            android:background="@drawable/gray_button_background"
+            android:src="@drawable/ic_minus_sign"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_counter_number"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:padding="5dp"
+            android:textColor="@color/primaryDark"
+            android:text="1"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/droid_sans"
+            android:textSize="20sp"
+            android:background="@drawable/gray_button_background" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_plus"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:padding="10dp"
+            android:background="@drawable/gray_button_background"
+            android:src="@drawable/ic_plus_sign"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:text="Time"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="5"
+        tools:listitem="@layout/card_time"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size14"
+        android:text="Occasion"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:weightSum="3">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/sp_occasion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.4"
+            android:padding="8dp"
+            style="@style/SpinnerTheme"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:text="Other Requests"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/et_other_requests"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/primaryDark"
+        android:background="@drawable/gray_button_background"
+        android:hint="Honoring request is at the discretion of the restaurant"
+        android:textColorHint="@color/gray"
+        android:fontFamily="@font/poppins"
+        android:textSize="11dp"
+        android:padding="10dp"
+        android:gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_next_table_information"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="NEXT"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_button_background"/>
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

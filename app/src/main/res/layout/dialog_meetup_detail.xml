@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="30dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="@dimen/size20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meetup details" />
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_marginTop="@dimen/size10" />
+
+        <ViewFlipper
+            android:id="@+id/switcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size10"
+                            android:background="@drawable/bg_white_edittext"
+                            android:backgroundTint="@color/bg_gray"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/name"
+                                style="@style/headerL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="My Birthday"
+                                android:textSize="25sp" />
+
+                            <TextView
+                                android:id="@+id/status"
+                                style="@style/subHeader"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="imran4u, has invited you to join a Meetup. Would You like to join now?  " />
+
+                            <TextView
+                                android:id="@+id/tvHeading"
+                                style="@style/header"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Also invited" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvInvitee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:orientation="horizontal"
+                                    android:paddingStart="@dimen/size30"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:listitem="@layout/card_meet_person_chat" />
+
+                                <TextView
+                                    android:id="@+id/tvPeoples"
+                                    style="@style/subHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="10dp"
+                                    android:text="10+ People" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Date and Time" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_corner_20dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@color/extraLightGray"
+                                android:src="@drawable/ic_date_new"
+                                app:contentPadding="@dimen/size10"
+                                app:shapeAppearanceOverlay="@style/Corner20" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/size10">
+
+                                <TextView
+                                    android:id="@+id/date"
+                                    style="@style/header"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Friday, August 13" />
+
+                                <TextView
+                                    android:id="@+id/time"
+                                    style="@style/subHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10:00 AM - 12:00 PM" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvPlaces"
+                            style="@style/header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Places" />
+
+                        <LinearLayout
+                            android:id="@+id/llPlaces"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_corner_20dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@color/extraLightGray"
+                                android:src="@drawable/ic_location_meet"
+                                app:contentPadding="@dimen/size10"
+                                app:shapeAppearanceOverlay="@style/Corner20" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvPlaces"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="10dp"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                app:layout_constraintTop_toBottomOf="@+id/placeHead" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Meetup Rules" />
+
+                        <LinearLayout
+                            android:id="@+id/llMeetRule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_corner_20dp"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:background="@color/extraLightGray"
+                                android:src="@drawable/ic_vote"
+                                app:contentPadding="@dimen/size10"
+                                app:shapeAppearanceOverlay="@style/Corner20" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/size10">
+
+                                <TextView
+                                    android:id="@+id/tvVoteChange"
+                                    style="@style/subHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vote Change:" />
+
+                                <TextView
+                                    android:id="@+id/tvJoinTime"
+                                    style="@style/subHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Join Time: 24 hour" />
+
+                                <TextView
+                                    android:id="@+id/tvDuration"
+                                    style="@style/subHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Duration: Full day!" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvDesc"
+                            style="@style/header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Description" />
+
+                        <LinearLayout
+                            android:id="@+id/llDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/gray_corner_20dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvDescription"
+                                style="@style/subHeader"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                tools:text="Celebrating the birthday of CEO. Celebrating life, achievement, Success, friendships, wins and more wins" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/llBefore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Before you join check out our meetup safety tips" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_warning" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size15"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvJoin"
+                        style="@style/primaryButton"
+                        android:layout_marginStart="@dimen/size10"
+                        android:layout_marginEnd="@dimen/size35"
+                        android:layout_weight="1"
+                        android:paddingVertical="8dp"
+                        android:text="Join"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvNo"
+                        style="@style/primaryButton"
+                        android:layout_marginStart="@dimen/size35"
+                        android:layout_marginEnd="@dimen/size10"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_add_commeent_round_corner"
+                        android:paddingVertical="8dp"
+                        android:text="NO"
+                        android:textColor="@color/primary" />
+                </LinearLayout>
+            </LinearLayout>
+        </ViewFlipper>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:text="Table Information"
+                    android:fontFamily="@font/poppins"
+                    android:textAllCaps="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_change_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/primaryDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="14dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/tv_date_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:text="Booked for Today, 20th December at 17:30. "
+                            android:ellipsize="start" />
+
+                        <TextView
+                            android:id="@+id/tv_guests"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/poppins"
+                            android:textColor="@color/black"
+                            android:text="5 Guests." />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/ic_occasion"/>
+
+                            <TextView
+                                android:id="@+id/tv_occasion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:textSize="14sp"
+                                android:textColor="#747474"
+                                android:text="Anniversary" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_other_requests"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/primaryDark"
+                            android:background="@drawable/gray_button_background"
+                            android:hint="Honoring request is at the discretion of the restaurant"
+                            android:textColorHint="@color/gray"
+                            android:textSize="14sp"
+                            android:padding="10dp"
+                            android:gravity="start"/>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Personal Details"
+                    android:textAllCaps="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_change_personal_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/primaryDark"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="14dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/size10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blu Ivy"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size12"
+                    android:textColor="@color/textdescColor"
+                    android:drawableStart="@drawable/ic_person_filled"
+                    android:drawablePadding="@dimen/size4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+971 55 999 6534"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size12"
+                    android:textColor="@color/textdescColor"
+                    android:drawableStart="@drawable/ic_person_filled"
+                    android:drawablePadding="@dimen/size4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bluivy@gmail.com"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size12"
+                    android:textColor="@color/textdescColor"
+                    android:drawableStart="@drawable/ic_person_filled"
+                    android:drawablePadding="@dimen/size4"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size20"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/poppins"
+                android:text="Confirmation Code"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="0 2 2 5 8"
+                android:textColor="@color/primaryDark"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="14dp"
+                android:paddingHorizontal="@dimen/size20"
+                android:gravity="center"
+                android:background="@drawable/gray_button_background"/>
+
+            <Button
+                android:id="@+id/btn_next_table_information"
+                android:layout_marginTop="@dimen/size20"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="NEXT"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:background="@drawable/blue_button_background"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

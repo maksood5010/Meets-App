@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootStatic"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/desc1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Who view your profile"
+                android:textSize="@dimen/size16"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/blacktextColor"
+                android:layout_marginTop="@dimen/size20"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingHorizontal="@dimen/size20"/>
+
+            <TextView
+                android:id="@+id/desc1sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/desc1"
+                android:text="Get insight into users who viewed your profile"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                android:layout_marginHorizontal="@dimen/size20"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/size20"
+                android:layout_marginVertical="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/desc1sub">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/count1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="@dimen/size8"
+                        android:paddingHorizontal="@dimen/size10"
+                        android:text="0 people viewed your profile "/>
+
+                    <ViewFlipper
+                        android:id="@+id/viewFlipper1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/count1"
+                        app:layout_constraintStart_toStartOf="parent">
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/ivFirst"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:src="@drawable/pvisit02"-->
+<!--                            android:elevation="5dp"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/count1"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintStart_toStartOf="parent" />-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/child1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv4People"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/size10"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                android:orientation="vertical"
+                                tools:listitem="@layout/card_like"
+                                tools:itemCount="4"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/seeThem"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="See them"
+                                android:paddingHorizontal="@dimen/size20"
+                                android:paddingVertical="@dimen/size16"
+                                android:textColor="@color/primaryDark"
+                                android:fontFamily="@font/poppins_semibold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/rv4People"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </ViewFlipper>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/desc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How often people views your profile"
+                android:textSize="@dimen/size16"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/blacktextColor"
+                android:layout_marginTop="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/card1"
+                android:paddingHorizontal="@dimen/size20"/>
+
+            <TextView
+                android:id="@+id/desc2sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/desc2"
+                android:text="Get insight into your profile views from the last 7 days"/>
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginHorizontal="@dimen/size20"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/desc2sub">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/size10">
+
+                    <TextView
+                        android:id="@+id/count2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/size20"
+                        android:paddingStart="@dimen/size20"
+                        android:fontFamily="@font/poppins_medium"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/desc3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile views"
+                        android:textSize="@dimen/size14"
+                        android:paddingStart="@dimen/size8"
+                        android:fontFamily="@font/poppins_medium"
+                        app:layout_constraintBottom_toBottomOf="@+id/count2"
+                        app:layout_constraintTop_toTopOf="@+id/count2"
+                        app:layout_constraintStart_toEndOf="@+id/count2"/>
+                    <ViewFlipper
+                        android:id="@+id/viewFlipper2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/count2">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/ivSecond"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/pvisit03"
+                                android:elevation="5dp"
+                                android:background="@drawable/pvisit03_bg"
+                                android:scaleType="centerInside"
+                                app:tint="@color/black" />
+                        </FrameLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/giude7"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSummery">
+
+                            <lecho.lib.hellocharts.view.PieChartView
+                                android:id="@+id/chart"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:minHeight="200dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_height="match_parent" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1">
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardUseCompatPadding="true"
+                                    app:cardCornerRadius="10dp">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:text="Organic views"
+                                            style="@style/subHeader"
+                                            android:textSize="11sp"
+                                            android:textColor="@color/white"
+                                            android:background="#5385F5"
+                                            android:layout_width="match_parent"
+                                            android:gravity="center_horizontal"
+                                            android:padding="8dp"
+                                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/tvOrganicView"
+                                            android:background="#C8EAFD"
+                                            android:layout_width="match_parent"
+                                            style="@style/headerL"
+                                            tools:text="200"
+                                            android:paddingVertical="10dp"
+                                            android:gravity="center_horizontal"
+                                            android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardUseCompatPadding="true"
+                                    app:cardCornerRadius="10dp">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:text="Super Charged views"
+                                            android:background="#8232C9"
+                                            style="@style/subHeader"
+                                            android:textSize="11sp"
+                                            android:textColor="@color/white"
+                                            android:gravity="center_horizontal"
+                                            android:padding="8dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+                                        <TextView
+                                            android:id="@+id/tvBoostedView"
+                                            android:background="#C8EAFD"
+                                            style="@style/headerL"
+                                            tools:text="200"
+                                            android:paddingVertical="10dp"
+                                            android:gravity="center_horizontal"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+<!--                        <lecho.lib.hellocharts.view.LineChartView-->
+<!--                            android:id="@+id/lineChart"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="@dimen/size200"-->
+<!--                            android:paddingHorizontal="@dimen/size20"-->
+<!--                            android:layout_marginVertical="@dimen/size20"-->
+<!--                            android:clipToOutline="false"/>-->
+
+                    </ViewFlipper>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/desc4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Where the people are from"
+                android:textSize="@dimen/size16"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/blacktextColor"
+                android:layout_marginTop="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/card2"
+                android:paddingHorizontal="@dimen/size20"/>
+
+            <TextView
+                android:id="@+id/desc4sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/desc4"
+                android:text="Get insight into which part of the globe people are viewing your profile"/>
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/desc4sub"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_marginBottom="@dimen/size20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="@dimen/size20"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/size20"
+                    app:layout_constraintTop_toBottomOf="@+id/desc4sub">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/size10">
+
+                        <TextView
+                            android:id="@+id/mostViewdDes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Most viewed in United Arab Emirates"
+                            android:textSize="@dimen/size14"
+                            android:paddingStart="@dimen/size20"
+                            android:fontFamily="@font/poppins_medium"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <!--<ViewFlipper
+                            android:id="@+id/viewFlipper3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/mostViewdDes">-->
+
+
+                        <ImageView
+                            android:id="@+id/ivThird"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/pvisit01"
+                            android:background="@drawable/pvisit01_bg"
+                            android:elevation="5dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mostViewdDes"
+                            android:scaleType="centerInside"
+                            app:tint="@color/black" />
+                        <!--<lecho.lib.hellocharts.view.ColumnChartView
+                            android:id="@+id/barChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size150"
+                            android:layout_margin="@dimen/size20"/>-->
+                        <!-- </ViewFlipper>-->
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCountryStat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/size20"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/layout_coutry_stats"/>
+
+            </ViewFlipper>
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

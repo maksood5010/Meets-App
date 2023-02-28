@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:paddingTop="1dp"
+    android:paddingHorizontal="@dimen/size5"
+    android:background="#00000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:id="@+id/llDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            style="@style/dateText" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/llDate"
+        android:layout_marginTop="@dimen/size5"
+        app:layout_constraintStart_toStartOf="parent" >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llotherbg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/otherImageCard"
+                android:layout_width="@dimen/size250"
+                android:layout_height="@dimen/size250"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="@dimen/size20">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!--<ProgressBar
+                        android:id="@+id/progressOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:elevation="@dimen/size8"/>-->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/otherImage"
+                        app:shapeAppearanceOverlay="@style/Corner20"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="#B8F2F2"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transparent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@color/white" />
+                    <TextView
+                        android:id="@+id/otherTime"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:minEms="5"
+                        android:layout_gravity="bottom|end"
+                        android:textColor="@color/blacktextColor"
+                        android:padding="@dimen/size10"
+                        style="@style/subHeaderVerySmall"
+                        android:textSize="10sp"
+                        tools:text="1233333" />
+                </FrameLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_own"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/llDate"
+        android:layout_marginTop="@dimen/size5"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llbgColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--<View
+                android:id="@+id/width"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"/>-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ownImageCard"
+                android:layout_width="@dimen/size250"
+                android:layout_height="250dp"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/size20">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ProgressBar
+                        android:id="@+id/progressOwn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:elevation="@dimen/size8"/>
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ownImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@color/transparent"
+                        android:padding="2dp"
+                        android:scaleType="centerCrop"
+                        android:src="@color/white"
+                        app:shapeAppearanceOverlay="@style/Corner20"
+                        app:strokeColor="@color/primary"
+                        app:strokeWidth="2dp"
+                        tools:text="@string/lorum_ipsum" />
+
+                    <TextView
+                        android:id="@+id/ownTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:minEms="5"
+                        android:layout_gravity="bottom|end"
+                        android:maxLines="1"
+                        style="@style/subHeaderVerySmall"
+                        android:textSize="10sp"
+                        android:padding="@dimen/size10"
+                        android:textColor="@color/blacktextColor"
+                        tools:text="1:33 am" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

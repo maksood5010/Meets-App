@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="5dp"
+    android:paddingHorizontal="10dp">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="5dp"
+        android:src="@drawable/meet_logo"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+    <TextView
+        app:layout_constraintStart_toEndOf="@id/ivLogo"
+        app:layout_constraintTop_toTopOf="@+id/ivLogo"
+        app:layout_constraintBottom_toBottomOf="@id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.2"
+        android:textColor="@color/black"
+        style="@style/headerL"
+        android:layout_marginStart="5dp"
+        android:text="Meets"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size10"
+        android:paddingVertical="@dimen/size2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rl_chat"
+        app:layout_constraintTop_toTopOf="@id/ivLogo">
+
+        <ImageView
+            android:id="@+id/notification"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_bell" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/new_noti"
+            android:layout_width="@dimen/size10"
+            android:layout_height="@dimen/size10"
+            android:layout_alignRight="@+id/notification"
+            android:layout_alignBottom="@+id/notification"
+            android:src="@color/red_color_picker"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size10"
+        android:paddingVertical="@dimen/size2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_chat"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chat" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/newMessage"
+            android:layout_width="@dimen/size10"
+            android:layout_height="@dimen/size10"
+            android:layout_alignRight="@+id/iv_chat"
+            android:layout_alignBottom="@+id/iv_chat"
+            android:src="@color/red_color_picker"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/ivCreateMeetUp"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_plus_sign"
+        android:background="@drawable/bg_button"
+        android:paddingHorizontal="15dp"
+        android:visibility="gone"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

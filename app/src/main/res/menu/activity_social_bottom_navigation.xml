@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="start"
+    android:layout_gravity="start">
+    <item android:id="@+id/action_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home" />
+    <item android:id="@+id/action_search"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search" />
+    <!--<item android:id="@+id/action_camera"
+        android:title="@string/camera_post"
+        android:icon="@drawable/ic_camera" />-->
+    <item android:id="@+id/action_profile"
+        android:title="@string/camera_post"
+        android:icon="@drawable/ic_single_person" />
+    <item android:id="@+id/action_shisheo"
+        android:title="@string/shisheo"
+        android:icon="@drawable/ic_bottom_shisheo" />
+</menu>

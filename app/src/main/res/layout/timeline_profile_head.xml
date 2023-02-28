@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_card_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/size10"
+    android:paddingStart="@dimen/size20"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/card_news_feed">
+
+    <FrameLayout
+        android:id="@+id/fl_dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:longClickable="true"
+            android:src="@drawable/restro_img"
+            tools:src="@drawable/restro_img" />
+
+        <ImageView
+            android:id="@+id/ivDpBadge"
+            style="@style/smallBadge" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/size8"
+        app:layout_constraintEnd_toStartOf="@+id/tvBoostTime"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/fl_dp"
+        app:layout_constraintTop_toTopOf="@id/fl_dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_bold"
+                android:lineSpacingExtra="-8dp"
+                android:maxLines="1"
+                android:textColor="@color/blacktextColor"
+                android:textSize="@dimen/size18"
+                tools:text="Muhammed" />
+
+
+            <ImageView
+                android:id="@+id/is_verified"
+                android:layout_width="@dimen/size20"
+                android:layout_height="@dimen/size20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/size5"
+                android:src="@drawable/ic_verified_tick"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_loc_last_seen"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins"
+            android:gravity="bottom"
+            android:text="8min ago"
+            android:textSize="@dimen/size14"
+            tools:text="Just now" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBoostTime"
+        style="@style/subHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="bottom"
+        android:visibility="gone"
+        android:drawableStart="@drawable/ic_boost_image"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/fl_dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_options"
+        app:layout_constraintTop_toTopOf="@+id/fl_dp" />
+    <TextView
+        android:id="@+id/tv_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/size20"
+        android:text="&#8942;"
+
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/fl_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fl_dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

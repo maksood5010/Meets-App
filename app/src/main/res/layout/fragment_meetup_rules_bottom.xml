@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/page_bg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/meetup_gb"
+            android:paddingHorizontal="@dimen/size20"
+            android:paddingTop="@dimen/size20"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:drawableStart="@drawable/ic_back"
+                android:drawablePadding="@dimen/size5"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/size25"
+                android:paddingVertical="@dimen/size8"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:drawableEnd="@drawable/ic_next"
+                android:drawablePadding="@dimen/size5"
+                android:drawableTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_into"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_back"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_back">
+
+                <TextView
+                    android:id="@+id/tv_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Meet up rules"
+                    android:textColor="@color/white"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:id="@+id/pageDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-16dp"
+                    android:fontFamily="@font/poppins"
+                    android:lineSpacingExtra="-3dp"
+                    android:text="Define your meetup rules here.  For example, set the number of times an invitee can change their vote."
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size12"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_friend" />
+
+                <EditText
+                    android:id="@+id/tvMeetname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:background="@color/transparent"
+                    android:editable="false"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/search"
+                style="@style/editTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_into"
+                android:layout_marginTop="@dimen/size10"
+                android:background="@drawable/bg_circular_corner_border"
+                android:hint="Search Contact list"
+                android:maxLength="50"
+                android:imeActionLabel="hello"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="#D8D4D4"
+                android:textSize="@dimen/size12"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Rules"
+            android:paddingVertical="@dimen/size8"
+            android:paddingHorizontal="@dimen/size20"
+            android:textSize="@dimen/size20"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:text="Add a name"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-7dp"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/size20"
+                    android:singleLine="true"
+                    android:text="Add a name to caption your meetup. All invitees will see this name"
+                    android:textSize="@dimen/size12" />
+
+                <EditText
+                    android:id="@+id/etMeetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size20"
+                    android:layout_marginTop="@dimen/size8"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Birthday party…."
+                    android:maxLength="25"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionDone"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size20"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:text="@string/date_time"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-7dp"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/size20"
+                    android:singleLine="true"
+                    android:text="Set date and time you want for this meetup"
+                    android:textSize="@dimen/size12" />
+
+
+                <LinearLayout
+                    android:id="@+id/llDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size20"
+                    android:layout_marginTop="@dimen/size8"
+                    android:divider="@color/darkerGray"
+                    android:showDividers="middle"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:id="@+id/rlPickDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingVertical="@dimen/size10">
+
+                        <ImageView
+                            android:id="@+id/ivCalendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/size20"
+                            android:layout_marginEnd="@dimen/size10"
+                            android:src="@drawable/ic_calendar"
+                            app:tint="@color/darkerGray" />
+
+                        <TextView
+                            android:id="@+id/selectedDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_toRightOf="@+id/ivCalendar"
+                            android:text="Select Date"
+                            android:textSize="@dimen/size16" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPickTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingVertical="@dimen/size10">
+
+                        <ImageView
+                            android:layout_width="@dimen/size15"
+                            android:layout_height="@dimen/size15"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginHorizontal="@dimen/size20"
+                            android:src="@drawable/ic_verification_pend"
+                            app:tint="@color/darkerGray" />
+
+                        <TextView
+                            android:id="@+id/selctedTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Select Time"
+                            android:textSize="@dimen/size16" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvVoteChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size20"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:text="Vote change"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size16" />
+
+                <TextView
+                    android:id="@+id/tvVoteCngDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-7dp"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/size20"
+                    android:singleLine="true"
+                    android:text="Set how many times a participant can change their vote"
+                    android:textSize="@dimen/size12" />
+
+                <RelativeLayout
+                    android:id="@+id/rlVoteChange"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginHorizontal="@dimen/size20"
+                    android:layout_marginTop="@dimen/size8"
+                    android:paddingVertical="@dimen/size8">
+
+
+
+                    <TextView
+                        android:id="@+id/voteOption"
+                        android:text="1 Time"
+                        style="@style/subHeader"
+                        android:layout_centerVertical="true"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tvMinBadge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/size12"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/headJoinTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size20"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:text="Join time"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size16" />
+
+                    <TextView
+                        android:id="@+id/descJoinTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-7dp"
+                        android:ellipsize="end"
+                        android:paddingStart="@dimen/size20"
+                        android:singleLine="true"
+                        android:text="Set a duration after which an invitee can no longer join the meetup"
+                        android:textSize="@dimen/size12"
+                        android:layout_below="@+id/headJoinTime"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rljoinTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/descJoinTime"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        android:paddingVertical="@dimen/size8">
+
+                        <!-- <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:gravity="start"
+                             android:paddingHorizontal="@dimen/size20"
+                             android:paddingVertical="@dimen/size5" />-->
+
+                        <TextView
+                            android:id="@+id/joinOption"
+                            style="@style/subHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:paddingHorizontal="10dp"
+                            android:text="Select Date and Time First" />
+
+
+                        <!--<ImageView
+                            android:layout_width="@dimen/size15"
+                            android:layout_height="@dimen/size15"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/size10"
+                            android:src="@drawable/ic_dropdown"
+                            app:tint="@color/darkerGray" />-->
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/headDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size20"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:text="Duration"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size16" />
+
+                    <TextView
+                        android:id="@+id/descDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-7dp"
+                        android:ellipsize="end"
+                        android:paddingStart="@dimen/size20"
+                        android:singleLine="true"
+                        android:text="Choose how long this open meetup will last"
+                        android:textSize="@dimen/size12"
+                        android:layout_below="@+id/headDuration"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/descDuration"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        android:paddingVertical="@dimen/size8">
+
+                        <!-- <TextView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:gravity="start"
+                             android:paddingHorizontal="@dimen/size20"
+                             android:paddingVertical="@dimen/size5" />-->
+
+                        <TextView
+                            android:id="@+id/durationOption"
+                            style="@style/subHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:text="1 hour" />
+
+
+                        <!--<ImageView
+                            android:layout_width="@dimen/size15"
+                            android:layout_height="@dimen/size15"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/size10"
+                            android:src="@drawable/ic_dropdown"
+                            app:tint="@color/darkerGray" />-->
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlParntCategory"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/headCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size20"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:text="Category"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size16" />
+
+                    <ImageView
+                        android:id="@+id/addCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/rlCategory"
+                        android:layout_alignTop="@+id/headCategory"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="@dimen/size20"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:id="@+id/descCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-7dp"
+                        android:ellipsize="end"
+                        android:paddingStart="@dimen/size20"
+                        android:singleLine="true"
+                        android:text="How will you categorize the activities in the meetup?"
+                        android:textSize="@dimen/size12"
+                        android:layout_below="@+id/headCategory"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/descCategory"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        android:minHeight="@dimen/size45"
+                        android:paddingVertical="@dimen/size8">
+
+                        <TextView
+                            android:id="@+id/tvClick"
+                            style="@style/subHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:text="Click to add" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/size10"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="0" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size20"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:text="Description"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-7dp"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/size20"
+                    android:singleLine="true"
+                    android:text="Say something about this meetup (Optional)"
+                    android:textSize="@dimen/size12" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tvLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="1dp"
+                        android:paddingTop="@dimen/size20"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        android:lines="5"/>
+                    <EditText
+                        android:id="@+id/etDesc"
+                        android:background="@color/page_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/size20"
+                        android:layout_marginTop="@dimen/size8"
+                        android:gravity="start"
+                        android:lines="4"
+                        android:maxLines="4"
+                        android:maxLength="500"
+                        android:overScrollMode="always"
+                        android:paddingTop="@dimen/size10"
+                        android:paddingHorizontal="@dimen/size10"
+                        android:paddingBottom="70dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical" />
+
+                </FrameLayout>
+
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="100dp" />-->
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/add_friend_or_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size20"
+        android:elevation="@dimen/size10"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingHorizontal="@dimen/size30"
+        android:paddingVertical="@dimen/size5"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size14"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

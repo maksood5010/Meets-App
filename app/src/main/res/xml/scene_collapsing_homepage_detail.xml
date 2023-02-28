@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start" />
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/civ_image"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/ivDpBadge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/civ_image"
+            motion:layout_constraintStart_toStartOf="@+id/civ_image"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintEnd_toEndOf="@+id/civ_image"
+            motion:layout_constraintVertical_bias="1"
+            motion:layout_constraintHorizontal_bias="1" />
+        <Constraint
+            android:id="@+id/iv_search"
+            motion:layout_constraintEnd_toEndOf="@+id/ll_header_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/tv_quote" />
+
+        <Constraint
+            android:id="@+id/ll_header_icon"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:id="@+id/ll_create_meet_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/civ_image"
+            android:layout_marginTop="@dimen/size10" >
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ll_create_meet_up2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            motion:layout_constraintTop_toTopOf="@+id/ll_create_meet_up"
+            motion:layout_constraintStart_toStartOf="@+id/ll_create_meet_up"
+            motion:layout_constraintEnd_toEndOf="@+id/ll_create_meet_up"
+            motion:layout_constraintBottom_toBottomOf="@+id/ll_create_meet_up"
+            android:layout_marginTop="@dimen/size10" >
+        </Constraint>
+        <!--<Constraint
+            android:id="@+id/tl_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent" />-->
+        <Constraint
+            android:id="@+id/tv_create_text"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:transitionEasing="linear">
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Create Meetup" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/tv_location"
+            motion:layout_constraintStart_toEndOf="@+id/meetup_icon"
+            android:layout_width="0dp"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_greet"
+            motion:layout_constraintEnd_toStartOf="@+id/iv_search"
+            />
+        <Constraint
+            android:id="@+id/tv_quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="@+id/civ_image"
+            motion:layout_constraintVertical_bias="0.9"
+            android:alpha="0.4"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintStart_toStartOf="@+id/tv_greet" />
+        <Constraint
+            android:id="@+id/meetup_icon"
+            android:visibility="gone"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_greet"
+            motion:layout_constraintStart_toStartOf="@+id/tv_greet" />
+        <Constraint
+            android:id="@+id/tv_greet"
+            motion:layout_constraintStart_toEndOf="@+id/civ_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size20"
+            motion:layout_constraintTop_toBottomOf="@+id/ll_header_icon"
+            motion:layout_constraintEnd_toStartOf="@+id/iv_search" />
+        <Constraint
+            android:id="@+id/iv_meet_up"
+            motion:layout_constraintEnd_toStartOf="@+id/tv_create_text"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/size20" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/civ_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/size8" />
+        <Constraint
+            android:id="@+id/ivDpBadge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/civ_image"
+            motion:layout_constraintStart_toStartOf="@+id/civ_image"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintEnd_toEndOf="@+id/civ_image"
+            motion:layout_constraintVertical_bias="1"
+            motion:layout_constraintHorizontal_bias="1"/>
+        <Constraint
+            android:id="@+id/iv_search"
+            motion:layout_constraintEnd_toEndOf="@+id/ll_header_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/tv_quote" />
+
+        <Constraint
+            android:id="@+id/ll_header_icon"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintStart_toEndOf="parent"/>
+        <Constraint
+            android:id="@+id/ll_create_meet_up"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/size10"
+            motion:layout_constraintStart_toStartOf="@+id/ll_create_meet_up2"
+            motion:layout_constraintEnd_toEndOf="@+id/ll_create_meet_up2"
+            motion:layout_constraintTop_toTopOf="@+id/ll_create_meet_up2"
+            motion:layout_constraintBottom_toBottomOf="@+id/ll_create_meet_up2"
+            android:visibility="invisible">
+
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ll_create_meet_up2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10"
+            android:visibility="visible"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp">
+
+
+        </Constraint>
+        <!--<Constraint
+            android:id="@+id/tl_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="parent" />-->
+        <Constraint
+            android:id="@+id/tv_create_text"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" >
+            <CustomAttribute
+                motion:attributeName="text"
+                motion:customStringValue="Create" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/tv_location"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_greet"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/tv_quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="@+id/civ_image"
+            motion:layout_constraintVertical_bias="0.9"
+            android:alpha="0.4"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/meetup_icon"
+            android:visibility="gone"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            motion:layout_constraintTop_toBottomOf="@+id/tv_greet"
+            motion:layout_constraintStart_toEndOf="parent" />
+        <Constraint
+            android:id="@+id/tv_greet"
+            motion:layout_constraintStart_toEndOf="@+id/civ_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/civ_image"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constraintTop_toTopOf="@+id/civ_image"
+            motion:layout_constraintEnd_toStartOf="@+id/ll_create_meet_up"
+            android:layout_marginStart="@dimen/size8" />
+        <Constraint
+            android:id="@+id/iv_meet_up"
+            motion:layout_constraintEnd_toStartOf="@+id/tv_create_text"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/size20" />
+
+    </ConstraintSet>
+
+</MotionScene>

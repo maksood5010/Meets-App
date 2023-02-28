@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:id="@+id/rootCo"
+    tools:visibility="visible"
+    android:background="@color/page_bg"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/page_bg"
+        android:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/toolBarBack"
+                android:paddingEnd="@dimen/size20"
+                android:paddingHorizontal="@dimen/size10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/size40"
+                android:layout_height="@dimen/size40"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/primaryDark"
+                app:layout_constraintStart_toEndOf="@+id/iv_back"
+                app:layout_constraintTop_toTopOf="@+id/iv_back"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_back"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/toolBarText"
+                android:text="Creo’s open meetup"
+                android:textSize="@dimen/size14"
+                android:paddingStart="@dimen/size10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/option"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="&#8942;"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D8D4D4"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/meetName"
+        style="@style/headerL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingStart="@dimen/size20"
+        android:paddingTop="@dimen/size20"
+        android:text="X-Box Challenge from morning till drop"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvCreated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size14"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="@dimen/size20"
+        android:paddingBottom="@dimen/size20"
+        app:layout_constraintTop_toBottomOf="@+id/meetName"
+        android:text="Created on : "/>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size20"
+        app:cardCornerRadius="@dimen/size20"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreated">
+
+        <LinearLayout
+            android:id="@+id/parentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/timingCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/size20"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/rl_intract"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/monthOfYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/gray4"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center"
+                            android:paddingVertical="@dimen/size10"
+                            android:text="Aug"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size20" />
+
+
+                        <TextView
+                            android:id="@+id/dayOfWeak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size10"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Friday"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size14" />
+
+                        <TextView
+                            android:id="@+id/dayOfMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="13"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size40" />
+
+                        <TextView
+                            android:id="@+id/timeOfDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="@dimen/size20"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="10:00am"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size14" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/demo_image_post7"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:id="@+id/ll_info"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size15">
+
+
+                <ImageView
+                    android:id="@+id/ic_loc"
+                    android:layout_width="@dimen/size16"
+                    android:layout_height="@dimen/size16"
+                    android:layout_marginTop="@dimen/size15"
+                    android:src="@drawable/ic_location"
+                    app:tint="@color/primaryDark" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size10"
+                    android:layout_toRightOf="@+id/ic_loc"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:lineSpacingExtra="-5dp"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="24, 7th Street Sheikh Zayeed Road"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="@dimen/size14" />
+
+                <LinearLayout
+                    android:id="@+id/llRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address"
+                    android:layout_marginTop="@dimen/size10"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvIntrested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/size30"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/card_meet_person_chat" />
+
+                    <TextView
+                        android:id="@+id/countInterested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="-5dp"
+                        android:paddingStart="@dimen/size5"
+                        android:text="10+ interested"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llNoRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address"
+                    android:layout_marginTop="@dimen/size10"
+                    android:orientation="vertical"
+                    tools:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/size5"
+                        android:text="No one joined yet"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size10" />
+
+                    <TextView
+                        android:id="@+id/tvFirst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/size5"
+                        android:text="Be the first to request to join"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size12" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/join"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/bg_dm_own"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/size8"
+                    android:text="Invite People"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivClock"
+        android:layout_width="@dimen/size25"
+        android:layout_height="@dimen/size25"
+        android:layout_marginStart="@dimen/size20"
+        android:layout_marginTop="@dimen/size20"
+        android:src="@drawable/ic_calendar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailCard"
+        app:tint="@color/black" />
+
+    <LinearLayout
+        android:id="@+id/llClockCalender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size10"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/tvSuperCharge1"
+        app:layout_constraintStart_toEndOf="@+id/ivClock"
+        app:layout_constraintTop_toTopOf="@+id/ivClock">
+
+        <TextView
+            android:id="@+id/clockDate"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Friday, August 13"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/clockTime"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:text="10:00 AM - 12:00 PM"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSuperCharge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_marginEnd="20dp"
+        android:paddingVertical="5dp"
+        android:text="Super charge this post"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/llClockCalender" />
+
+    <ImageView
+        android:id="@+id/ivAlarm"
+        android:layout_width="@dimen/size25"
+        android:layout_height="@dimen/size25"
+        android:layout_marginStart="@dimen/size20"
+        android:layout_marginTop="@dimen/size10"
+        android:src="@drawable/ic_clock2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llClockCalender" />
+
+    <TextView
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size10"
+        android:text="Status"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/ivAlarm"
+        app:layout_constraintTop_toTopOf="@+id/ivAlarm" />
+
+    <TextView
+        android:id="@+id/tvDaysPend"
+        style="@style/subHeaderSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size20"
+        android:text="2 More days to start"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivAlarm" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size20"
+        android:layout_marginStart="@dimen/size10"
+        android:layout_marginTop="@dimen/size8"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/cutom_dayspend_meet_progress_selector"
+        app:layout_constraintEnd_toEndOf="@+id/tvDaysPend"
+        app:layout_constraintStart_toEndOf="@+id/ivAlarm"
+        app:layout_constraintTop_toBottomOf="@+id/tvDaysPend" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Meetup rules"
+        app:layout_constraintStart_toStartOf="@+id/ivAlarm"
+        app:layout_constraintTop_toTopOf="@id/cardJoin" />
+
+    <TextView
+        android:id="@+id/tvD"
+        style="@style/subHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration  :"
+        android:gravity="bottom"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_jointime"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/tvDuration"
+        style="@style/header"
+
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        tools:text="3hrs"
+        app:layout_constraintBottom_toBottomOf="@+id/tvD"
+        app:layout_constraintStart_toEndOf="@+id/tvD"
+        app:layout_constraintTop_toTopOf="@+id/tvD" />
+
+    <TextView
+        android:id="@+id/tvJ"
+        style="@style/subHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_jointime"
+        android:drawablePadding="10dp"
+        android:gravity="bottom"
+        android:text="Join time :"
+        app:layout_constraintStart_toStartOf="@+id/tvD"
+        app:layout_constraintTop_toBottomOf="@+id/tvD" />
+
+
+    <TextView
+        android:id="@+id/tvJoinTime"
+        style="@style/header"
+        android:layout_marginStart="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        tools:text="Until meetup"
+        app:layout_constraintBottom_toBottomOf="@+id/tvJ"
+        app:layout_constraintStart_toEndOf="@+id/tvJ"
+        app:layout_constraintTop_toTopOf="@+id/tvJ" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardJoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="@+id/progress"
+        app:layout_constraintTop_toBottomOf="@+id/progress">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/header"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:paddingHorizontal="10dp"
+                android:background="#E7F2F2"
+                android:text="Who can join"/>
+            <ImageView
+                android:id="@+id/trophy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="5dp"
+                android:src="@drawable/ic_trophy_dummy"/>
+            <TextView
+                android:id="@+id/tvMinBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/subHeader"
+                android:textSize="11sp"
+                android:paddingHorizontal="10dp"
+                android:gravity="center"
+                tools:text="Gold Status+"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvTags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvJoinTime"
+        app:layout_constraintStart_toStartOf="@+id/tvJ"
+        android:text="Tags"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTags"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="@+id/cardJoin"
+        app:layout_constraintStart_toStartOf="@+id/tvTags"
+        app:layout_constraintTop_toBottomOf="@+id/tvTags"
+        app:spanCount="4"
+        tools:itemCount="2"
+        tools:listitem="@layout/card_interest_item" />
+
+
+    <TextView
+        android:id="@+id/tvDescHeading"
+        style="@style/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size20"
+        android:layout_marginTop="@dimen/size16"
+        android:text="Description"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvTags" />
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/subHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size20"
+
+        android:text="@string/lorum_ipsum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDescHeading"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescHeading"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#D8D4D4"
+        android:layout_marginTop="@dimen/size10"
+        app:layout_constraintTop_toBottomOf="@+id/desc"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

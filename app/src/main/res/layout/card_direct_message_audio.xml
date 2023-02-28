@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:paddingHorizontal="@dimen/size5"
+    android:paddingVertical="@dimen/size1">
+    <LinearLayout
+        android:id="@+id/llDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_gravity="center"
+            style="@style/dateText" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_other"
+        android:layout_width="@dimen/size250"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llDate"
+        android:layout_marginTop="@dimen/size5">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llotherbg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dm_others"
+            android:backgroundTint="#B8F2F2"
+            android:orientation="vertical"
+            android:padding="@dimen/size5">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ViewFlipper
+                    android:id="@+id/otherFlipper"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+
+                    <ProgressBar
+                        android:id="@+id/progressOther"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivPlayOther"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_play_new"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </ViewFlipper>
+                <TextView
+                    android:id="@+id/otherTime"
+                    style="@style/subHeaderVerySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1233333" />
+
+                <SeekBar
+                    android:id="@+id/otherSeekBar"
+                    android:layout_width="161dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/otherTime"
+                    app:layout_constraintStart_toEndOf="@+id/otherFlipper"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvOtherDuration"
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="0:00"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/otherSeekBar"
+                    app:layout_constraintTop_toBottomOf="@+id/otherSeekBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_own"
+        android:layout_width="@dimen/size250"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/size5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llDate">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llbgColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dm_own"
+            android:backgroundTint="#8FDEF9"
+            android:orientation="vertical"
+            android:padding="@dimen/size5">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ViewFlipper
+                    android:id="@+id/ownFlipper"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+
+                    <ProgressBar
+                        android:id="@+id/progressOwn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/ivPlayOwn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_play_new"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </ViewFlipper>
+
+                <TextView
+                    android:id="@+id/ownTime"
+                    style="@style/subHeaderVerySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1233333"
+                    app:drawableTopCompat="@drawable/ic_check_in"
+                    app:drawableTint="@color/primary" />
+
+                <SeekBar
+                    android:id="@+id/ownSeekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/ownTime"
+                    app:layout_constraintStart_toEndOf="@+id/ownFlipper"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvOwnDuration"
+                    style="@style/subHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="0:00"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/ownSeekBar"
+                    app:layout_constraintTop_toBottomOf="@+id/ownSeekBar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

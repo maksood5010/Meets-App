@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="@dimen/size5">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/size35"
+        android:layout_height="@dimen/size35"
+        android:src="@drawable/ic_trophy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size14"
+        android:text="Blue Diamond status members"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintEnd_toStartOf="@+id/check"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size10"
+        android:text="1 user are you know is a Blue Diamond status member"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintEnd_toStartOf="@+id/check"/>
+
+
+    <ImageView
+        android:id="@+id/check"
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size40"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/color_border_white_bg_button_bg"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

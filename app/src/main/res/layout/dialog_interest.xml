@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    android:layout_marginVertical="@dimen/size60"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="@dimen/size30">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_cancel"
+                android:tint="@color/primaryDark"
+                app:tint="@color/primaryDark"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:layout_marginVertical="@dimen/size10"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="#CECECE"
+                android:layout_marginHorizontal="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/iv_cancel"/>
+
+            <TextView
+                android:id="@+id/interest_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What are your interests"
+                android:textSize="@dimen/size18"
+                android:paddingHorizontal="@dimen/size20"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_cancel"/>
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share your interest to connect with others with similar interests"
+                android:textSize="@dimen/size8"
+                android:fontFamily="@font/poppins"
+                android:textColor="#D8D4D4"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/interest_heading"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Searching Interest"
+                android:maxLength="50"
+                android:textColorHint="#32BFC9"
+                android:layout_marginTop="@dimen/size10"
+                android:textSize="@dimen/size10"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_light"
+                android:background="@drawable/bg_circular_corcnor_filled2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc"
+                android:paddingHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size15"
+                android:layout_marginHorizontal="@dimen/size20"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_interest"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/size10"
+                android:layout_marginVertical="@dimen/size20"
+                app:layout_constraintTop_toBottomOf="@+id/et_search"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/card_interest_item"
+                app:layout_constraintBottom_toTopOf="@+id/tv_save"/>
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:text="Save"
+                android:textSize="@dimen/size18"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/round_border_primary_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingVertical="@dimen/size10"
+                android:layout_marginVertical="@dimen/size20"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_height="match_parent">
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="match_parent"
+        android:elevation="@dimen/size10"
+        tools:visibility="gone"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/shimmer_placeholder"/>
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="@dimen/size16"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:background="@drawable/bg_shimmer_curve"
+                android:layout_marginTop="@dimen/size10"/>
+
+            <View
+                android:layout_width="150dp"
+                android:layout_height="@dimen/size24"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:background="@drawable/bg_shimmer_curve"
+                android:layout_marginTop="@dimen/size10"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:background="@drawable/bg_shimmer_curve"
+                android:layout_marginTop="@dimen/size10"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginHorizontal="@dimen/size20">
+
+                <View
+                    android:layout_width="@dimen/size60"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_shimmer_curve"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:layout_width="@dimen/size60"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_shimmer_curve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginEnd="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginHorizontal="@dimen/size20">
+
+                <View
+                    android:layout_width="@dimen/size60"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_shimmer_curve"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <View
+                    android:layout_width="@dimen/size60"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_shimmer_curve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginEnd="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_shimmer_curve"
+                    android:layout_marginHorizontal="@dimen/size10" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/rootCo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+
+
+            <include
+                android:id="@+id/collapse"
+                layout="@layout/layout_collapsing_restaurant_toolbar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include
+                android:id="@+id/detail"
+                layout="@layout/content_restaurant_detail" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/floatmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/size20"
+        android:layout_gravity="bottom"
+        android:elevation="@dimen/size10"
+        android:layout_marginHorizontal="@dimen/size10">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/size10"
+            android:elevation="@dimen/size10"
+            app:cardBackgroundColor="@color/primaryDark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/size10"
+                android:gravity="center_vertical"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/ll_book_table"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_book_table"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Table"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/size10"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_addReview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_review"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Review"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/size10"
+                        android:textColor="@color/white"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_direction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_direction"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Direction"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/size10"
+                        android:textColor="@color/white"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_check_in"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/white"
+                        android:src="@drawable/ic_check_in"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check-in"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="@dimen/size10"
+                        android:textColor="@color/white"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Under Construction"
+        android:textSize="30dp"
+        android:textColor="@color/red_color_picker"
+        android:gravity="center"/>-->
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="floatmenu,rootCo"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

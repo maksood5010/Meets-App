@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "112778614873",
+    "firebase_url": "https://meets-production-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "meets-production",
+    "storage_bucket": "meets-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112778614873:android:23d849bfc0852604fef948",
+        "android_client_info": {
+          "package_name": "com.meetsportal.meets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112778614873-89je3k5mpb1cjtvk0gkees85je807n7p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetsportal.meets",
+            "certificate_hash": "f2446dcd3a5d4705b9d598fedf18fcf76e71f927"
+          }
+        },
+        {
+          "client_id": "112778614873-6t3ep1mht638d1741iaa47gq42qf1b4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmx7FpeN0VWfqu1SPA7Q5yw49Ulm8oy4k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112778614873-6t3ep1mht638d1741iaa47gq42qf1b4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

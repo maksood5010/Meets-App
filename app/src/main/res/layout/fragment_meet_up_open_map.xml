@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/tooltipView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/size20"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/bg_primary_gradient"
+        android:rotation="180"
+        android:elevation="1dp"
+        app:tint="#006994" />
+
+    <LinearLayout
+        android:id="@+id/tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:gravity="center"
+        android:elevation="@dimen/size2"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/size5"
+        android:background="@drawable/bg_map_tab_bar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/size20">
+
+        <TextView
+            android:id="@+id/people_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="People"
+            android:elevation="@dimen/size10"
+            android:paddingVertical="@dimen/size10"
+            android:paddingHorizontal="@dimen/size15"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/bg_map_tab_new"
+            android:textSize="@dimen/size12"
+            android:textColor="@color/primaryDark"/>
+        <TextView
+            android:id="@+id/place_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Places"
+            android:gravity="center"
+            android:padding="@dimen/size10"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="@dimen/size12"
+            android:textColor="@color/primaryDark"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200+ people are available to Meetup"
+        app:layout_anchor="@id/tab"
+        android:visibility="gone"
+        android:textSize="@dimen/size12"
+        tools:visibility="visible"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/white"
+        android:paddingHorizontal="@dimen/size25"
+        android:paddingVertical="@dimen/size8"
+        android:elevation="@dimen/size2"
+        app:layout_anchorGravity="bottom|center_horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:translationY="10dp"/>
+
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/llsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/rvInterests"
+        android:translationY="-20dp"
+        android:translationX="20dp"
+        android:paddingRight="20dp"
+        android:visibility="visible"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_circular_corner_filled"
+        app:layout_anchorGravity="end"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/size20"
+            android:layout_height="@dimen/size20"
+            android:src="@drawable/ic_places_tab"
+            android:layout_marginStart="@dimen/size10"
+            android:layout_marginEnd="@dimen/size5"/>
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search this Area"
+            android:textSize="@dimen/size14"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/blacktextColor"
+            android:paddingVertical="@dimen/size6"
+            android:paddingRight="@dimen/size10"
+            />
+
+
+        <ProgressBar
+            android:id="@+id/searchProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/size5"
+            android:indeterminateTint="@color/blacktextColor"
+            style="?android:attr/progressBarStyleSmallTitle"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvInterests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomSheet"
+        tools:listitem="@layout/card_map_interest"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/size20"
+        android:clipToPadding="false"
+        android:layout_gravity="top"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00ffffff"
+        android:id="@+id/bottomSheet"
+        android:elevation="@dimen/size3"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size50"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_primary_gradient"
+                    android:layout_marginBottom="-43dp"/>
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/size20"
+                    android:elevation="@dimen/size20"
+                    android:background="@drawable/bg_bottom_sheet">
+
+                    <include
+                        android:id="@+id/btSheet"
+                        layout="@layout/layout_bottom_other_profile"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/size20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dubai"
+                            android:gravity="center_vertical"
+                            android:fontFamily="@font/poppins"
+                            android:textSize="@dimen/size10"
+                            android:textColor="@color/blacktextColor"
+                            android:drawablePadding="@dimen/size5"
+                            android:drawableStart="@drawable/ic_location_small"/>
+
+
+                        <!-- <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="Business Bay Dubai"
+                             android:gravity="center_vertical"
+                             android:fontFamily="@font/poppins"
+                             android:textSize="@dimen/size10"
+                             android:layout_marginStart="@dimen/size10"
+                             android:textColor="@color/blacktextColor"
+                             android:drawablePadding="@dimen/size5"
+                             android:drawableStart="@drawable/ic_car_small_gray"/>-->
+
+                    </LinearLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/size20">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mapCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:cardElevation="0dp"
+                            app:cardCornerRadius="@dimen/size20"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <FrameLayout
+                                android:id="@+id/map2"
+                                android:background="@color/extraLightGray"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </androidx.cardview.widget.CardView>
+                        <View
+                            android:id="@+id/div_1"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/matchCard"
+                            android:layout_width="0dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_height="match_parent"
+                            app:cardElevation="10dp"
+                            android:layout_margin="@dimen/size10"
+                            app:cardCornerRadius="@dimen/size20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/div_1">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingVertical="@dimen/size10"
+                                android:paddingHorizontal="@dimen/size10"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Matching Interests"
+                                    android:textSize="@dimen/size12"
+                                    android:drawablePadding="@dimen/size10"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:drawableStart="@drawable/ic_matching"/>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ProgressBar
+                                        android:id="@+id/progress"
+                                        style="?android:attr/progressBarStyleHorizontal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/size30"
+                                        android:max="100"
+                                        android:paddingHorizontal="@dimen/size10"
+                                        android:progress="50"
+                                        android:progressDrawable="@drawable/cutom_matching_progressbar" />
+
+                                    <TextView
+                                        android:id="@+id/matching"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="80%"
+                                        android:fontFamily="@font/poppins_bold"
+                                        android:paddingHorizontal="@dimen/size20"
+                                        android:layout_alignEnd="@+id/progress"
+                                        android:layout_centerVertical="true"/>
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Distance"
+                                    android:layout_marginTop="@dimen/size5"
+                                    android:textSize="@dimen/size12"
+                                    android:drawablePadding="@dimen/size10"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:drawableStart="@drawable/ic_distance"/>
+
+                                <TextView
+                                    android:id="@+id/distanceDesc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/size10"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/poppins"
+                                    android:text="Dredge is just 1Km away from you"/>
+
+                                <RelativeLayout
+                                    android:id="@+id/rlCreateMeetUp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/size10"
+                                    android:background="@drawable/round_border_primary_bg"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:gravity="center_vertical"
+                                        android:paddingVertical="@dimen/size8">
+
+                                        <!--<ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="28dp"
+                                            android:src="@drawable/meet_up_logo"/>-->
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/poppins_bold"
+                                            android:text="Invite to Meetup"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/size10" />
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="315dp"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="30dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivLockIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:elevation="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/flBlurView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/icon_lock"/>
+        <TextView
+            android:id="@+id/tvMineMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="15dp"
+            android:background="@drawable/bg_trans"
+            style="@style/subHeader"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="5dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLockIcon"
+            android:text="Mine 100 more mints to unlock this status"/>
+            <FrameLayout
+                android:id="@+id/flBlurView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:elevation="@dimen/size10"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:elevation="15dp" />
+
+            </FrameLayout>
+<!--        </no.danielzeller.blurbehindlib.BlurBehindLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white">
+
+            <FrameLayout
+                android:id="@+id/fl_badge"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_bronze"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_badge"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/badge_bronze"
+                app:layout_constraintVertical_bias="0.4"
+                app:layout_constraintBottom_toBottomOf="@id/fl_badge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/llLevel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="@dimen/size10"
+                android:layout_marginHorizontal="@dimen/size30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_badge"
+                app:layout_constraintStart_toStartOf="parent">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_level"/>
+                <TextView
+                    android:id="@+id/tv_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/subHeader"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:layout_weight="1"
+                    android:text="Level 01"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/mints_gold"/>
+                <TextView
+                    android:id="@+id/tvMints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    style="@style/subHeader"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/size10"
+                    android:text="100 mints"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:minEms="4"
+                android:text="Bronze"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_badge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/iv_badge"
+                app:layout_constraintTop_toTopOf="@+id/iv_badge" />
+
+
+            <TextView
+                android:id="@+id/tv_status_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="Bronze Status holder."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_badge" />
+
+            <TextView
+                android:id="@+id/tv_status_holder_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppins"
+                android:lines="2"
+                android:padding="@dimen/size5"
+                android:gravity="center_horizontal"
+                android:text="Mine 100 mints to get to your next level."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status_holder" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/pv_meets_credibility"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:tooltipText="100 Mints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:progressView_animation="normal"
+                app:progressView_autoAnimate="false"
+                app:progressView_colorBackground="#ABA39F"
+                app:progressView_colorProgress="@color/gray"
+                app:progressView_labelColorInner="@color/blacktextColor"
+                app:progressView_labelColorOuter="@color/blacktextColor"
+                app:progressView_labelSize="12sp"
+                app:progressView_labelSpace="10dp"
+                app:progressView_labelText="100.0%"
+                app:progressView_labelTypeface="bold"
+                app:progressView_max="100"
+                app:progressView_min="0"
+                app:progressView_padding="1dp"
+                app:progressView_progress="100"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="12dp" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/schedular2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/temp_restaurant_detail"
+                android:visibility="gone"
+                app:civ_border_color="#32BFC9"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_people_text"
+                app:layout_constraintEnd_toStartOf="@+id/tv_people_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_people_text" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_user1_2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/temp_restaurant_detail"
+                android:visibility="gone"
+                app:civ_border_color="#32BFC9"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_people_text"
+                app:layout_constraintEnd_toStartOf="@+id/tv_people_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_people_text" />
+
+            <TextView
+                android:id="@+id/tv_people_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="start"
+                android:text="0 people you know are this Status holders"
+                android:textColor="#8B8989"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_mine_more_mints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pv_meets_credibility" />
+
+
+            <TextView
+                android:id="@+id/tv_mine_more_mints"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size20"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_border_primary_bg"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size10"
+                android:text="Mine More Mints"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_people_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

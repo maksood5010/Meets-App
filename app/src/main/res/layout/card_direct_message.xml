@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:paddingHorizontal="@dimen/size5"
+    android:paddingVertical="@dimen/size1">
+
+    <LinearLayout
+        android:id="@+id/llDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvDate"
+            style="@style/dateText"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size5"
+        android:background="@drawable/bg_dm_others"
+        android:backgroundTint="#B8F2F2"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llDate"
+        app:layout_constraintWidth_max="280dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/otherParentImage"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_margin="2dp"
+            app:layout_constraintWidth_min="250dp"
+            android:src="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/otherParentBody"
+            app:shapeAppearanceOverlay="@style/TopRight15" />
+
+        <TextView
+            android:id="@+id/otherParentBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="#89D9D9"
+            android:visibility="gone"
+            android:drawablePadding="@dimen/size5"
+            android:paddingHorizontal="@dimen/size20"
+            android:paddingVertical="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherParentImage"
+            app:layout_constraintBottom_toTopOf="@+id/llotherbg"
+            app:layout_constraintWidth_min="250dp"
+            tools:text="Voice message   (0:00)" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llotherbg"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_min="wrap"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherParentBody">
+
+            <TextView
+                android:id="@+id/others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:maxWidth="270dp"
+                android:minEms="3"
+                android:textIsSelectable="true"
+                android:padding="10dp"
+                android:paddingHorizontal="@dimen/size10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size14"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toStartOf="@+id/otherTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="abc" />
+
+            <TextView
+                android:id="@+id/otherTime"
+                style="@style/subHeaderVerySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/size10"
+                android:textColor="@color/blacktextColor"
+                android:textSize="@dimen/size8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="1233333" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_own"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size5"
+        android:background="@drawable/bg_dm_own"
+        android:backgroundTint="#8FDEF9"
+
+        android:gravity="end"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llDate"
+        app:layout_constraintWidth_max="280dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ownParentImage"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="2dp"
+            android:scaleType="centerCrop"
+            android:src="@color/primary"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/ownParentBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_min="250dp"
+            app:shapeAppearanceOverlay="@style/TopLeft15" />
+
+        <TextView
+            android:id="@+id/ownParentBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            style="@style/subHeader"
+            android:maxLines="3"
+            android:visibility="gone"
+            android:ellipsize="end"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="#44B6DD"
+            android:drawablePadding="@dimen/size5"
+            android:paddingHorizontal="@dimen/size20"
+            android:paddingVertical="10dp"
+            android:textColor="@color/white"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@+id/llbgColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ownParentImage"
+            app:layout_constraintWidth_min="250dp"
+            tools:text="Voice message (0:00)" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llbgColor"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintWidth_min="wrap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ownParentBody">
+
+
+            <TextView
+                android:id="@+id/own"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textIsSelectable="true"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@+id/ownTime"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="hello" />
+
+            <TextView
+                android:id="@+id/ownTime"
+                style="@style/subHeaderVerySmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="end"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/size10"
+                android:textColor="@color/blacktextColor"
+                android:textSize="@dimen/size8"
+                app:drawableTint="@color/primary"
+                app:drawableTopCompat="@drawable/ic_check_in"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="1233333" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

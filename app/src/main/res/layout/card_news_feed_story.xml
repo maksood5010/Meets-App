@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_round_border"
+    android:padding="@dimen/size5"
+    android:layout_marginHorizontal="@dimen/size5">
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_cancel"
+        android:tint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/size5"
+        android:src="@drawable/ic_default_person"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/primaryDark"/>
+
+    <ImageView
+        android:id="@+id/iv_verify"
+        android:src="@drawable/badge_bronze"
+        style="@style/smallBadge"
+        android:elevation="@dimen/size10"
+        app:layout_constraintTop_toTopOf="@+id/civ_image"
+        app:layout_constraintBottom_toBottomOf="@+id/civ_image"
+        app:layout_constraintStart_toStartOf="@+id/civ_image"
+        app:layout_constraintEnd_toEndOf="@+id/civ_image"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="1"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="julia"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textColor="@color/blacktextColor"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/civ_image"
+        app:layout_constraintStart_toStartOf="@+id/civ_image"
+        app:layout_constraintEnd_toEndOf="@+id/civ_image"/>
+
+    <TextView
+        android:id="@+id/tv_follow_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2M Followers"
+        android:textSize="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/blacktextColor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="@+id/civ_image"
+        app:layout_constraintEnd_toEndOf="@+id/civ_image"/>
+
+    <TextView
+        android:id="@+id/tv_follow"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="Follow"
+        android:layout_marginTop="@dimen/size2"
+        android:paddingVertical="@dimen/size2"
+        android:textSize="@dimen/size10"
+        android:fontFamily="@font/poppins"
+        android:clickable="true"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv_follow_count"
+        app:layout_constraintStart_toStartOf="@+id/civ_image"
+        app:layout_constraintEnd_toEndOf="@+id/civ_image"
+        android:gravity="center_horizontal"
+        android:background="@drawable/shape_ractangle"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:clickable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size10"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Shiseo Lounge"
+            android:textColor="@color/primaryDark"
+            android:textSize="@dimen/size18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_heading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_heading"
+            app:tint="@color/primaryDark" />
+
+
+        <EditText
+            android:id="@+id/et_review"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constrainedHeight="true"
+            android:background="@color/page_bg"
+            android:fontFamily="@font/poppins"
+            android:hint="Add review"
+            android:gravity="top"
+            android:maxLength="1000"
+            android:scrollbars="vertical"
+            android:paddingHorizontal="@dimen/size10"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+            app:layout_constraintVertical_bias="0.1"
+            tools:layout_editor_absoluteX="10dp" />
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size2"
+            android:background="#59ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="10dp">
+
+            <TextView
+                android:id="@+id/tv_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginVertical="@dimen/size5"
+                android:fontFamily="@font/poppins"
+                android:text="0/1000"
+                android:textColor="#FF7272"
+                android:textSize="@dimen/size12" />
+
+            <LinearLayout
+                android:id="@+id/ll_line"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_below="@+id/tv_counter"
+                android:background="@color/primaryDark"
+                android:orientation="vertical" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_line"
+                android:layout_marginTop="@dimen/size10"
+                android:isIndicator="false"
+                android:progressTint="@color/yellow"
+                android:rating="0"
+                android:secondaryProgressTint="@color/yellow"
+                android:stepSize="1" />
+
+
+            <TextView
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ll_line"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/size12"
+                android:background="@drawable/round_border_primary_bg"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="@dimen/size22"
+                android:paddingVertical="@dimen/size8"
+                android:text="Post"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size14" />
+
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/size350"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:clickable="false"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:elevation="5dp"
+        android:clickable="true"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/rootCo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:background="@color/gray1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:paddingEnd="@dimen/size20"
+                android:layout_marginStart="@dimen/size30"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginBottom="@dimen/size8"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/meetName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Yet to Vote"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="#32BFC9"
+                    android:textSize="@dimen/size20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_options"/>
+
+                <TextView
+                    android:id="@+id/tv_options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&#8942;"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textStyle="bold"
+                    android:paddingStart="@dimen/size30"
+                    android:paddingEnd="@dimen/size10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/meetName" />
+
+               <!-- <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="@dimen/size20"
+                    android:layout_height="@dimen/size20"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintTop_toTopOf="@+id/meetName"
+                    app:layout_constraintBottom_toBottomOf="@+id/meetName"
+                    app:layout_constraintEnd_toEndOf="parent"/>-->
+
+                <!--<ImageView
+                    android:id="@+id/ivUnderLine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dash"
+                    android:elevation="@dimen/size2"
+                    app:layout_constraintBottom_toBottomOf="@+id/meetName"
+                    app:layout_constraintStart_toStartOf="@+id/meetName"
+                    app:layout_constraintEnd_toEndOf="@+id/meetName"/>-->
+
+                <!--<TextView
+                    android:id="@+id/seeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size12"
+                    android:padding="@dimen/size5"
+                    android:textColor="#00EBFF"
+                    app:layout_constraintTop_toTopOf="@+id/meetName"
+                    app:layout_constraintEnd_toEndOf="parent"/>-->
+
+
+                <LinearLayout
+                    android:id="@+id/ll_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/meetName">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:text="Date"
+                            android:textColor="@color/blacktextColor"
+                            android:textSize="@dimen/size10" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="11th - July -2020"
+                            android:textColor="@color/blacktextColor"
+                            android:textSize="@dimen/size10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/size10"
+                        android:background="#707070" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:text="Time"
+                            android:textColor="@color/blacktextColor"
+                            android:textSize="@dimen/size10" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="7:00pm"
+                            android:textColor="@color/blacktextColor"
+                            android:textSize="@dimen/size10" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/placeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Yet to Vote"
+                    android:textColor="@color/primaryDark"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawableTint="@color/primaryDark"
+                    android:drawablePadding="@dimen/size5"
+                    android:textSize="@dimen/size10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_time" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Who is Coming?"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="10dp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPerson"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:paddingStart="@dimen/size30"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/card_meet_person"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tvEnterChat"/>
+
+                        <TextView
+                            android:id="@+id/tvEnterChat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/enterChat"
+                            android:textSize="@dimen/size12"
+                            android:paddingVertical="@dimen/size5"
+                            style="@style/primaryButton"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingHorizontal="@dimen/size15"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/schedular"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/temp_restaurant_detail"
+                            app:civ_border_color="#32BFC9"
+                            app:civ_border_width="1dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_count"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="23dp"
+                            android:src="#F7F7F7"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="3+"
+                            android:textColor="#32BFC9"
+                            android:textSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/civ_count"
+                            app:layout_constraintEnd_toEndOf="@+id/civ_count"
+                            app:layout_constraintStart_toStartOf="@+id/civ_count"
+                            app:layout_constraintTop_toTopOf="@+id/civ_count" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/rlCancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whiteTranparent"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/size10"
+                android:layout_marginBottom="@dimen/size20"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="@dimen/size10"
+                android:text="Cancelled"
+                android:textColor="@color/dark_transparent"
+                android:textSize="@dimen/size14" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

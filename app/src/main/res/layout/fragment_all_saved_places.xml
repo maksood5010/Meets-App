@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:padding="10dp"
+            android:id="@+id/iv_back"
+            style="@style/toolBarBack" />
+
+        <TextView
+            style="@style/toolBarText"
+            android:text="Saved" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <include
+        android:id="@+id/no_data"
+        layout="@layout/layout_no_result" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_place"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/card_all_places"
+        tools:itemCount="1"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:layout_marginTop="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:shimmer_auto_start="true"
+        tools:visibility="visible"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/size30"
+            android:paddingTop="@dimen/size20">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/bg_shimmer_curve"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/size10"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="@dimen/size20"
+                            android:background="@drawable/bg_shimmer_curve"/>
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size5"
+                android:layout_height="130dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/bg_shimmer_curve"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/size10"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="@dimen/size20"
+                            android:background="@drawable/bg_shimmer_curve"/>
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size5"
+                android:layout_height="130dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/bg_shimmer_curve"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/size10"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="@dimen/size20"
+                            android:background="@drawable/bg_shimmer_curve"/>
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size5"
+                android:layout_height="130dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+
+                    <View
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:background="@drawable/bg_shimmer_curve"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/size10"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="120dp"
+                            android:layout_height="@dimen/size20"
+                            android:background="@drawable/bg_shimmer_curve"/>
+                        <View
+                            android:layout_width="150dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+                        <View
+                            android:layout_width="160dp"
+                            android:layout_height="@dimen/size15"
+                            android:layout_marginTop="@dimen/size4"
+                            android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size10"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+                            <View
+                                android:layout_width="100dp"
+                                android:layout_height="@dimen/size25"
+                                android:layout_marginTop="@dimen/size4"
+                                android:layout_marginStart="@dimen/size5"
+                                android:background="@drawable/bg_shimmer_curve"/>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <include
+        android:id="@+id/retryCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/size10"
+        layout="@layout/generic_retry_card"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

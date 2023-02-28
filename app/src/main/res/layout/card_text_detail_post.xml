@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:id="@+id/rootCo"
+    tools:visibility="visible"
+    android:background="@color/page_bg"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/page_bg"
+        android:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/toolBarBack"
+                android:paddingEnd="@dimen/size20"
+                android:paddingHorizontal="@dimen/size10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/size40"
+                android:layout_height="@dimen/size40"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/primaryDark"
+                app:layout_constraintStart_toEndOf="@+id/iv_back"
+                app:layout_constraintTop_toTopOf="@+id/iv_back"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_back"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/toolBarText"
+                android:text="username's post"
+                android:textSize="@dimen/size14"
+                android:paddingStart="@dimen/size10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/option"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="&#8942;"
+                android:visibility="gone"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D8D4D4"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+   <!-- <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size10"
+        app:cardCornerRadius="@dimen/size20"
+        app:contentPadding="0.5dp"
+        android:minHeight="@dimen/size100"
+        app:cardBackgroundColor="@color/gray1"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/lightestGray"
+            app:cardCornerRadius="19.5dp">-->
+
+
+            <TextView
+                android:id="@+id/etTextpost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/size10"
+                android:paddingHorizontal="@dimen/size20"
+                android:fontFamily="@font/poppins"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/size16"
+                android:visibility="visible"
+                tools:text="jcbh"
+                android:minHeight="@dimen/size100"
+                android:text="jdbcjhwfjhc"
+                tools:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tb_toolbar"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+<!--        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

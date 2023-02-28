@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/primaryDark" />
+
+            <LinearLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:visibility="invisible"
+                android:background="#CECECE"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/cancel"/>
+
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allow Location"
+                android:visibility="invisible"
+                android:textSize="@dimen/size18"
+                android:layout_marginStart="@dimen/size10"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blacktextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share your location"
+                android:textColor="#D8D4D4"
+                android:visibility="invisible"
+                android:layout_marginStart="@dimen/size10"
+                android:textSize="@dimen/size10"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/head"/>
+
+            <!--<ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share_location"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                android:layout_marginTop="@dimen/size20"/>-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size200"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/size20" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sending Invitation..."
+                android:gravity="center"
+                android:textSize="@dimen/size14"
+                android:textColor="#4D4D4D"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+
+            <TextView
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Meetup invitation has been sent to"
+                android:visibility="invisible"
+                android:gravity="center"
+                android:textSize="@dimen/size14"
+                android:textColor="#4D4D4D"
+                android:fontFamily="@font/poppins"
+
+                app:layout_constraintTop_toBottomOf="@+id/status"/>
+
+            <TextView
+                android:id="@+id/invitee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="5dp"
+                tools:text="Imran, Ceo, reo_sanchez,Imran, Ceo, reo_sanchez,Imran, Ceo, reo_sanchez,Imran, Ceo, reo_sanchez,Imran, Ceo, reo_sanchez,  "
+                android:textColor="@color/primaryDark"
+                android:textSize="@dimen/size12"
+                android:fontFamily="@font/poppins"
+                app:layout_constraintTop_toBottomOf="@+id/reason"/>
+
+            <TextView
+                android:id="@+id/seeMeetUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Chat"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/size40"
+                android:textSize="@dimen/size18"
+                android:paddingVertical="@dimen/size5"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:background="@drawable/round_border_primary_bg"
+               android:layout_marginHorizontal="@dimen/size20"
+                android:layout_marginTop="@dimen/size30"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/invitee"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

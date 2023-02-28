@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootCo"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_onboard_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_onboard_shade"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="@dimen/size20"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:paddingTop="@dimen/size20"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        android:digits="@string/usernameValidLetter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="15"
+                        android:paddingVertical="5dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/ic_single_person"
+                        android:drawablePadding="@dimen/size20"
+                        android:inputType="textPersonName"
+                        android:imeOptions="actionNext"
+                        android:drawableTint="@color/primaryDark"
+                        android:fontFamily="@font/poppins"
+                        android:hint="username"
+                        android:capitalize="none"
+                        android:textColorHint="#E8E8E8"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray1" />
+
+                    <TextView
+                        android:id="@+id/tv_username_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Username must not have special characters"
+                        android:textColor="#E8E8E8"
+                        android:textSize="8dp"/>
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="5dp"
+                        android:background="@color/white"
+                        android:fontFamily="@font/poppins"
+                        android:hint="Email"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:gravity="bottom"
+                        android:textColorHint="#E8E8E8"
+                        android:paddingLeft="@dimen/size10"
+                        android:layout_marginTop="@dimen/size12"
+                        android:textSize="16dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray1" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_go"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#32BFC9"
+                    android:gravity="center"
+                    android:text="Go"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingVertical="@dimen/size10"/>
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:visibility="gone"
+        android:textSize="@dimen/size18"
+        android:layout_marginTop="@dimen/size30"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@+id/cl_form"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="34dp"
+        android:layout_marginBottom="@dimen/size20"
+        android:text="Just couple of seconds"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size20"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cl_form"/>
+
+    <TextView
+        android:id="@+id/tv_quick_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="34dp"
+        android:text="A Quick One"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size40"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/meet_logo"
+        app:layout_constraintBottom_toTopOf="@+id/tv_quick_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

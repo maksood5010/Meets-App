@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                style="@style/toolBarBack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvToolbarText"
+                style="@style/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_toolbar">
+        <ViewFlipper
+            android:id="@+id/viewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clEMail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size10"
+                    android:background="@drawable/shape_round_search"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:id="@+id/fl_email"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/ic_firstname"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/ivChannel"
+                            style="@style/header"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:src="@drawable/ic_mail"
+                            app:tint="@color/black" />
+                    </FrameLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        style="@style/subHeaderSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/fl_email"
+                        app:layout_constraintTop_toTopOf="@+id/fl_email"
+                        android:layout_marginHorizontal="@dimen/size10"
+                        android:layout_toEndOf="@+id/fl_email"
+                        android:text="Email" />
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/country_code_picker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:ccp_rememberLastSelection="true"
+                        app:ccp_showNameCode="false"
+                        app:ccp_customMasterCountries="@string/contrylist"
+                        android:visibility="gone"
+                        app:ccp_autoDetectCountry="true"
+                        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+                        app:ccp_hintExampleNumber="true"
+                        android:layout_below="@+id/tvEmail"
+                        android:layout_alignStart="@+id/tvEmail"
+                        app:ccp_textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvEmail"
+                        android:layout_alignStart="@+id/tvEmail"
+                        android:background="@color/transparent"
+                        android:hint="type your email…"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="65"
+                        android:maxLines="1"
+                        android:paddingVertical="5dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/country_code_picker"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvSubmit"
+                    style="@style/primaryButton"
+                    android:background="@drawable/gray_bg_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:paddingHorizontal="100dp"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/rlEmail"
+                    app:layout_constraintStart_toStartOf="@+id/rlEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/rlEmail" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvText"
+                    style="@style/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center_horizontal"
+                    android:text="Didn't get the code? "
+                    android:textSize="@dimen/size20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_resend"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_resend"
+                    style="@style/header"
+                    android:textColor="@color/resend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Resend"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvText"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size50"
+                    android:fontFamily="@font/poppins"
+                    android:text="60 seconds remaining"
+                    android:textSize="@dimen/size15"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_resend"
+                    app:layout_constraintEnd_toEndOf="@+id/otp_view" />
+
+                <com.mukesh.OtpView
+                    android:id="@+id/otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="72dp"
+                    android:inputType="number"
+                    android:cursorVisible="true"
+                    android:itemBackground="#aaffffff"
+                    android:textColor="@color/black"
+                    app:OtpItemCount="4"
+                    app:OtpLineColor="@color/transparent"
+                    app:OtpViewType="rectangle"
+                    app:OtpItemRadius="@dimen/size20"
+                    app:OtpItemHeight="72dp"
+                    app:OtpItemWidth="72dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_timer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/tv_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="34dp"
+                    android:layout_marginBottom="@dimen/size20"
+                    android:fontFamily="@font/poppins"
+                    android:text="code sent to mail@mail.com"
+                    android:textSize="@dimen/size20"
+                    app:layout_constraintBottom_toTopOf="@+id/otp_view"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_quick_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="34dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Verify Email"
+                    android:textSize="@dimen/size40"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_contact"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ViewFlipper>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

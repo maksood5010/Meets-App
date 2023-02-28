@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/rootCo"
+    android:layout_marginHorizontal="@dimen/size5"
+    android:layout_marginVertical="10dp"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="@dimen/size5"
+    android:background="@drawable/horizontal_round_shape">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_add_review"/>
+
+
+    <TextView
+        android:id="@+id/place_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sort by: Closest to me"
+        android:textColor="@color/blacktextColor"
+        android:textSize="@dimen/size14"
+        android:fontFamily="@font/poppins"
+        android:paddingVertical="@dimen/size5"
+        android:paddingHorizontal="@dimen/size10"
+        android:layout_alignParentStart="true" />
+
+</LinearLayout>

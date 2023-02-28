@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/size30"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/size10"
+            android:paddingTop="@dimen/size10"
+            android:paddingBottom="@dimen/size20">
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/primaryDark" />
+
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vote Stats"
+                android:textSize="@dimen/size18"
+                android:layout_marginStart="@dimen/size10"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blacktextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="#CECECE"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/cancel"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cLogo"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:cardCornerRadius="@dimen/size20"
+                app:cardElevation="0dp"
+                android:layout_marginHorizontal="@dimen/size15"
+                app:layout_constraintTop_toBottomOf="@+id/line">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_bg_default_place_h"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toBottomOf="@+id/head"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/size20"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size15"
+                android:text="Shisheo Louge"
+                android:gravity="start"
+                android:textSize="@dimen/size14"
+                android:textColor="#4D4D4D"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="@dimen/size10"
+                app:layout_constraintTop_toBottomOf="@+id/cLogo"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Dubai"
+                android:layout_marginStart="@dimen/size15"
+                android:textSize="@dimen/size14"
+                android:fontFamily="@font/poppins"
+                android:gravity="start"
+                app:layout_constraintTop_toBottomOf="@+id/name"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/address"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHeight_max="350dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/size15">
+
+                        <TextView
+                            android:id="@+id/reason_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="These people voted for Shisheo Lounge"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size20"
+                            android:fontFamily="@font/poppins"
+                            android:layout_marginTop="@dimen/size20" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvVotedPerson"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="vertical"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/card_like">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

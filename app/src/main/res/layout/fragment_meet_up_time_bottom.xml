@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/meetup_gb"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingTop="@dimen/size20"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:drawableStart="@drawable/ic_back"
+            android:drawablePadding="@dimen/size5"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:paddingVertical="@dimen/size8"
+            android:paddingHorizontal="@dimen/size25"
+            android:gravity="center_vertical"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/ic_next"
+            android:drawablePadding="@dimen/size5"
+            android:drawableTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+
+        <LinearLayout
+            android:id="@+id/ll_into"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back">
+
+            <TextView
+                android:id="@+id/tv_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Review Meetup"
+                android:textColor="@color/white"
+                android:textSize="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-18dp"
+                android:fontFamily="@font/poppins"
+                android:text="Review your meetup details and send invitation to All members. "
+                android:textColor="@color/white"
+                android:lineSpacingExtra="-3dp"
+                android:textSize="@dimen/size12"
+                app:layout_constraintTop_toBottomOf="@+id/tv_friend" />
+
+        </LinearLayout>
+
+        <!--<TextView
+            android:id="@+id/invite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_into"
+            android:layout_marginTop="@dimen/size10"
+            android:layout_marginBottom="@dimen/size5"
+            android:background="@drawable/bg_circular_corner_filled"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="Send Invitation"
+            android:textColor="@color/primaryDark"
+            android:textColorHint="#D8D4D4"
+            android:textSize="@dimen/size18"
+            app:layout_constraintTop_toBottomOf="@+id/ll_into" />-->
+
+        <TextView
+            android:id="@+id/tvAddName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_into"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="@string/add_custom_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_into"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivEditName"
+            android:layout_width="@dimen/size20"
+            android:layout_height="@dimen/size20"
+            android:visibility="gone"
+            android:src="@drawable/ic_edit"
+            android:layout_marginStart="@dimen/size5"
+            app:layout_constraintStart_toEndOf="@+id/tvAddName"
+            app:layout_constraintTop_toTopOf="@+id/tvAddName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddName"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size10"
+                android:background="#F7F7F7" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/size10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_chosen_restaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="@dimen/size20"
+                    android:text="Chosen Places"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/size20"
+                    android:paddingBottom="@dimen/size15"
+                    android:text="Not sure?, you can still change the places"
+                    android:textColor="#707070"
+                    android:textSize="@dimen/size14" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPlaces"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/card_meet_up_place_result" />
+
+
+            </LinearLayout>
+
+          <!--  <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size10"
+                android:background="#F7F7F7" />
+-->
+
+            <LinearLayout
+                android:id="@+id/llFriend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/size30"
+                android:paddingHorizontal="@dimen/size20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_your_friend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Invited Friends"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:text="You can still remove and add friends here"
+                    android:textColor="#707070"
+                    android:textSize="@dimen/size14" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFriends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/size10"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/card_chosen_friend" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size10"
+                android:background="#F7F7F7" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Meetup rules"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:text="Review and edit meetup rules"
+                    android:textColor="#707070"
+                    android:textSize="@dimen/size14" />
+
+                <LinearLayout
+                    android:id="@+id/ll_date_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/size20"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/hr_line">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/gray_button_background"
+                        android:padding="@dimen/size10"
+                        android:src="@drawable/ic_calendar" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/gray_button_background">
+
+                        <TextView
+                            android:id="@+id/tv_date_pick_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:fontFamily="@font/poppins"
+                            android:text="Choose Date"
+                            android:textColor="@color/blacktextColor"
+                            android:textSize="@dimen/size12" />
+
+                        <ImageView
+                            android:layout_width="@dimen/size15"
+                            android:layout_height="@dimen/size15"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/size15"
+                            android:src="@drawable/ic_spinner_drop" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size15"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size25"
+                        android:layout_height="@dimen/size20"
+                        android:src="@drawable/ic_calendar2"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15-01-2021"
+                        android:textSize="@dimen/size14"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/blacktextColor"
+                        android:paddingStart="@dimen/size10"/>
+
+                    <ImageView
+                        android:layout_width="@dimen/size25"
+                        android:layout_height="@dimen/size20"
+                        android:layout_marginLeft="@dimen/size20"
+                        android:src="@drawable/ic_clock2"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15-01-2021"
+                        android:textSize="@dimen/size14"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/blacktextColor"
+                        android:paddingStart="@dimen/size10"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size25"
+                        android:layout_height="@dimen/size20"
+                        android:src="@drawable/ic_jointime"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tvDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size14"
+                        android:paddingStart="@dimen/size5"
+                        android:text="Duration : "/>
+
+                    <TextView
+                        android:id="@+id/durationCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/size10"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="4"
+                        android:textSize="@dimen/size14" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size25"
+                        android:layout_height="@dimen/size20"
+                        android:src="@drawable/ic_exchange"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/voteChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size14"
+                        android:paddingStart="@dimen/size5"
+                        android:text="Vote change : "/>
+
+                    <TextView
+                        android:id="@+id/voteChangeCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/size10"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="4"
+                        android:textSize="@dimen/size14" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size8"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/size25"
+                        android:layout_height="@dimen/size20"
+                        android:src="@drawable/ic_jointime"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/size5"
+                        android:textSize="@dimen/size14"
+                        android:text="Join time :"/>
+
+                    <TextView
+                        android:id="@+id/joinTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25 hour"
+                        android:paddingStart="@dimen/size10"
+                        android:textSize="@dimen/size14"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/llCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:paddingTop="@dimen/size15"
+                        android:text="Categories"
+                        android:textColor="@color/blacktextColor"
+                        android:textSize="@dimen/size20" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategory"
+                        android:layout_width="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingTop="@dimen/size15"
+                    android:text="Description"
+                    android:textColor="@color/blacktextColor"
+                    android:textSize="@dimen/size20" />
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="descriprion"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="@dimen/size14"
+                    tools:text="@string/lorum_ipsum"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/invite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size20"
+        android:background="@drawable/bg_dm_own"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="Create Open Meetup"
+        android:layout_marginHorizontal="@dimen/size20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size18"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

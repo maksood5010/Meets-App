@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo">
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_toolbar_new"/>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/meetup_gb"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/meetup_gb"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_available_meet_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size20"
+                android:visibility="gone"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:visibility="gone"
+                    android:text="20+ people are available to Meetup."
+                    android:textColor="#00EBFF"
+                    android:textSize="@dimen/size10" />
+
+                <TextView
+                    android:id="@+id/allOpenForMeetUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="See them"
+                    android:visibility="gone"
+                    android:textColor="#00EBFF"
+                    android:textSize="@dimen/size10" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_upcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size20"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/size15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_available_meet_up">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Up Coming Meetup"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:id="@+id/tv_seeThem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:text="Tap on any of the cards to join the group chat"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_upcoming_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginEnd="@dimen/size20"
+                android:fontFamily="@font/poppins"
+                android:text="2+"
+                android:visibility="gone"
+                android:textColor="#00EBFF"
+                android:textSize="@dimen/size20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ll_upcoming" />
+
+            <LinearLayout
+                android:id="@+id/llNoMeetup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shimmer_curve"
+                android:backgroundTint="#5000727A"
+                android:orientation="vertical"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/ll_upcoming">
+
+                <TextView
+                    style="@style/headerL"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="You have no Meetups"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Your Meetups \n Will be displayed here" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUpcomingPmeet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/ll_upcoming"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/brUpPMeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="rvUpcomingPmeet,llNoMeetup"/>
+
+
+            <!--<RelativeLayout
+                android:id="@+id/refrence"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/size5"
+                android:layout_height="200dp"
+                app:layout_constraintTop_toBottomOf="@+id/ll_upcoming">
+
+            </RelativeLayout>-->
+
+            <!--<com.yuyakaido.android.cardstackview.CardStackView
+                android:id="@+id/cards"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/card_swipe_meetup"
+                tools:itemCount="0"
+                app:layout_constraintBottom_toBottomOf="@+id/refrence">
+
+            </com.yuyakaido.android.cardstackview.CardStackView>-->
+
+            <TextView
+                android:id="@+id/seeAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View all Meetups"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size10"
+                android:textColor="@color/primaryDark"
+                android:textSize="@dimen/size14"
+                android:elevation="@dimen/size5"
+                android:layout_marginTop="@dimen/size10"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:background="@drawable/bg_round_gray2"
+                app:layout_constraintTop_toBottomOf="@+id/brUpPMeet"/>
+
+            <LinearLayout
+                android:id="@+id/ll_openMeet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_marginTop="@dimen/size15"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seeAll">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Upcoming Open MeetUps"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:text="Tap on any of the cards to join the group chat board"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNoOpenMeet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shimmer_curve"
+                android:backgroundTint="#5000727A"
+                android:orientation="vertical"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/ll_openMeet">
+
+                <TextView
+                    style="@style/headerL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="You have no Meetups"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Your Open Meetups \n Will be displayed here" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOpen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/size20"
+                tools:itemCount="1"
+                tools:visibility="gone"
+                android:elevation="@dimen/size20"
+                android:paddingVertical="@dimen/size5"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/ll_openMeet"
+                tools:listitem="@layout/card_core_open_meet" />
+            <include
+                android:id="@+id/toolOpen"
+                layout="@layout/card_tooltip_new"
+                android:layout_width="wrap_content"
+                tools:visibility="gone"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/rvOpen"
+                app:layout_constraintStart_toStartOf="@+id/rvOpen"
+                app:layout_constraintTop_toBottomOf="@+id/rvOpen" />
+
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/openBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="rvOpen,llNoOpenMeet"/>
+
+            <TextView
+                android:id="@+id/seeAllOpenMeet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View all Open Meetups"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:paddingVertical="@dimen/size10"
+                android:textColor="@color/primaryDark"
+                android:textSize="@dimen/size14"
+                android:elevation="@dimen/size5"
+                android:layout_marginTop="@dimen/size10"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:background="@drawable/bg_round_gray2"
+                app:layout_constraintTop_toBottomOf="@+id/openBarrier"/>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size20"
+                android:layout_marginTop="@dimen/size5"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seeAllOpenMeet">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Previous Meetups"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:text="Tap on any of the cards to see previous group chat"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size10"
+                android:layout_marginEnd="@dimen/size20"
+                android:fontFamily="@font/poppins"
+                android:text="20+"
+                android:visibility="gone"
+                android:textColor="#00EBFF"
+                android:textSize="@dimen/size20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ll_previous" />
+            <LinearLayout
+                android:id="@+id/llNoPrevMeet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@drawable/bg_shimmer_curve"
+                android:backgroundTint="#5000727A"
+                android:orientation="vertical"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:paddingVertical="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/ll_previous">
+
+                <TextView
+                    style="@style/headerL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="You have no Previous Meetups"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    style="@style/subHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Your Previous Meetups\nWill be displayed here" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPrevious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/size10"
+                android:elevation="@dimen/size20"
+                tools:itemCount="1"
+                android:paddingVertical="@dimen/size5"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/ll_previous"
+                tools:listitem="@layout/card_previous_meetup" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/prevBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="rvPrevious,llNoPrevMeet"/>
+
+
+            <TextView
+                android:id="@+id/seeAllPrevious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size20"
+                android:layout_marginVertical="@dimen/size10"
+                android:background="@drawable/bg_round_gray2"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:elevation="@dimen/size5"
+                android:paddingVertical="@dimen/size10"
+                android:text="View all previous Meetups"
+                android:textColor="@color/primaryDark"
+                android:textSize="@dimen/size14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prevBarrier"
+                tools:layout_editor_absoluteX="20dp" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F7F7F7"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_createOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_border_white_bg_button_bg"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingHorizontal="@dimen/size40"
+            android:paddingVertical="8dp"
+            android:text="Create One"
+            android:textColor="#8032BFC9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:text="You have no Meetups Created Yet"
+            android:textColor="#604d4d4d"
+            android:textSize="@dimen/size10"
+            app:layout_constraintBottom_toTopOf="@+id/tv_createOne"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:src="@drawable/ic_meet_up_colored"
+            app:layout_constraintBottom_toTopOf="@+id/tv_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

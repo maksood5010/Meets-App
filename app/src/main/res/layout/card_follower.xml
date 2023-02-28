@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootCo"
+    tools:background="@color/white"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/size10">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/size20"
+        android:src="@drawable/ic_person_placeholder"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <ImageView
+        android:id="@+id/ivDpBadge"
+        style="@style/smallBadge"
+        app:layout_constraintTop_toTopOf="@+id/image"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintEnd_toEndOf="@+id/image"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_verify"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="15dp"-->
+<!--        android:layout_height="15dp"-->
+<!--        android:src="@drawable/ic_verified_tick"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/image"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/image"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/image"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/image"-->
+<!--        app:layout_constraintVertical_bias="1"-->
+<!--        app:layout_constraintHorizontal_bias="1"/>-->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/size10"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintEnd_toStartOf="@+id/followUnfollow"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/image">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="hello"
+            android:singleLine="true"
+            android:drawablePadding="@dimen/size5"
+            android:lineSpacingExtra="-8dp"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-2dp"
+            style="@style/subHeaderSmall"
+            android:textColor="@color/blacktextColor"
+            tools:text="username"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/followUnfollow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follow"
+        android:textSize="@dimen/size12"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/white"
+        android:paddingHorizontal="@dimen/size20"
+        android:paddingVertical="@dimen/size5"
+        android:layout_marginEnd="@dimen/size10"
+        android:background="@drawable/round_border_primary_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/block"/>
+
+    <TextView
+        android:id="@+id/block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Block"
+        android:textSize="@dimen/size12"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/primaryDark"
+        android:paddingHorizontal="@dimen/size20"
+        android:layout_marginRight="@dimen/size15"
+        android:paddingVertical="@dimen/size5"
+        android:background="@drawable/horizontal_round_shape"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="#B7B7B7"
+        android:visibility="gone"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
