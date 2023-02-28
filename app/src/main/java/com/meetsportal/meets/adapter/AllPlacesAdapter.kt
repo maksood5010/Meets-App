@@ -34,7 +34,7 @@ class AllPlacesAdapter(var myContext: Activity):
     var day: Int= Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        Log.i(TAG,"item ${getItem(position)}")
+        Log.i(TAG,"itemss: ${getItem(position)}")
         bindData(getItem(position),holder as RviewHolder)
     }
 
